@@ -1,3 +1,5 @@
+package restaurants;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -15,7 +17,7 @@ public class EditRestMainPageTests {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://lptest.bigdig.com.ua/");
-    loginAsAdmin();
+    login("manager@lunch.ua", "2CDTx8Wz");
     gotoAdminPanel();
     Thread.sleep(3000);
   }
@@ -24,14 +26,14 @@ public class EditRestMainPageTests {
     wd.findElement(By.xpath("//a[contains(text(),'manager')]")).click();
   }
 
-  private void loginAsAdmin() {
+  private void login(String username, String password) {
     wd.findElement(By.cssSelector("a.log-in")).click();
     wd.findElement(By.id("email")).click();
     wd.findElement(By.id("email")).clear();
-    wd.findElement(By.id("email")).sendKeys("manager@lunch.ua");
+    wd.findElement(By.id("email")).sendKeys(username);
     wd.findElement(By.id("pass")).click();
     wd.findElement(By.id("pass")).clear();
-    wd.findElement(By.id("pass")).sendKeys("2CDTx8Wz");
+    wd.findElement(By.id("pass")).sendKeys(password);
     wd.findElement(By.xpath("//div[@id='logIn']/div/a/span")).click();
   }
 
@@ -39,7 +41,7 @@ public class EditRestMainPageTests {
   public void testEditRestaurantMainPage() throws InterruptedException {
     searchRestInAdminPanel();
     gotoEditRestInAdminPanel();
-    fillRestName();
+    fillRestName(new RestDataOfMainPage("Slava test selenium"));
     saveRestMainPage();
     confirmChangesOfRestMainPage();
   }
@@ -53,10 +55,10 @@ public class EditRestMainPageTests {
     Thread.sleep(3000);
   }
 
-  private void fillRestName() {
+  private void fillRestName(RestDataOfMainPage restDataOfMainPage) {
     wd.findElement(By.id("edit_restName")).click();
     wd.findElement(By.id("edit_restName")).clear();
-    wd.findElement(By.id("edit_restName")).sendKeys("Slava test selenium");
+    wd.findElement(By.id("edit_restName")).sendKeys(restDataOfMainPage.getNameOfRest());
   }
 
   private void gotoEditRestInAdminPanel() throws InterruptedException {
