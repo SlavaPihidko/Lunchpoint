@@ -42,9 +42,9 @@ public class EditRestaurantMainPage {
         wd.findElement(By.name("RestaurantsLangSearch[address]")).click();
         //wd.findElement(By.name("RestaurantsLangSearch[address]")).clear();
         Thread.sleep(3000);
-        wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2228']>span.glyphicon.glyphicon-pencil")).click();
-        wd.findElement(By.id("edit_restName")).click();
+        wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']>span.glyphicon.glyphicon-pencil")).click();
         Thread.sleep(3000);
+        wd.findElement(By.id("edit_restName")).click();
         wd.findElement(By.id("edit_restName")).clear();
         wd.findElement(By.id("edit_restName")).sendKeys("Slava test selenium");
         wd.findElement(By.id("btn_form_general")).click();
