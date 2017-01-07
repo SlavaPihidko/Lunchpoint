@@ -22,27 +22,33 @@ public class EditRestaurantMainPage {
     }
     
     @Test
-    public void EditRestaurantMainPage() {
-        wd.get("https://lunchpoint.com/");
-        wd.findElement(By.linkText("ВХОД")).click();
+    public void EditRestaurantMainPage() throws InterruptedException {
+        wd.get("http://lptest.bigdig.com.ua/");
+        wd.findElement(By.cssSelector("a.log-in")).click();
         wd.findElement(By.id("email")).click();
         wd.findElement(By.id("email")).clear();
         wd.findElement(By.id("email")).sendKeys("manager@lunch.ua");
         wd.findElement(By.id("pass")).click();
         wd.findElement(By.id("pass")).clear();
         wd.findElement(By.id("pass")).sendKeys("2CDTx8Wz");
-        wd.findElement(By.linkText("ЛОГІН")).click();
-        wd.findElement(By.linkText("MANAGER")).click();
+        wd.findElement(By.xpath("//div[@id='logIn']/div/a/span")).click();
+        wd.findElement(By.xpath("//a[contains(text(),'manager')]")).click();
+        Thread.sleep(3000);
         wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
         wd.findElement(By.name("RestaurantsLangSearch[name]")).clear();
         wd.findElement(By.name("RestaurantsLangSearch[name]")).sendKeys("test");
-        wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
-        wd.findElement(By.name("RestaurantsLangSearch[name]")).sendKeys("\n");
-        wd.findElement(By.cssSelector("span.glyphicon.glyphicon-pencil")).click();
+        wd.get("http://lptest.bigdig.com.ua/manager/restaurants?RestaurantsLangSearch%5Bname%5D=test&RestaurantsLangSearch%5Baddress%5D=");
+        /*wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
+        wd.findElement(By.name("RestaurantsLangSearch[address]")).click();
+        wd.findElement(By.name("RestaurantsLangSearch[address]")).clear();*/
+        Thread.sleep(3000);
+        wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2229']>span.glyphicon.glyphicon-pencil")).click();
         wd.findElement(By.id("edit_restName")).click();
+        Thread.sleep(3000);
         wd.findElement(By.id("edit_restName")).clear();
-        wd.findElement(By.id("edit_restName")).sendKeys("Slava test123");
+        wd.findElement(By.id("edit_restName")).sendKeys("Slava test selenium");
         wd.findElement(By.id("btn_form_general")).click();
+        Thread.sleep(3000);
         wd.findElement(By.id("save_ok")).click();
     }
     
