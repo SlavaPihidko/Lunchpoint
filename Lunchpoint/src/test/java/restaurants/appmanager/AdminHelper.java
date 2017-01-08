@@ -17,11 +17,6 @@ public class AdminHelper {
     wd.findElement(By.xpath("//a[contains(text(),'manager')]")).click();
   }
 
-  public void gotoEditRestInAdminPanel() throws InterruptedException {
-    wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']>span.glyphicon.glyphicon-pencil")).click();
-    Thread.sleep(3000);
-  }
-
   public void searchRestInAdminPanel() throws InterruptedException {
     wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
     wd.findElement(By.name("RestaurantsLangSearch[name]")).clear();
@@ -32,4 +27,11 @@ public class AdminHelper {
     //wd.findElement(By.name("RestaurantsLangSearch[address]")).clear();
     Thread.sleep(3000);
   }
+
+  public void gotoEditRestInAdminPanel() throws InterruptedException {
+    wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']>span.glyphicon.glyphicon-pencil")).click();
+    Thread.sleep(3000);
+  }
+
+
 }

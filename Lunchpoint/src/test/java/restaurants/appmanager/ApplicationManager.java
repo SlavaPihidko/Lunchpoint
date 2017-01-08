@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
   private FirefoxDriver wd;
 
-  private MenuPageHelper menuPageHelper;
-  private MainPageHelper mainPageHelper;
   private AdminHelper adminHelper;
+  private MainPageHelper mainPageHelper;
+  private MenuPageHelper menuPageHelper;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
