@@ -10,7 +10,6 @@ public class EditRestMenuPageTests extends TestBase {
   @Test
   public void testEditRestMenuPage() throws InterruptedException {
     app.getAdminHelper().gotoAdminPanel();
-    Thread.sleep(3000);
     app.getAdminHelper().searchRestInAdminPanel();
     app.getAdminHelper().gotoEditRestInAdminPanel();
     app.getMenuPageHelper().gotoMenuPage();

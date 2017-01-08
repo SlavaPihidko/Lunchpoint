@@ -15,16 +15,8 @@ public class SessionHelper extends HelperBase {
 
   protected void login(String username, String password) {
     click(By.cssSelector("a.log-in"));
-    //wd.findElement(By.cssSelector("a.log-in")).click();
     type(By.id("email"),username);
-    /*wd.findElement(By.id("email")).click();
-    wd.findElement(By.id("email")).clear();
-    wd.findElement(By.id("email")).sendKeys(username);*/
     type(By.id("pass"),password);
-    /*wd.findElement(By.id("pass")).click();
-    wd.findElement(By.id("pass")).clear();
-    wd.findElement(By.id("pass")).sendKeys(password);*/
     click(By.xpath("//div[@id='logIn']/div/a/span"));
-    //wd.findElement(By.xpath("//div[@id='logIn']/div/a/span")).click();
   }
 }
