@@ -12,12 +12,8 @@ public class MenuPageHelper extends HelperBase {
     super(wd);
   }
 
-  public void confirmChangesOfRestMenuPage() {
-    click(By.id("save_ok"));
-  }
-
-  public void saveRestMenuPage() throws InterruptedException {
-    click(By.id("menu-img_update"));
+  public void gotoMenuPage() throws InterruptedException {
+    click(By.linkText("Меню"));
     dream();
   }
 
@@ -26,8 +22,18 @@ public class MenuPageHelper extends HelperBase {
     dream();
   }
 
-  public void gotoMenuPage() throws InterruptedException {
-    click(By.linkText("Меню"));
+  public void saveRestMenuPage() throws InterruptedException {
+    click(By.id("menu-img_update"));
     dream();
   }
+
+  public void confirmChangesOfRestMenuPage() {
+    click(By.id("save_ok"));
+  }
+
+
+
+
+
+
 }

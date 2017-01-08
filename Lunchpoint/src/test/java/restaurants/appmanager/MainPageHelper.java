@@ -13,8 +13,8 @@ public class MainPageHelper extends HelperBase {
     super(wd);
   }
 
-  public void confirmChangesOfRestMainPage() {
-    click(By.id("save_ok"));
+  public void fillRestName(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
   }
 
   public void saveRestMainPage() throws InterruptedException {
@@ -22,8 +22,8 @@ public class MainPageHelper extends HelperBase {
     dream();
   }
 
-  public void fillRestName(RestDataOfMainPage restDataOfMainPage) {
-    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
+  public void confirmChangesOfRestMainPage() {
+    click(By.id("save_ok"));
   }
 
 }

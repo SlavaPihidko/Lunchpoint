@@ -19,7 +19,6 @@ public class AdminHelper extends HelperBase {
 
   public void searchRestInAdminPanel() throws InterruptedException {
     type(By.name("RestaurantsLangSearch[name]"),"slava");
-    click(By.name("RestaurantsLangSearch[name]"));
     click(By.name("RestaurantsLangSearch[address]"));
     dream();
   }
