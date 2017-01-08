@@ -11,9 +11,9 @@ public class EditRestMainPageTests extends TestBase {
     Thread.sleep(3000);
     app.getAdminHelper().searchRestInAdminPanel();
     app.getAdminHelper().gotoEditRestInAdminPanel();
-    app.fillRestName(new RestDataOfMainPage("Slava test selenium"));
-    app.saveRestMainPage();
-    app.confirmChangesOfRestMainPage();
+    app.getMainPageHelper().fillRestName(new RestDataOfMainPage("Slava test selenium"));
+    app.getMainPageHelper().saveRestMainPage();
+    app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
 
 }
