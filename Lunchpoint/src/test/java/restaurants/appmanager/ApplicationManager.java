@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
   private FirefoxDriver wd;
 
+  private MenuPageHelper menuPageHelper;
   private MainPageHelper mainPageHelper;
   private AdminHelper adminHelper;
 
@@ -30,6 +31,7 @@ public class ApplicationManager {
     wd.get("http://lptest.bigdig.com.ua/");
     adminHelper = new AdminHelper(wd);
     mainPageHelper = new MainPageHelper(wd);
+    menuPageHelper = new MenuPageHelper(wd);
     login("manager@lunch.ua", "2CDTx8Wz");
   }
 
@@ -48,30 +50,15 @@ public class ApplicationManager {
     wd.quit();
   }
 
-  public void confirmChangesOfRestMenuPage() {
-    wd.findElement(By.id("save_ok")).click();
-  }
-
-  public void saveRestMenuPage() throws InterruptedException {
-    wd.findElement(By.id("menu-img_update")).click();
-    Thread.sleep(3000);
-  }
-
-  public void createNewMenu() throws InterruptedException {
-    wd.findElement(By.cssSelector("div.add-menu-block")).click();
-    Thread.sleep(3000);
-  }
-
-  public void gotoMenuPage() throws InterruptedException {
-    wd.findElement(By.linkText("Меню")).click();
-    Thread.sleep(3000);
-  }
-
   public AdminHelper getAdminHelper() {
     return adminHelper;
   }
 
   public MainPageHelper getMainPageHelper() {
     return mainPageHelper;
+  }
+
+  public MenuPageHelper getMenuPageHelper() {
+    return menuPageHelper;
   }
 }

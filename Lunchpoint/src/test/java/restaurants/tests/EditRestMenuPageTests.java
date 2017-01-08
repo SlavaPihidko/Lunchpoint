@@ -13,10 +13,10 @@ public class EditRestMenuPageTests extends TestBase {
     Thread.sleep(3000);
     app.getAdminHelper().searchRestInAdminPanel();
     app.getAdminHelper().gotoEditRestInAdminPanel();
-    app.gotoMenuPage();
-    app.createNewMenu();
-    app.saveRestMenuPage();
-    app.confirmChangesOfRestMenuPage();
+    app.getMenuPageHelper().gotoMenuPage();
+    app.getMenuPageHelper().createNewMenu();
+    app.getMenuPageHelper().saveRestMenuPage();
+    app.getMenuPageHelper().confirmChangesOfRestMenuPage();
   }
 
 }
