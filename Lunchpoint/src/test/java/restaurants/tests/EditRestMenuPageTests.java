@@ -15,5 +15,4 @@ public class EditRestMenuPageTests extends TestBase {
     app.getMenuPageHelper().saveRestMenuPage();
     app.getMenuPageHelper().confirmChangesOfRestMenuPage();
   }
-
 }

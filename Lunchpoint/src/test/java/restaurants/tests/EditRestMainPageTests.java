@@ -12,7 +12,4 @@ public class EditRestMainPageTests extends TestBase {
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
-
-
-
 }
