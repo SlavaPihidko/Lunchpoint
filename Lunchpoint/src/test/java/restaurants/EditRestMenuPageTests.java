@@ -18,22 +18,4 @@ public class EditRestMenuPageTests extends TestBase {
       confirmChangesOfRestMenuPage();
   }
 
-  private void confirmChangesOfRestMenuPage() {
-    wd.findElement(By.id("save_ok")).click();
-  }
-
-  private void saveRestMenuPage() throws InterruptedException {
-    wd.findElement(By.id("menu-img_update")).click();
-    Thread.sleep(3000);
-  }
-
-  private void createNewMenu() throws InterruptedException {
-    wd.findElement(By.cssSelector("div.add-menu-block")).click();
-    Thread.sleep(3000);
-  }
-
-  private void gotoMenuPage() throws InterruptedException {
-    wd.findElement(By.linkText("Меню")).click();
-    Thread.sleep(3000);
-  }
 }

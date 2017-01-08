@@ -83,4 +83,23 @@ public class TestBase {
   public void tearDown() {
     wd.quit();
   }
+
+  protected void confirmChangesOfRestMenuPage() {
+    wd.findElement(By.id("save_ok")).click();
+  }
+
+  protected void saveRestMenuPage() throws InterruptedException {
+    wd.findElement(By.id("menu-img_update")).click();
+    Thread.sleep(3000);
+  }
+
+  protected void createNewMenu() throws InterruptedException {
+    wd.findElement(By.cssSelector("div.add-menu-block")).click();
+    Thread.sleep(3000);
+  }
+
+  protected void gotoMenuPage() throws InterruptedException {
+    wd.findElement(By.linkText("Меню")).click();
+    Thread.sleep(3000);
+  }
 }
