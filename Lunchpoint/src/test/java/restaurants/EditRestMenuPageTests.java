@@ -1,6 +1,5 @@
 package restaurants;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 /**
@@ -10,12 +9,14 @@ public class EditRestMenuPageTests extends TestBase {
 
   @Test
   public void testEditRestMenuPage() throws InterruptedException {
-      searchRestInAdminPanel();
-      gotoEditRestInAdminPanel();
-      gotoMenuPage();
-      createNewMenu();
-      saveRestMenuPage();
-      confirmChangesOfRestMenuPage();
+    gotoAdminPanel();
+    Thread.sleep(3000);
+    searchRestInAdminPanel();
+    gotoEditRestInAdminPanel();
+    gotoMenuPage();
+    createNewMenu();
+    saveRestMenuPage();
+    confirmChangesOfRestMenuPage();
   }
 
 }
