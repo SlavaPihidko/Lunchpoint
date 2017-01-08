@@ -22,4 +22,8 @@ public class HelperBase {
     wd.findElement(locator).clear();
     wd.findElement(locator).sendKeys(text);
   }
+
+  protected void dream() throws InterruptedException {
+    Thread.sleep(3000);
+  }
 }

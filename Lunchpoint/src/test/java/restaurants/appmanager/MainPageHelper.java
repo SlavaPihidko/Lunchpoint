@@ -19,7 +19,7 @@ public class MainPageHelper extends HelperBase {
 
   public void saveRestMainPage() throws InterruptedException {
     click(By.id("btn_form_general"));
-    Thread.sleep(3000);
+    dream();
   }
 
   public void fillRestName(RestDataOfMainPage restDataOfMainPage) {

@@ -6,29 +6,32 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Slava on 08.01.2017.
  */
-public class MenuPageHelper {
-  protected FirefoxDriver wd;
+public class MenuPageHelper extends HelperBase {
 
   public MenuPageHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void confirmChangesOfRestMenuPage() {
-    wd.findElement(By.id("save_ok")).click();
+    click(By.id("save_ok"));
+    //wd.findElement(By.id("save_ok")).click();
   }
 
   public void saveRestMenuPage() throws InterruptedException {
-    wd.findElement(By.id("menu-img_update")).click();
-    Thread.sleep(3000);
+    click(By.id("menu-img_update"));
+    //wd.findElement(By.id("menu-img_update")).click();
+    dream();
   }
 
   public void createNewMenu() throws InterruptedException {
-    wd.findElement(By.cssSelector("div.add-menu-block")).click();
-    Thread.sleep(3000);
+    click(By.cssSelector("div.add-menu-block"));
+    //wd.findElement(By.cssSelector("div.add-menu-block")).click();
+    dream();
   }
 
   public void gotoMenuPage() throws InterruptedException {
-    wd.findElement(By.linkText("Меню")).click();
-    Thread.sleep(3000);
+    click(By.linkText("Меню"));
+    //wd.findElement(By.linkText("Меню")).click();
+    dream();
   }
 }
