@@ -1,4 +1,4 @@
-package restaurants;
+package restaurants.model;
 
 public class RestDataOfMainPage {
   private final String nameOfRest;

@@ -1,4 +1,4 @@
-package restaurants;
+package restaurants.tests;
 
 import org.testng.annotations.Test;
 
@@ -9,14 +9,14 @@ public class EditRestMenuPageTests extends TestBase {
 
   @Test
   public void testEditRestMenuPage() throws InterruptedException {
-    gotoAdminPanel();
+    app.gotoAdminPanel();
     Thread.sleep(3000);
-    searchRestInAdminPanel();
-    gotoEditRestInAdminPanel();
-    gotoMenuPage();
-    createNewMenu();
-    saveRestMenuPage();
-    confirmChangesOfRestMenuPage();
+    app.searchRestInAdminPanel();
+    app.gotoEditRestInAdminPanel();
+    app.gotoMenuPage();
+    app.createNewMenu();
+    app.saveRestMenuPage();
+    app.confirmChangesOfRestMenuPage();
   }
 
 }

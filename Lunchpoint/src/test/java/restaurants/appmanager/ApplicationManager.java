@@ -1,8 +1,9 @@
-package restaurants;
+package restaurants.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import restaurants.model.RestDataOfMainPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,14 +22,14 @@ public class ApplicationManager {
     }
   }
 
-  protected void init() {
+  public void init() {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://lptest.bigdig.com.ua/");
     login("manager@lunch.ua", "2CDTx8Wz");
   }
 
-  protected void gotoAdminPanel() {
+  public void gotoAdminPanel() {
     wd.findElement(By.xpath("//a[contains(text(),'manager')]")).click();
   }
 
@@ -43,27 +44,27 @@ public class ApplicationManager {
     wd.findElement(By.xpath("//div[@id='logIn']/div/a/span")).click();
   }
 
-  protected void confirmChangesOfRestMainPage() {
+  public void confirmChangesOfRestMainPage() {
     wd.findElement(By.id("save_ok")).click();
   }
 
-  protected void saveRestMainPage() throws InterruptedException {
+  public void saveRestMainPage() throws InterruptedException {
     wd.findElement(By.id("btn_form_general")).click();
     Thread.sleep(3000);
   }
 
-  protected void fillRestName(RestDataOfMainPage restDataOfMainPage) {
+  public void fillRestName(RestDataOfMainPage restDataOfMainPage) {
     wd.findElement(By.id("edit_restName")).click();
     wd.findElement(By.id("edit_restName")).clear();
     wd.findElement(By.id("edit_restName")).sendKeys(restDataOfMainPage.getNameOfRest());
   }
 
-  protected void gotoEditRestInAdminPanel() throws InterruptedException {
+  public void gotoEditRestInAdminPanel() throws InterruptedException {
     wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']>span.glyphicon.glyphicon-pencil")).click();
     Thread.sleep(3000);
   }
 
-  protected void searchRestInAdminPanel() throws InterruptedException {
+  public void searchRestInAdminPanel() throws InterruptedException {
     wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
     wd.findElement(By.name("RestaurantsLangSearch[name]")).clear();
     wd.findElement(By.name("RestaurantsLangSearch[name]")).sendKeys("slava");
@@ -74,25 +75,25 @@ public class ApplicationManager {
     Thread.sleep(3000);
   }
 
-  protected void stop() {
+  public void stop() {
     wd.quit();
   }
 
-  protected void confirmChangesOfRestMenuPage() {
+  public void confirmChangesOfRestMenuPage() {
     wd.findElement(By.id("save_ok")).click();
   }
 
-  protected void saveRestMenuPage() throws InterruptedException {
+  public void saveRestMenuPage() throws InterruptedException {
     wd.findElement(By.id("menu-img_update")).click();
     Thread.sleep(3000);
   }
 
-  protected void createNewMenu() throws InterruptedException {
+  public void createNewMenu() throws InterruptedException {
     wd.findElement(By.cssSelector("div.add-menu-block")).click();
     Thread.sleep(3000);
   }
 
-  protected void gotoMenuPage() throws InterruptedException {
+  public void gotoMenuPage() throws InterruptedException {
     wd.findElement(By.linkText("Меню")).click();
     Thread.sleep(3000);
   }
