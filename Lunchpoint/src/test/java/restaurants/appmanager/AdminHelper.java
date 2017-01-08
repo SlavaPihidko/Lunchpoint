@@ -28,5 +28,11 @@ public class AdminHelper extends HelperBase {
     dream();
   }
 
+  public void initOfEditRest() throws InterruptedException {
+    gotoAdminPanel();
+    searchRestInAdminPanel();
+    gotoEditRestInAdminPanel();
+  }
+
 
 }

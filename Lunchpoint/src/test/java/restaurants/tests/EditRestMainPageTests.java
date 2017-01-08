@@ -7,12 +7,12 @@ public class EditRestMainPageTests extends TestBase {
 
   @Test
   public void testEditRestaurantMainPage() throws InterruptedException {
-    app.getAdminHelper().gotoAdminPanel();
-    app.getAdminHelper().searchRestInAdminPanel();
-    app.getAdminHelper().gotoEditRestInAdminPanel();
+    app.getAdminHelper().initOfEditRest();
     app.getMainPageHelper().fillRestName(new RestDataOfMainPage("Slava test selenium"));
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
+
+
 
 }
