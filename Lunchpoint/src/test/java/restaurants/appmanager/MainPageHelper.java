@@ -24,8 +24,12 @@ public class MainPageHelper {
   }
 
   public void fillRestName(RestDataOfMainPage restDataOfMainPage) {
-    wd.findElement(By.id("edit_restName")).click();
-    wd.findElement(By.id("edit_restName")).clear();
-    wd.findElement(By.id("edit_restName")).sendKeys(restDataOfMainPage.getNameOfRest());
+    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
+  }
+
+  private void type(By locator, String text) {
+    wd.findElement(locator).click();
+    wd.findElement(locator).clear();
+    wd.findElement(locator).sendKeys(text);
   }
 }
