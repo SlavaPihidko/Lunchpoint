@@ -31,9 +31,4 @@ public class MenuPageHelper extends HelperBase {
     click(By.id("save_ok"));
   }
 
-
-
-
-
-
 }

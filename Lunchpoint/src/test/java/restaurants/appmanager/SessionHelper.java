@@ -15,8 +15,8 @@ public class SessionHelper extends HelperBase {
 
   protected void login(String username, String password) {
     click(By.cssSelector("a.log-in"));
-    type(By.id("email"),username);
-    type(By.id("pass"),password);
+    type(By.id("email"), username);
+    type(By.id("pass"), password);
     click(By.xpath("//div[@id='logIn']/div/a/span"));
   }
 }
