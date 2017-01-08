@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
   FirefoxDriver wd;
 
+  private AdminHelper adminHelper;
+
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
       wd.switchTo().alert();
@@ -26,11 +28,8 @@ public class ApplicationManager {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://lptest.bigdig.com.ua/");
+    adminHelper = new AdminHelper(wd);
     login("manager@lunch.ua", "2CDTx8Wz");
-  }
-
-  public void gotoAdminPanel() {
-    wd.findElement(By.xpath("//a[contains(text(),'manager')]")).click();
   }
 
   private void login(String username, String password) {
@@ -59,22 +58,6 @@ public class ApplicationManager {
     wd.findElement(By.id("edit_restName")).sendKeys(restDataOfMainPage.getNameOfRest());
   }
 
-  public void gotoEditRestInAdminPanel() throws InterruptedException {
-    wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']>span.glyphicon.glyphicon-pencil")).click();
-    Thread.sleep(3000);
-  }
-
-  public void searchRestInAdminPanel() throws InterruptedException {
-    wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
-    wd.findElement(By.name("RestaurantsLangSearch[name]")).clear();
-    wd.findElement(By.name("RestaurantsLangSearch[name]")).sendKeys("slava");
-    // wd.get("http://lptest.bigdig.com.ua/manager/restaurants?RestaurantsLangSearch%5Bname%5D=test&RestaurantsLangSearch%5Baddress%5D=");
-    wd.findElement(By.name("RestaurantsLangSearch[name]")).click();
-    wd.findElement(By.name("RestaurantsLangSearch[address]")).click();
-    //wd.findElement(By.name("RestaurantsLangSearch[address]")).clear();
-    Thread.sleep(3000);
-  }
-
   public void stop() {
     wd.quit();
   }
@@ -96,5 +79,9 @@ public class ApplicationManager {
   public void gotoMenuPage() throws InterruptedException {
     wd.findElement(By.linkText("Меню")).click();
     Thread.sleep(3000);
+  }
+
+  public AdminHelper getAdminHelper() {
+    return adminHelper;
   }
 }
