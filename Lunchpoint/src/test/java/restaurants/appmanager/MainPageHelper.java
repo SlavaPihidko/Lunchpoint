@@ -15,12 +15,16 @@ public class MainPageHelper {
   }
 
   public void confirmChangesOfRestMainPage() {
-    wd.findElement(By.id("save_ok")).click();
+    click(By.id("save_ok"));
   }
 
   public void saveRestMainPage() throws InterruptedException {
-    wd.findElement(By.id("btn_form_general")).click();
+    click(By.id("btn_form_general"));
     Thread.sleep(3000);
+  }
+
+  private void click(By locator) {
+    wd.findElement(locator).click();
   }
 
   public void fillRestName(RestDataOfMainPage restDataOfMainPage) {
@@ -28,7 +32,7 @@ public class MainPageHelper {
   }
 
   private void type(By locator, String text) {
-    wd.findElement(locator).click();
+    click(locator);
     wd.findElement(locator).clear();
     wd.findElement(locator).sendKeys(text);
   }
