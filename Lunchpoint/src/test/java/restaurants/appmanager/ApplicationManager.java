@@ -1,6 +1,5 @@
 package restaurants.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -10,8 +9,9 @@ import java.util.concurrent.TimeUnit;
  * Created by Slava on 08.01.2017.
  */
 public class ApplicationManager {
-  private FirefoxDriver wd;
+  protected FirefoxDriver wd;
 
+  private SessionHelper sessionHelper;
   private AdminHelper adminHelper;
   private MainPageHelper mainPageHelper;
   private MenuPageHelper menuPageHelper;
@@ -32,18 +32,8 @@ public class ApplicationManager {
     adminHelper = new AdminHelper(wd);
     mainPageHelper = new MainPageHelper(wd);
     menuPageHelper = new MenuPageHelper(wd);
-    login("manager@lunch.ua", "2CDTx8Wz");
-  }
-
-  private void login(String username, String password) {
-    wd.findElement(By.cssSelector("a.log-in")).click();
-    wd.findElement(By.id("email")).click();
-    wd.findElement(By.id("email")).clear();
-    wd.findElement(By.id("email")).sendKeys(username);
-    wd.findElement(By.id("pass")).click();
-    wd.findElement(By.id("pass")).clear();
-    wd.findElement(By.id("pass")).sendKeys(password);
-    wd.findElement(By.xpath("//div[@id='logIn']/div/a/span")).click();
+    sessionHelper = new SessionHelper(wd);
+    sessionHelper.login("manager@lunch.ua", "2CDTx8Wz");
   }
 
   public void stop() {
@@ -60,5 +50,9 @@ public class ApplicationManager {
 
   public MenuPageHelper getMenuPageHelper() {
     return menuPageHelper;
+  }
+
+  public SessionHelper getSessionHelper() {
+    return sessionHelper;
   }
 }
