@@ -13,10 +13,11 @@ public class SessionHelper extends HelperBase {
     super(wd);
   }
 
-  protected void login(String username, String password) {
+  public void login(String username, String password) {
     click(By.cssSelector("a.log-in"));
     type(By.id("email"), username);
     type(By.id("pass"), password);
     click(By.xpath("//div[@id='logIn']/div/a/span"));
   }
+
 }

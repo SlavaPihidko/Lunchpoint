@@ -7,6 +7,7 @@ public class EditRestMainPageTests extends TestBase {
 
   @Test
   public void testEditRestaurantMainPage() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().initOfEditRest();
     app.getMainPageHelper().fillRestName(new RestDataOfMainPage("Slava test selenium"));
     app.getMainPageHelper().saveRestMainPage();

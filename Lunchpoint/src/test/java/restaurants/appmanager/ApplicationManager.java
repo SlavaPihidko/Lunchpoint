@@ -23,7 +23,7 @@ public class ApplicationManager {
     mainPageHelper = new MainPageHelper(wd);
     menuPageHelper = new MenuPageHelper(wd);
     sessionHelper = new SessionHelper(wd);
-    sessionHelper.login("manager@lunch.ua", "2CDTx8Wz");
+    //sessionHelper.login("manager@lunch.ua", "2CDTx8Wz");
   }
 
   public void stop() {

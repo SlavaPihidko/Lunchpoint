@@ -10,6 +10,10 @@ import restaurants.appmanager.ApplicationManager;
 public class TestBase {
 
   protected final ApplicationManager app = new ApplicationManager();
+  String usernameAdmin = "manager@lunch.ua";
+  String passwordAdmin = "2CDTx8Wz";
+  String usernameGuest = "slava17puh@gmail.com";
+  String passwordGuest = "bigdig12";
 
   @BeforeMethod
   public void setUp() throws Exception {
