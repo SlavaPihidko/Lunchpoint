@@ -26,4 +26,7 @@ public class MainPageHelper extends HelperBase {
     click(By.id("save_ok"));
   }
 
+  public void gotoTabRestInAdminPanel() {
+    click(By.linkText("Ресторани"));
+  }
 }
