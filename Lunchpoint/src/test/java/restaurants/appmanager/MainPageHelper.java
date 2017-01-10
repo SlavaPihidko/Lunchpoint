@@ -13,8 +13,9 @@ public class MainPageHelper extends HelperBase {
     super(wd);
   }
 
-  public void fillRestName(RestDataOfMainPage restDataOfMainPage) {
+  public void fillRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
+
   }
 
   public void saveRestMainPage() throws InterruptedException {
@@ -35,8 +36,12 @@ public class MainPageHelper extends HelperBase {
     //dream();
   }
 
-  public String text(){
-    return wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']")).getText();
+  public void setText(By locator){
+    wd.findElement(locator);
+  }
+
+  public String text(By locator){
+    return wd.findElement(locator).getText();
   }
 
 }
