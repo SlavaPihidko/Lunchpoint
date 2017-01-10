@@ -15,6 +15,7 @@ public class MainPageHelper extends HelperBase {
 
   public void fillRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
+    type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
 
   }
 
