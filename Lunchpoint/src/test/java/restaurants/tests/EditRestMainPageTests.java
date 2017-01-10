@@ -17,11 +17,11 @@ public class EditRestMainPageTests extends TestBase {
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
     app.getMainPageHelper().gotoTabRestInAdminPanel();
-    app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", "slava");
+    app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", "Slava test selenium");
     // нужно заполнить все поля на главной странице, позже открыть код тот что ниже
-    //app.getAdminHelper().gotoAddressFieldInAdminPanel();//
-    assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key='40357']/td[2]/a")), "Slava test selenium");// проверка имени
-    assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key='40357']/td[3]/a")),"вул.Жолудєва 8");// проверка адреса
+    app.getAdminHelper().gotoAddressFieldInAdminPanel();//
+    assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key]/td[2]/a")), "Slava test selenium");// проверка имени
+    assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key]/td[3]/a")),"вул.Жолудєва 8");// проверка адреса
 
   }
 }
