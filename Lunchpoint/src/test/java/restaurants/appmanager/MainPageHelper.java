@@ -22,9 +22,6 @@ public class MainPageHelper extends HelperBase {
     dream();
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
     js.executeScript("scrollBy(0,2000)");
-    //click(By.cssSelector("div.rest-options"));
-    //dream();
-
   }
 
   public void saveRestMainPage() throws InterruptedException {
@@ -35,10 +32,11 @@ public class MainPageHelper extends HelperBase {
   public void confirmChangesOfRestMainPage() throws InterruptedException {
     click(By.id("save_ok"));
     dream();
+    js.executeScript("scrollBy(0,-3300)");
   }
 
   public void gotoTabRestInAdminPanel() throws InterruptedException {
-    wd.get("http://lptest.bigdig.com.ua/manager/restaurants");
+    click(By.linkText("Ресторани"));
     dream();
      }
 

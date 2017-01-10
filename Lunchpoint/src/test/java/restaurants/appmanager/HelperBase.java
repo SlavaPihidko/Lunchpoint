@@ -34,7 +34,7 @@ public class HelperBase {
   }
 
   protected void dream() throws InterruptedException {
-    Thread.sleep(4000);
+    Thread.sleep(3000);
   }
 
 }
