@@ -22,11 +22,21 @@ public class MainPageHelper extends HelperBase {
     dream();
   }
 
-  public void confirmChangesOfRestMainPage() {
+  public void confirmChangesOfRestMainPage() throws InterruptedException {
     click(By.id("save_ok"));
+    dream();
   }
 
-  public void gotoTabRestInAdminPanel() {
-    click(By.linkText("Ресторани"));
+  public void gotoTabRestInAdminPanel() throws InterruptedException {
+    wd.get("http://lptest.bigdig.com.ua/manager/restaurants");
+    dream();
+    //click(By.cssSelector("div.row-footer.clear"));
+    //click(By.linkText("Ресторани"));
+    //dream();
   }
+
+  public String text(){
+    return wd.findElement(By.cssSelector("a[href='/manager/restaurants/update?id=2219']")).getText();
+  }
+
 }

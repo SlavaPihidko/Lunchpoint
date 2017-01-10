@@ -17,8 +17,13 @@ public class AdminHelper extends HelperBase {
     dream();
   }
 
-  public void searchRestInAdminPanel(String locator, String nameOfRest) throws InterruptedException {
+  public void searchRestInAdminPanel(String locator, String nameOfRest) {
     type(By.name(locator), nameOfRest);
+    //click(By.name(locator));
+
+  }
+
+  public void gotoAddressFieldInAdminPanel() throws InterruptedException {
     click(By.name("RestaurantsLangSearch[address]"));
     dream();
   }
@@ -30,6 +35,7 @@ public class AdminHelper extends HelperBase {
 
   public void initOfEditRest() throws InterruptedException {
     searchRestInAdminPanel("RestaurantsLangSearch[name]", "slava");
+    gotoAddressFieldInAdminPanel();
     gotoEditRestInAdminPanel();
   }
 
