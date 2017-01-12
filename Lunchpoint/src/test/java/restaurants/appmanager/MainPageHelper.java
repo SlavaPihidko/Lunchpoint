@@ -51,7 +51,8 @@ public class MainPageHelper extends HelperBase {
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
-    js.executeScript("scrollBy(0,500)");
+    type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
+    //js.executeScript("scrollBy(0,500)");
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
     dream();
     js.executeScript("scrollBy(0,2500)");

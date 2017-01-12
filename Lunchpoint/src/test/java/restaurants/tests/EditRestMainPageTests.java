@@ -13,10 +13,8 @@ public class EditRestMainPageTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    RestDataOfMainPage restDataOfMainPageNameAdress = new RestDataOfMainPage("Slava test selenium",
-                                                                   "вул.Жолудєва 8",
-                                                                   "slavkotest");
-    app.getMainPageHelper().fillRestFieldOnMainPageNameAddress(restDataOfMainPageNameAdress);
+    RestDataOfMainPage restDataOfMainPageNameAddress = new RestDataOfMainPage("Slava test selenium", "вул.Жолудєва 8");
+    app.getMainPageHelper().fillRestFieldOnMainPageNameAddress(restDataOfMainPageNameAddress);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
     app.getMainPageHelper().gotoTabRestInAdminPanel();
@@ -35,7 +33,8 @@ public void testEditRestMainPageAllField() throws InterruptedException {
     app.getAdminHelper().initOfEditRest();
     RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava test selenium",
             "вул.Жолудєва 8",
-            "slavkotest123");
+            "slavkotest123",
+            "Здесь описание ресторана");
       app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
