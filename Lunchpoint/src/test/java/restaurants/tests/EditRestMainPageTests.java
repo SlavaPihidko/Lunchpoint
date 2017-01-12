@@ -8,12 +8,15 @@ import static org.testng.Assert.assertEquals;
 
 public class EditRestMainPageTests extends TestBase {
 
-  @Test
-  public void testEditRestaurantMainPage() throws InterruptedException {
+  @Test(enabled = false)
+  public void testEditRestMainPageNameAddress() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPageHelper().fillRestFieldOnMainPage(new RestDataOfMainPage("Slava test selenium", "вул.Жолудєва 8"));
+    RestDataOfMainPage restDataOfMainPageNameAdress = new RestDataOfMainPage("Slava test selenium",
+                                                                   "вул.Жолудєва 8",
+                                                                   "slavkotest");
+    app.getMainPageHelper().fillRestFieldOnMainPageNameAddress(restDataOfMainPageNameAdress);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
     app.getMainPageHelper().gotoTabRestInAdminPanel();
@@ -24,4 +27,19 @@ public class EditRestMainPageTests extends TestBase {
     assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key]/td[3]/a")),"вул.Жолудєва 8");// проверка адреса
 
   }
+
+  @Test(enabled = true)
+public void testEditRestMainPageAllField() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    app.getAdminHelper().gotoAdminPanel();
+    app.getAdminHelper().initOfEditRest();
+    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava test selenium",
+            "вул.Жолудєва 8",
+            "slavkotest123");
+      app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
+    app.getMainPageHelper().saveRestMainPage();
+    app.getMainPageHelper().confirmChangesOfRestMainPage();
+
+     }
 }
+

@@ -17,7 +17,7 @@ public class MainPageHelper extends HelperBase {
   JavascriptExecutor js = (JavascriptExecutor)wd;
 
 
-  public void fillRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
+  public void fillRestFieldOnMainPageNameAddress(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
     dream();
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
@@ -48,4 +48,13 @@ public class MainPageHelper extends HelperBase {
     return wd.findElement(locator).getText();
   }
 
+  public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
+    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
+    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
+    js.executeScript("scrollBy(0,500)");
+    type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
+    dream();
+    js.executeScript("scrollBy(0,2500)");
+    dream();
+  }
 }
