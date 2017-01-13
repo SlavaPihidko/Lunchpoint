@@ -34,11 +34,11 @@ public void testEditRestMainPageAllField() throws InterruptedException {
     RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava test selenium",
             "вул.Жолудєва 8",
             "slavkotest123",
-            "Здесь описание ресторана");
+            "Здесь описание ресторана",
+            "вулиця Жолудєва, 8, Київ, Украина, 03134");
       app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
-
      }
 }
 

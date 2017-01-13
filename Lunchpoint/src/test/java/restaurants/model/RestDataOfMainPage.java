@@ -5,17 +5,19 @@ public class RestDataOfMainPage {
   private final String addressOfRest;
   private String seoOfRest;
   private String descriptionOfRest;
+  private String addressOnTheMapOfRest;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
   }
 
-  public RestDataOfMainPage(String nameOfRest, String addressOfRest, String seoOfRest, String descriptionOfRest ) {
+  public RestDataOfMainPage(String nameOfRest, String addressOfRest, String seoOfRest, String descriptionOfRest, String addressOnTheMapOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
     this.descriptionOfRest = descriptionOfRest;
+    this.addressOnTheMapOfRest = addressOnTheMapOfRest;
   }
 
   public String getNameOfRest() {
@@ -33,4 +35,9 @@ public class RestDataOfMainPage {
   public String getDescriptionOfRest() {
     return descriptionOfRest;
   }
+
+  public String getAddressOnTheMapOfRest() {
+    return addressOnTheMapOfRest;
+  }
+
 }
