@@ -8,10 +8,20 @@ public class RestDataOfMainPage {
   private String addressOnTheMapOfRest;
   private String gpsOfRest;
   private String indexOfRest;
+  private String telOfRest;
+  private String emailOfRest;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
+  }
+
+  public String getTelOfRest() {
+    return telOfRest;
+  }
+
+  public String getEmailOfRest() {
+    return emailOfRest;
   }
 
   public RestDataOfMainPage(String nameOfRest,
@@ -20,7 +30,9 @@ public class RestDataOfMainPage {
                             String descriptionOfRest,
                             String addressOnTheMapOfRest,
                             String gpsOfRest,
-                            String indexOfRest) {
+                            String indexOfRest,
+                            String telOfRest,
+                            String emailOfRest) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -28,6 +40,8 @@ public class RestDataOfMainPage {
     this.addressOnTheMapOfRest = addressOnTheMapOfRest;
     this.gpsOfRest = gpsOfRest;
     this.indexOfRest = indexOfRest;
+    this.telOfRest = telOfRest;
+    this.emailOfRest = emailOfRest;
   }
 
   public String getNameOfRest() {

@@ -58,8 +58,10 @@ public class MainPageHelper extends HelperBase {
     // Сейчас это обойду и буду жестко вставлять значение в поле GPS
     type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest());
     type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest());
+    type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest());
+    type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest());
     dream();
-    js.executeScript("scrollBy(0,2500)");
+    js.executeScript("scrollBy(0,1700)");
     dream();
   }
 }
