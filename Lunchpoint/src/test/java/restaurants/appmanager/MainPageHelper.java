@@ -61,6 +61,7 @@ public class MainPageHelper extends HelperBase {
     type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest());
     type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest());
     type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest());
+    type(By.id("restSite"),restDataOfMainPage.getSiteOfRest());
     dream();
     js.executeScript("scrollBy(0,1700)");
     dream();

@@ -11,22 +11,11 @@ public class RestDataOfMainPage {
   private String telOfRest;
   private String emailOfRest;
   private String bookingEmailOfRest;
+  private String siteOfRest;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
-  }
-
-  public String getTelOfRest() {
-    return telOfRest;
-  }
-
-  public String getEmailOfRest() {
-    return emailOfRest;
-  }
-
-  public String getBookingEmailOfRest() {
-    return bookingEmailOfRest;
   }
 
   public RestDataOfMainPage(String nameOfRest,
@@ -38,7 +27,8 @@ public class RestDataOfMainPage {
                             String indexOfRest,
                             String telOfRest,
                             String emailOfRest,
-                            String bookingEmailOfRest) {
+                            String bookingEmailOfRest,
+                            String siteOfRest) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -49,6 +39,7 @@ public class RestDataOfMainPage {
     this.telOfRest = telOfRest;
     this.emailOfRest = emailOfRest;
     this.bookingEmailOfRest = bookingEmailOfRest;
+    this.siteOfRest = siteOfRest;
   }
 
   public String getNameOfRest() {
@@ -77,5 +68,21 @@ public class RestDataOfMainPage {
 
   public String getIndexOfRest() {
     return indexOfRest;
+  }
+
+  public String getTelOfRest() {
+    return telOfRest;
+  }
+
+  public String getEmailOfRest() {
+    return emailOfRest;
+  }
+
+  public String getBookingEmailOfRest() {
+    return bookingEmailOfRest;
+  }
+
+  public String getSiteOfRest() {
+    return siteOfRest;
   }
 }
