@@ -10,6 +10,7 @@ public class RestDataOfMainPage {
   private String indexOfRest;
   private String telOfRest;
   private String emailOfRest;
+  private String bookingEmailOfRest;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
@@ -24,6 +25,10 @@ public class RestDataOfMainPage {
     return emailOfRest;
   }
 
+  public String getBookingEmailOfRest() {
+    return bookingEmailOfRest;
+  }
+
   public RestDataOfMainPage(String nameOfRest,
                             String addressOfRest,
                             String seoOfRest,
@@ -32,7 +37,8 @@ public class RestDataOfMainPage {
                             String gpsOfRest,
                             String indexOfRest,
                             String telOfRest,
-                            String emailOfRest) {
+                            String emailOfRest,
+                            String bookingEmailOfRest) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -42,6 +48,7 @@ public class RestDataOfMainPage {
     this.indexOfRest = indexOfRest;
     this.telOfRest = telOfRest;
     this.emailOfRest = emailOfRest;
+    this.bookingEmailOfRest = bookingEmailOfRest;
   }
 
   public String getNameOfRest() {
