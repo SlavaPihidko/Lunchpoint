@@ -36,7 +36,8 @@ public void testEditRestMainPageAllField() throws InterruptedException {
             "slavkotest123",
             "Здесь описание ресторана",
             "вулиця Жолудєва, 8, Київ, Украина, 03134",
-            "50.4167724,30.39818839999998");
+            "50.4167724,30.39818839999998",
+            "03134");
       app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();

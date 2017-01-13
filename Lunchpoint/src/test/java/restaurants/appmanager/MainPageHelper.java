@@ -53,10 +53,11 @@ public class MainPageHelper extends HelperBase {
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
-    type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
     //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
     // Сейчас это обойду и буду жестко вставлять значение в поле GPS
+    type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest());
+    type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest());
     dream();
     js.executeScript("scrollBy(0,2500)");
     dream();
