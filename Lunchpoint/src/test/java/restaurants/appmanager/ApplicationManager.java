@@ -20,7 +20,7 @@ public class ApplicationManager {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://lptest.bigdig.com.ua/");
-    wd.manage().window().setSize(new Dimension(1366,730));
+    wd.manage().window().setSize(new Dimension(1366,730)); // устанавливает ширину открывающегося окна
     adminHelper = new AdminHelper(wd);
     mainPageHelper = new MainPageHelper(wd);
     menuPageHelper = new MenuPageHelper(wd);
