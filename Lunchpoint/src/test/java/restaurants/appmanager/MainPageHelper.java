@@ -61,21 +61,26 @@ public class MainPageHelper extends HelperBase {
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
     //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
     // Сейчас это обойду и буду жестко вставлять значение в поле GPS
+    //dream();
+    js.executeScript("scrollBy(0,150)");
     type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest());
     type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest());
     type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest());
+    //dream();
+    js.executeScript("scrollBy(0,600)");
     type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest());
     type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest());
     type(By.id("restSite"),restDataOfMainPage.getSiteOfRest());
     type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest());
     type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest());
     type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest());
+    js.executeScript("scrollBy(0,400)");
     click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered"));
    dream();
     // click(By.id("select2-restCuisine-result-frcf-18"));
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform();
-    dream();
-    js.executeScript("scrollBy(0,1600)");
+    //dream();
+    js.executeScript("scrollBy(0,1300)");
     dream();
   }
 }
