@@ -42,7 +42,8 @@ public void testEditRestMainPageAllField() throws InterruptedException {
             "optibayukraine@gmail.com",
             "slava17puh123@gmail.com",
             "my_site123.com",
-            "my_fb.com");
+            "my_fb.com",
+            "my_instagram.com");
       app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
