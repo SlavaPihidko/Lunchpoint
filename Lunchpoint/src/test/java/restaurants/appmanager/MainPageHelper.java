@@ -64,6 +64,7 @@ public class MainPageHelper extends HelperBase {
     type(By.id("restSite"),restDataOfMainPage.getSiteOfRest());
     type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest());
     type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest());
+    type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest());
     dream();
     js.executeScript("scrollBy(0,1600)");
     dream();

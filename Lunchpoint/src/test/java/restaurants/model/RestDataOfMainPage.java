@@ -14,6 +14,7 @@ public class RestDataOfMainPage {
   private String siteOfRest;
   private String fbOfRest;
   private String instagramOfRest;
+  private String twitterOfRest;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
@@ -32,7 +33,8 @@ public class RestDataOfMainPage {
                             String bookingEmailOfRest,
                             String siteOfRest,
                             String fbOfRest,
-                            String instagramOfRest) {
+                            String instagramOfRest,
+                            String twitterOfRest) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -46,6 +48,7 @@ public class RestDataOfMainPage {
     this.siteOfRest = siteOfRest;
     this.fbOfRest = fbOfRest;
     this.instagramOfRest = instagramOfRest;
+    this.twitterOfRest = twitterOfRest;
   }
 
   public String getNameOfRest() {
@@ -98,5 +101,9 @@ public class RestDataOfMainPage {
 
   public String getInstagramOfRest() {
     return instagramOfRest;
+  }
+
+  public String getTwitterOfRest() {
+    return twitterOfRest;
   }
 }
