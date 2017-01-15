@@ -3,6 +3,8 @@ package restaurants.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import restaurants.model.RestDataOfMainPage;
 
 /**
@@ -15,6 +17,9 @@ public class MainPageHelper extends HelperBase {
   }
 
   JavascriptExecutor js = (JavascriptExecutor)wd;
+
+  Actions clicker = new Actions(wd);
+
 
 
   public void fillRestFieldOnMainPageNameAddress(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
@@ -66,6 +71,9 @@ public class MainPageHelper extends HelperBase {
     type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest());
     type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest());
     click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered"));
+   dream();
+    // click(By.id("select2-restCuisine-result-frcf-18"));
+    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform();
     dream();
     js.executeScript("scrollBy(0,1600)");
     dream();

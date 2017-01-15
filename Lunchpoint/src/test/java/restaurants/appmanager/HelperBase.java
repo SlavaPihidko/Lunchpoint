@@ -27,6 +27,8 @@ public class HelperBase {
     wd.findElement(locator).click();
   }
 
+
+
   protected void type(By locator, String text) {
     click(locator);
     wd.findElement(locator).clear();
