@@ -31,9 +31,11 @@ public void testEditRestMainPageAllField() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava test selenium",
+    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
+            "Slava test selenium",
             "вул.Жолудєва 8",
             "slavkotest123",
+            "grisha123",
             "Здесь описание ресторана",
             "вулиця Жолудєва, 8, Київ, Украина, 03134",
             "50.4167724,30.39818839999998",

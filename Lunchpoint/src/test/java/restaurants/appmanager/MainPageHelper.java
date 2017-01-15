@@ -51,6 +51,13 @@ public class MainPageHelper extends HelperBase {
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
+    dream();
+    js.executeScript("scrollBy(0,1600)");
+    dream();
+    //wd.findElement(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field")).clickAt();
+    //click(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field"));
+    type(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field"),restDataOfMainPage.getVariantsOfNameOfRest());
+    dream();
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки

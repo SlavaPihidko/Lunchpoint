@@ -4,6 +4,7 @@ public class RestDataOfMainPage {
   private final String nameOfRest;
   private final String addressOfRest;
   private String seoOfRest;
+  private String variantsOfNameOfRest;
   private String descriptionOfRest;
   private String addressOnTheMapOfRest;
   private String gpsOfRest;
@@ -24,6 +25,7 @@ public class RestDataOfMainPage {
   public RestDataOfMainPage(String nameOfRest,
                             String addressOfRest,
                             String seoOfRest,
+                            String variantsOfNameOfRest,
                             String descriptionOfRest,
                             String addressOnTheMapOfRest,
                             String gpsOfRest,
@@ -38,6 +40,7 @@ public class RestDataOfMainPage {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
+    this.variantsOfNameOfRest = variantsOfNameOfRest;
     this.descriptionOfRest = descriptionOfRest;
     this.addressOnTheMapOfRest = addressOnTheMapOfRest;
     this.gpsOfRest = gpsOfRest;
@@ -105,5 +108,9 @@ public class RestDataOfMainPage {
 
   public String getTwitterOfRest() {
     return twitterOfRest;
+  }
+
+  public String getVariantsOfNameOfRest() {
+    return variantsOfNameOfRest;
   }
 }
