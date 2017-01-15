@@ -62,8 +62,9 @@ public class MainPageHelper extends HelperBase {
     type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest());
     type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest());
     type(By.id("restSite"),restDataOfMainPage.getSiteOfRest());
+    type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest());
     dream();
-    js.executeScript("scrollBy(0,1700)");
+    js.executeScript("scrollBy(0,1600)");
     dream();
   }
 }
