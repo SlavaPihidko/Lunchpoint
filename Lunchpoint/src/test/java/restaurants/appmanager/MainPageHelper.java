@@ -55,8 +55,8 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,1600)");
     dream();
     //wd.findElement(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field")).clickAt();
-    //click(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field"));
-    type(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field"),restDataOfMainPage.getVariantsOfNameOfRest());
+    click(By.cssSelector("div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered"));
+    //type(By.cssSelector("css=div.input-outer.hint-cuisine span[dir='ltr'] span.selection ul.select2-selection__rendered > li.select2-search.select2-search--inline input.select2-search__field"),restDataOfMainPage.getVariantsOfNameOfRest());
     dream();
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
