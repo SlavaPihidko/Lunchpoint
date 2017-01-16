@@ -58,9 +58,8 @@ public class MainPageHelper extends HelperBase {
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered"));
     wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n");
-    dream();
+    //dream();
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
-
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
     //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
@@ -81,11 +80,21 @@ public class MainPageHelper extends HelperBase {
     dream();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform();
     dream();
+    js.executeScript("scrollBy(0,-400)");
+    click(By.id("restTw"));
+    js.executeScript("scrollBy(0,250)");
+    dream();
+    //clicker.moveToElement(wd.findElement(By.cssSelector("div.opt.hint-services #services1"))).moveByOffset(4,4).click().perform();
+    click(By.cssSelector("div.opt.hint-services div.input-outer li > label"));
+    //input[name=Restaurants[breakfast]]
+    dream();
+    js.executeScript("scrollBy(0,300)");
+    dream();
     click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered "));
     dream();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform();
     dream();
-    js.executeScript("scrollBy(0,300)");
+    //js.executeScript("scrollBy(0,400)");
     click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered"));
     dream();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform();
