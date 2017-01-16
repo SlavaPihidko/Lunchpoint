@@ -56,6 +56,9 @@ public class MainPageHelper extends HelperBase {
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
+    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered"));
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima");
+    dream();
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
@@ -86,7 +89,7 @@ public class MainPageHelper extends HelperBase {
     dream();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform();
     dream();
-    js.executeScript("scrollBy(0,1100)");
+    js.executeScript("scrollBy(0,1000)");
     dream();
   }
 }
