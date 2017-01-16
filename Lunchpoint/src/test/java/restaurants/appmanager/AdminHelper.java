@@ -14,7 +14,7 @@ public class AdminHelper extends HelperBase {
 
   public void gotoAdminPanel() throws InterruptedException {
     click(By.xpath("//a[contains(text(),'manager')]"));
-    dream();
+    dream3Sec();
   }
 
   public void searchRestInAdminPanel(String locator, String nameOfRest) {
@@ -25,12 +25,12 @@ public class AdminHelper extends HelperBase {
 
   public void gotoAddressFieldInAdminPanel() throws InterruptedException {
     click(By.name("RestaurantsLangSearch[address]"));
-    dream();
+    dream3Sec();
   }
 
   public void gotoEditRestInAdminPanel() throws InterruptedException {
     click(By.cssSelector("a[href='/manager/restaurants/update?id=2219']>span.glyphicon.glyphicon-pencil"));
-    dream();
+    dream3Sec();
   }
 
   public void initOfEditRest() throws InterruptedException {

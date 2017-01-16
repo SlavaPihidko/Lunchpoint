@@ -35,8 +35,12 @@ public class HelperBase {
     wd.findElement(locator).sendKeys(text);
   }
 
-  protected void dream() throws InterruptedException {
+  protected void dream3Sec() throws InterruptedException {
     Thread.sleep(3000);
+  }
+
+  protected void dream1Sec() throws InterruptedException {
+    Thread.sleep(1000);
   }
 
 }

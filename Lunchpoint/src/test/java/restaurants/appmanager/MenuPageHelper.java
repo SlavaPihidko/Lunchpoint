@@ -14,17 +14,17 @@ public class MenuPageHelper extends HelperBase {
 
   public void gotoMenuPage() throws InterruptedException {
     click(By.linkText("Меню"));
-    dream();
+    dream3Sec();
   }
 
   public void createNewMenu() throws InterruptedException {
     click(By.cssSelector("div.add-menu-block"));
-    dream();
+    dream3Sec();
   }
 
   public void saveRestMenuPage() throws InterruptedException {
     click(By.id("menu-img_update"));
-    dream();
+    dream3Sec();
   }
 
   public void confirmChangesOfRestMenuPage() {
