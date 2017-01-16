@@ -57,9 +57,10 @@ public class MainPageHelper extends HelperBase {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered"));
-    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima");
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n");
     dream();
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
+
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
     //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
