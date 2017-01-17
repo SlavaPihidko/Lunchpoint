@@ -97,6 +97,8 @@ public class MainPageHelper extends HelperBase {
     dream1Sec();
     js.executeScript("scrollBy(0,200)");
     click(By.cssSelector("div.input-outer.radio-tog.rest-state > label[for='state-1']")); // Клик по радиобатону Статус Ресторана
+    click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
+    dream3Sec();
     js.executeScript("scrollBy(0,800)");
     dream3Sec();
   }
