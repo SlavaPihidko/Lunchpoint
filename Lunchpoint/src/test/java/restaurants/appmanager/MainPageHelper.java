@@ -79,6 +79,11 @@ public class MainPageHelper extends HelperBase {
     clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results > ul#select2-restNet-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клип по второму елементу с Сетей заведения, если  выбран изначально первый елемент
     dream1Sec();
     click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения что бы закрыть
+    dream1Sec();
+    click(By.cssSelector("div.input-outer.rest-type span.select2-selection__arrow")); // Клик по Типу Заведения
+    dream1Sec();
+    clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results ul#select2-restType-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клик по первому елементу с Типов Заведения
+    click(By.cssSelector("div.input-outer.rest-type span.select2-selection__arrow")); // Клик что бы закрыть выпадашку по Типам Заведения
     click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Типы Кухни
     dream1Sec();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
