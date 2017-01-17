@@ -79,7 +79,7 @@ public class MainPageHelper extends HelperBase {
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
     click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в Типах Кухни чточто бы закрыть выпадашку
     dream1Sec();
-    click(By.cssSelector("div.opt.hint-services div.input-outer li > label")); // Клик по чекбоксу Завтраки
+    click(By.cssSelector("div.opt.hint-services div.input-outer li > label[for='services1']")); // Клик по чекбоксу Завтраки
     dream1Sec();
     js.executeScript("scrollBy(0,300)");
     dream1Sec();
@@ -93,6 +93,7 @@ public class MainPageHelper extends HelperBase {
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента в поле Особенности заведения
     click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); //что бы закрыть выпадашку
     dream1Sec();
+    click(By.cssSelector("div.opt div.input-outer li > label[for='payment0']")); // Клик по чекбоксу Наличные
     js.executeScript("scrollBy(0,1000)");
     dream3Sec();
   }
