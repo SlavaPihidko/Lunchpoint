@@ -94,7 +94,10 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); //что бы закрыть выпадашку
     dream1Sec();
     click(By.cssSelector("div.opt div.input-outer li > label[for='payment0']")); // Клик по чекбоксу Наличные
-    js.executeScript("scrollBy(0,1000)");
+    dream1Sec();
+    js.executeScript("scrollBy(0,200)");
+    click(By.cssSelector("div.input-outer.radio-tog.rest-state > label[for='state-1']")); // Клик по радиобатону Статус Ресторана
+    js.executeScript("scrollBy(0,800)");
     dream3Sec();
   }
 }
