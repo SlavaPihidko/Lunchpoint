@@ -100,9 +100,11 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
     //div.time_schedule1 ul.select li.option.curr-opt > span
     dream3Sec();
-    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span"));
+    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span")); // Клик выбора работы Рабочих Дней Ресторана
     dream3Sec();
+    //div.ranger-outer > div.Slider.ranger label[for='pos0']
     js.executeScript("scrollBy(0,600)");
+    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']"));
     dream3Sec();
   }
 }
