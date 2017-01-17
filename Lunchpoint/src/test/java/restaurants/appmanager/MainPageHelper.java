@@ -98,8 +98,11 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,200)");
     click(By.cssSelector("div.input-outer.radio-tog.rest-state > label[for='state-1']")); // Клик по радиобатону Статус Ресторана
     click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
+    //div.time_schedule1 ul.select li.option.curr-opt > span
     dream3Sec();
-    js.executeScript("scrollBy(0,800)");
+    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span"));
+    dream3Sec();
+    js.executeScript("scrollBy(0,600)");
     dream3Sec();
   }
 }
