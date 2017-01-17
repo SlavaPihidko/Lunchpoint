@@ -73,7 +73,8 @@ public class MainPageHelper extends HelperBase {
     type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest()); // Вводим Фейсбук ресторана
     type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest()); // Вводим Инстаграм Ресторана
     type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest()); // Вводим Твиттер Ресторана
-    js.executeScript("scrollBy(0,400)");
+    js.executeScript("scrollBy(0,300)");
+    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
     click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Типы Кухни
     dream1Sec();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
@@ -99,12 +100,13 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.input-outer.radio-tog.rest-state > label[for='state-1']")); // Клик по радиобатону Статус Ресторана
     click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
     //div.time_schedule1 ul.select li.option.curr-opt > span
-    dream3Sec();
+    dream1Sec();
     click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span")); // Клик выбора работы Рабочих Дней Ресторана
-    dream3Sec();
+    dream1Sec();
     //div.ranger-outer > div.Slider.ranger label[for='pos0']
     js.executeScript("scrollBy(0,600)");
-    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']"));
+    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream3Sec();
   }
 }
+//div.input-outer.rest-net span.select2-selection__arrow
