@@ -53,44 +53,44 @@ public class MainPageHelper extends HelperBase {
   }
 
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
-    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
-    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest());
-    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered"));
-    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n");
-    type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest());
+    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
+    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest()); // Вводим seo-url ресторана
+    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n"); // Вводим в поле Варианты Названий текст и Ентер
+    type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest()); // Вводим текст в поле Описание Ресторана
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
     //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
     // Сейчас это обойду и буду жестко вставлять значение в поле GPS
     js.executeScript("scrollBy(0,150)");
-    type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest());
-    type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest());
-    type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest());
+    type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest()); // Вводим координаты Ресторана
+    type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest()); // Вводим Индекс ресторана
+    type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest()); // Вводим телефон ресторана
     js.executeScript("scrollBy(0,600)");
-    type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest());
-    type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest());
-    type(By.id("restSite"),restDataOfMainPage.getSiteOfRest());
-    type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest());
-    type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest());
-    type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest());
+    type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest()); // Вводим Емейл Ресторана
+    type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest()); // Вводим Емейл для бронирования
+    type(By.id("restSite"),restDataOfMainPage.getSiteOfRest()); // Вводим Сайт ресторана
+    type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest()); // Вводим Фейсбук ресторана
+    type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest()); // Вводим Инстаграм Ресторана
+    type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest()); // Вводим Твиттер Ресторана
     js.executeScript("scrollBy(0,400)");
-    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered"));
+    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Типы Кухни
     dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform();
-    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // что бы закрыть выпадашку
+    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
+    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в Типах Кухни чточто бы закрыть выпадашку
     dream1Sec();
-    click(By.cssSelector("div.opt.hint-services div.input-outer li > label"));
+    click(By.cssSelector("div.opt.hint-services div.input-outer li > label")); // Клик по чекбоксу Завтраки
     dream1Sec();
     js.executeScript("scrollBy(0,300)");
     dream1Sec();
-    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered "));
+    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // Клик в поле Дополнительные услуги
     dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform();
-    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // что бы закрыть выпадашку
+    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента для Дополнительных услуг
+    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // что бы закрыть выпадашку снова клик в Дополнительных Услугах
     dream1Sec();
-    click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered"));
+    click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Особенности заведения
     dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform();
+    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента в поле Особенности заведения
     click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); //что бы закрыть выпадашку
     dream1Sec();
     js.executeScript("scrollBy(0,1000)");
