@@ -73,38 +73,59 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,300)");
     choiceNetworkOfRestMainPage();
     choiceTypeOfRestMainPage();
-    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Типы Кухни
-    dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
-    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в Типах Кухни чточто бы закрыть выпадашку
-    dream1Sec();
-    click(By.cssSelector("div.opt.hint-services div.input-outer li > label[for='services1']")); // Клик по чекбоксу Завтраки
-    dream1Sec();
+    choiceTypeOfCuisineOfRestMainPage();
+    clickCheckBoxServicesOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
+    choiceAdditionalServicesOfRestMainPage();
+    choiceOtherFeaturesOfRestMainPage();
+    clickCheckboxPaymentOfRestMainPage();
+    js.executeScript("scrollBy(0,300)");
+    choiceRadiobuttonStatusOfRestMainPage();
+    click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
     dream1Sec();
-    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // Клик в поле Дополнительные услуги
+    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span")); // Клик выбора работы Рабочих Дней Ресторана
     dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента для Дополнительных услуг
-    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // что бы закрыть выпадашку снова клик в Дополнительных Услугах
+    js.executeScript("scrollBy(0,600)");
+    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
+    dream3Sec();
+  }
+
+  private void choiceRadiobuttonStatusOfRestMainPage() {
+    click(By.cssSelector("div.input-outer.radio-tog.rest-state > label[for='state-1']")); // Клик по радиобатону Статус Ресторана
+  }
+
+  private void clickCheckboxPaymentOfRestMainPage() throws InterruptedException {
+    click(By.cssSelector("div.opt div.input-outer li > label[for='payment0']")); // Клик по чекбоксу Наличные
     dream1Sec();
+  }
+
+  private void choiceOtherFeaturesOfRestMainPage() throws InterruptedException {
     click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Особенности заведения
     dream1Sec();
     clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента в поле Особенности заведения
     click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); //что бы закрыть выпадашку
     dream1Sec();
-    click(By.cssSelector("div.opt div.input-outer li > label[for='payment0']")); // Клик по чекбоксу Наличные
+  }
+
+  private void choiceAdditionalServicesOfRestMainPage() throws InterruptedException {
+    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // Клик в поле Дополнительные услуги
     dream1Sec();
-    js.executeScript("scrollBy(0,300)");
-    click(By.cssSelector("div.input-outer.radio-tog.rest-state > label[for='state-1']")); // Клик по радиобатону Статус Ресторана
-    click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
-    //div.time_schedule1 ul.select li.option.curr-opt > span
+    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента для Дополнительных услуг
+    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // что бы закрыть выпадашку снова клик в Дополнительных Услугах
     dream1Sec();
-    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span")); // Клик выбора работы Рабочих Дней Ресторана
+  }
+
+  private void clickCheckBoxServicesOfRestMainPage() throws InterruptedException {
+    click(By.cssSelector("div.opt.hint-services div.input-outer li > label[for='services1']")); // Клик по чекбоксу Завтраки
     dream1Sec();
-    //div.ranger-outer > div.Slider.ranger label[for='pos0']
-    js.executeScript("scrollBy(0,600)");
-    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
-    dream3Sec();
+  }
+
+  private void choiceTypeOfCuisineOfRestMainPage() throws InterruptedException {
+    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Типы Кухни
+    dream1Sec();
+    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
+    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в Типах Кухни чточто бы закрыть выпадашку
+    dream1Sec();
   }
 
   private void choiceTypeOfRestMainPage() throws InterruptedException {
