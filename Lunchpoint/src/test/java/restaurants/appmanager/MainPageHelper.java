@@ -207,11 +207,13 @@ public class MainPageHelper extends HelperBase {
 
   private void enterVariantsOfNameOfRestMainPage(VariantsOfNameOfMainPage variantsOfNameOfMainPage) throws InterruptedException {
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
-    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName1()); // Вводим в поле Варианты Названий текст и Ентер
     dream1Sec();
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName1()); // Вводим в поле Варианты Названий текст и Ентер
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    dream1Sec();
     wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName2());
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    dream1Sec();
     wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName3());
     dream3Sec();
   }
