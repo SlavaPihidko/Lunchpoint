@@ -23,7 +23,6 @@ public class EditRestMainPageTests extends TestBase {
     app.getAdminHelper().gotoAddressFieldInAdminPanel();//
     assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key]/td[2]/a")), "Slava test selenium");// проверка имени
     assertEquals(app.getMainPageHelper().text(By.xpath("//tr[@data-key]/td[3]/a")),"вул.Жолудєва 8");// проверка адреса
-
   }
 
   @Test(enabled = true)

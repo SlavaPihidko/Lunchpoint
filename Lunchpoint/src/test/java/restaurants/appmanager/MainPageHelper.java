@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import restaurants.model.RestDataOfMainPage;
+import restaurants.model.VariantsOfNameOfMainPage;
 
 /**
  * Created by Slava on 08.01.2017.
@@ -55,7 +56,8 @@ public class MainPageHelper extends HelperBase {
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
     enterSeoUrlOfRestMainPage(restDataOfMainPage);
-    enterVariantsOfNameOfRestMainPage();
+    VariantsOfNameOfMainPage variantsOfNameOfMainPage = new VariantsOfNameOfMainPage("Slavko\n", "Dima\n", "Kolya\n");
+    enterVariantsOfNameOfRestMainPage(variantsOfNameOfMainPage);
     enterDescriptionOfRestMainPage(restDataOfMainPage);
     enterAddressOfRestMainPage(restDataOfMainPage);
     //enterAddressOnTheMapOfRestMainPage(restDataOfMainPage);
@@ -203,9 +205,15 @@ public class MainPageHelper extends HelperBase {
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest()); // Вводим текст в поле Описание Ресторана
   }
 
-  private void enterVariantsOfNameOfRestMainPage() {
+  private void enterVariantsOfNameOfRestMainPage(VariantsOfNameOfMainPage variantsOfNameOfMainPage) throws InterruptedException {
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
-    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n"); // Вводим в поле Варианты Названий текст и Ентер
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName1()); // Вводим в поле Варианты Названий текст и Ентер
+    dream1Sec();
+    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName2());
+    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName3());
+    dream3Sec();
   }
 
   private void enterSeoUrlOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
