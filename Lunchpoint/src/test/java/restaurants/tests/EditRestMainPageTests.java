@@ -45,7 +45,7 @@ public void testEditRestMainPageAllField() throws InterruptedException {
             "my_fb.com",
             "my_instagram.com",
             "my_twitter.com");
-      app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
+    app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
      }

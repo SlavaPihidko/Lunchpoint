@@ -59,7 +59,7 @@ public class RestDataOfMainPage {
     return addressOfRest;
   }
 
-  public String getSeoOfRest() {
+  public String getSeoUrlOfRest() {
     return seoOfRest;
   }
 

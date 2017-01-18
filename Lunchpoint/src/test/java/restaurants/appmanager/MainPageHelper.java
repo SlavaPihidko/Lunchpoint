@@ -22,7 +22,7 @@ public class MainPageHelper extends HelperBase {
 
 
   public void fillRestFieldOnMainPageNameAddress(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
-    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest());
+    enterNameOfRestMainPage(restDataOfMainPage);
     dream3Sec();
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
     js.executeScript("scrollBy(0,2000)");
@@ -53,11 +53,10 @@ public class MainPageHelper extends HelperBase {
   }
 
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
-    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
-    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest()); // Вводим seo-url ресторана
-    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
-    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n"); // Вводим в поле Варианты Названий текст и Ентер
-    type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest()); // Вводим текст в поле Описание Ресторана
+    enterNameOfRestMainPage(restDataOfMainPage);
+    enterSeoUrlOfRestMainPage(restDataOfMainPage);
+    enterVariantsOfNameOfRestMainPage();
+    enterDescriptionOfRestMainPage(restDataOfMainPage);
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
    // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
     //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
@@ -117,5 +116,21 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream3Sec();
   }
+
+  private void enterDescriptionOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest()); // Вводим текст в поле Описание Ресторана
+  }
+
+  private void enterVariantsOfNameOfRestMainPage() {
+    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys("Dima\n"); // Вводим в поле Варианты Названий текст и Ентер
+  }
+
+  private void enterSeoUrlOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoUrlOfRest()); // Вводим seo-url ресторана
+  }
+
+  private void enterNameOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
+  }
 }
-//div.input-outer.rest-net span.select2-selection__arrow
