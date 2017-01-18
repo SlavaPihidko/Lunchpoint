@@ -64,12 +64,12 @@ public class MainPageHelper extends HelperBase {
     enterIndexOfRestMainPage(restDataOfMainPage);
     enterTelOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,600)");
-    type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest()); // Вводим Емейл Ресторана
-    type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest()); // Вводим Емейл для бронирования
-    type(By.id("restSite"),restDataOfMainPage.getSiteOfRest()); // Вводим Сайт ресторана
-    type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest()); // Вводим Фейсбук ресторана
-    type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest()); // Вводим Инстаграм Ресторана
-    type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest()); // Вводим Твиттер Ресторана
+    enterEmailOfRestMainPage(restDataOfMainPage);
+    enterBookingEmailOfRestMainPage(restDataOfMainPage);
+    enterSiteOfRestMainPage(restDataOfMainPage);
+    enterFbOfRestMainPage(restDataOfMainPage);
+    enterInstagramOfRestMainPage(restDataOfMainPage);
+    enterTwitterOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,300)");
     click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
     dream3Sec();
@@ -113,6 +113,30 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,600)");
     click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream3Sec();
+  }
+
+  private void enterTwitterOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest()); // Вводим Твиттер Ресторана
+  }
+
+  private void enterInstagramOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest()); // Вводим Инстаграм Ресторана
+  }
+
+  private void enterFbOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest()); // Вводим Фейсбук ресторана
+  }
+
+  private void enterSiteOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("restSite"),restDataOfMainPage.getSiteOfRest()); // Вводим Сайт ресторана
+  }
+
+  private void enterBookingEmailOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest()); // Вводим Емейл для бронирования
+  }
+
+  private void enterEmailOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest()); // Вводим Емейл Ресторана
   }
 
   private void enterTelOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
