@@ -71,12 +71,7 @@ public class MainPageHelper extends HelperBase {
     enterInstagramOfRestMainPage(restDataOfMainPage);
     enterTwitterOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,300)");
-    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
-    dream3Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results > ul#select2-restNet-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клип по второму елементу с Сетей заведения, если  выбран изначально первый елемент
-    dream1Sec();
-    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения что бы закрыть
-    dream1Sec();
+    choiceNetworkOfRestMainPage();
     click(By.cssSelector("div.input-outer.rest-type span.select2-selection__arrow")); // Клик по Типу Заведения
     dream1Sec();
     clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results ul#select2-restType-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клик по первому елементу с Типов Заведения
@@ -113,6 +108,15 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,600)");
     click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream3Sec();
+  }
+
+  private void choiceNetworkOfRestMainPage() throws InterruptedException {
+    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
+    dream3Sec();
+    clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results > ul#select2-restNet-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клип по второму елементу с Сетей заведения, если  выбран изначально первый елемент
+    dream1Sec();
+    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения что бы закрыть
+    dream1Sec();
   }
 
   private void enterTwitterOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
