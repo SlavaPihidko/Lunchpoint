@@ -24,7 +24,7 @@ public class MainPageHelper extends HelperBase {
   public void fillRestFieldOnMainPageNameAddress(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
     dream3Sec();
-    type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
+    enterAddressOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,2000)");
   }
 
@@ -57,14 +57,12 @@ public class MainPageHelper extends HelperBase {
     enterSeoUrlOfRestMainPage(restDataOfMainPage);
     enterVariantsOfNameOfRestMainPage();
     enterDescriptionOfRestMainPage(restDataOfMainPage);
-    type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
-   // type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest()); В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
-    //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
-    // Сейчас это обойду и буду жестко вставлять значение в поле GPS
+    enterAddressOfRestMainPage(restDataOfMainPage);
+    //enterAddressOnTheMapOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,150)");
-    type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest()); // Вводим координаты Ресторана
-    type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest()); // Вводим Индекс ресторана
-    type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest()); // Вводим телефон ресторана
+    enterGpsOfRestMainPage(restDataOfMainPage);
+    enterIndexOfRestMainPage(restDataOfMainPage);
+    enterTelOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,600)");
     type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest()); // Вводим Емейл Ресторана
     type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest()); // Вводим Емейл для бронирования
@@ -115,6 +113,29 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,600)");
     click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream3Sec();
+  }
+
+  private void enterTelOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest()); // Вводим телефон ресторана
+  }
+
+  private void enterIndexOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest()); // Вводим Индекс ресторана
+  }
+
+  private void enterGpsOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest()); // Вводим координаты Ресторана
+  }
+
+  private void enterAddressOnTheMapOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("geocomplete"),restDataOfMainPage.getAddressOnTheMapOfRest());
+    //В поле "Адреса на карті" записываетсся значение, но так как выпадашка Гугловская, то я не могу выбрать значение с выпадашки
+    //Нужно с значений с выпадашки формировать лишки, потом я смогу по ним клацать
+    // Сейчас это обойду и буду жестко вставлять значение в поле GPS
+  }
+
+  private void enterAddressOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+    type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
   }
 
   private void enterDescriptionOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
