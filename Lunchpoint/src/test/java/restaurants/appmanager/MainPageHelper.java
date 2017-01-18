@@ -81,13 +81,21 @@ public class MainPageHelper extends HelperBase {
     clickCheckboxPaymentOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
     choiceRadiobuttonStatusOfRestMainPage();
+    choiceTypeOfScheduleOfRestMainPage();
+    js.executeScript("scrollBy(0,600)");
+    choiceRadiobuttonAvgPriceOfRestMainPage();
+  }
+
+  private void choiceRadiobuttonAvgPriceOfRestMainPage() throws InterruptedException {
+    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
+    dream1Sec();
+  }
+
+  private void choiceTypeOfScheduleOfRestMainPage() throws InterruptedException {
     click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
     dream1Sec();
     click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span")); // Клик выбора работы Рабочих Дней Ресторана
     dream1Sec();
-    js.executeScript("scrollBy(0,600)");
-    click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
-    dream3Sec();
   }
 
   private void choiceRadiobuttonStatusOfRestMainPage() {
