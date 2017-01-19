@@ -56,7 +56,7 @@ public class MainPageHelper extends HelperBase {
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
     enterSeoUrlOfRestMainPage(restDataOfMainPage);
-    VariantsOfNameOfMainPage variantsOfNameOfMainPage = new VariantsOfNameOfMainPage("Slavko\n", "Dima\n", "Kolya\n");
+    VariantsOfNameOfMainPage variantsOfNameOfMainPage = new VariantsOfNameOfMainPage("Masha\n", "Dima\n", "Kolya\n");
     enterVariantsOfNameOfRestMainPage(variantsOfNameOfMainPage);
     enterDescriptionOfRestMainPage(restDataOfMainPage);
     enterAddressOfRestMainPage(restDataOfMainPage);
