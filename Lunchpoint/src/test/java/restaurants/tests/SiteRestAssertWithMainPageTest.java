@@ -19,6 +19,12 @@ public class SiteRestAssertWithMainPageTest extends TestBase {
     app.getSiteHelper().searchRestButton();
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div[lng='30.39818839999998'] > div.content > div.type")),"Бистро");
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div[lng='30.39818839999998'] a[href='/kharkiv/slavkotest123'] > div.title")), "Slava test selenium");
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div[lng='30.39818839999998'] > div.content > div.address")), "вул.Жолудєва 8");
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div[lng='30.39818839999998'] > div.content div.min-bill.clear > span")), "<100 грн");
   }
 
 }
