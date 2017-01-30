@@ -15,6 +15,7 @@ public class ApplicationManager {
   private AdminHelper adminHelper;
   private MainPageHelper mainPageHelper;
   private MenuPageHelper menuPageHelper;
+  private SiteHelper siteHelper;
 
   public void init() {
     wd = new FirefoxDriver();
@@ -25,6 +26,7 @@ public class ApplicationManager {
     mainPageHelper = new MainPageHelper(wd);
     menuPageHelper = new MenuPageHelper(wd);
     sessionHelper = new SessionHelper(wd);
+    siteHelper = new SiteHelper(wd);
     //sessionHelper.login("manager@lunch.ua", "2CDTx8Wz");
   }
 
@@ -46,5 +48,9 @@ public class ApplicationManager {
 
   public SessionHelper getSessionHelper() {
     return sessionHelper;
+  }
+
+  public SiteHelper getSiteHelper() {
+    return siteHelper;
   }
 }
