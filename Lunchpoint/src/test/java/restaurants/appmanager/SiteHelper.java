@@ -21,7 +21,8 @@ public class SiteHelper extends HelperBase {
     type(By.name("f"), nameOfRest);
   }
 
-  public void searchRestButton() {
+  public void searchRestButton() throws InterruptedException {
     click(By.cssSelector("div.input-outer.to-right > input[type='submit']"));
+    dream3Sec();
   }
 }
