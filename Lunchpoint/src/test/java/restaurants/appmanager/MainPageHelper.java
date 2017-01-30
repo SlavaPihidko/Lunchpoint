@@ -53,6 +53,10 @@ public class MainPageHelper extends HelperBase {
     return wd.findElement(locator).getText();
   }
 
+  public String attribute(By locator, String st){
+    return wd.findElement(locator).getAttribute(st);
+  }
+
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
     enterSeoUrlOfRestMainPage(restDataOfMainPage);

@@ -1,5 +1,6 @@
 package restaurants.tests;
 
+import org.apache.xpath.SourceTree;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -27,6 +28,9 @@ public class SiteRestListTest extends TestBase {
             .text(By.cssSelector("div[lng='30.39818839999998'] > div.content > div.address")), "вул.Жолудєва 8");
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div[lng='30.39818839999998'] > div.content div.min-bill.clear > span")), "<100 грн");
+    assertEquals(app.getMainPageHelper()
+            .attribute(By.cssSelector("div[lng='30.39818839999998'] > a[img='/img/3.png']"), "img"), "/img/3.png"); // если заглушка вместо картинки
+    //System.out.print(app.getMainPageHelper().attribute(By.cssSelector("div[lng='30.39818839999998'] > a[img='/img/3.png']"), "img")); // выводим то что возвращает метод attribute
   }
 
 }
