@@ -11,12 +11,13 @@ import static org.testng.Assert.assertEquals;
 public class SiteRestAssertWithMainPageTest extends TestBase {
 
   @Test(enabled = true)
-  public void testSiteRestAssertWithMainPage() throws InterruptedException {
     String city = "Київ";
     String nameOfRest = "Slava";
     app.getSiteHelper().enterCity(city);
     app.getSiteHelper().enterRestName(nameOfRest);
     app.getSiteHelper().searchRestButton();
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("section.container > div.title-h1 > h1")), "Рестораны в Киеве");
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div[lng='30.39818839999998'] > div.content > div.type")),"Бистро");
     assertEquals(app.getMainPageHelper()
