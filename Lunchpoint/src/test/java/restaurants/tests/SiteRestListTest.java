@@ -13,11 +13,7 @@ public class SiteRestListTest extends TestBase {
 
   @Test(enabled = true)
   public void testSiteRestList() throws InterruptedException {
-    String city = "Київ";
-    String nameOfRest = "Slava";
-    app.getSiteHelper().enterCity(city);
-    app.getSiteHelper().enterRestName(nameOfRest);
-    app.getSiteHelper().searchRestButton();
+    app.getSiteHelper().searchRestOnTheSite();
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("section.container > div.title-h1 > h1")), "Рестораны в Киеве");
     assertEquals(app.getMainPageHelper()
@@ -32,5 +28,7 @@ public class SiteRestListTest extends TestBase {
             .attribute(By.cssSelector("div[lng='30.39818839999998'] > a[img='/img/3.png']"), "img"), "/img/3.png"); // если заглушка вместо картинки
     //System.out.print(app.getMainPageHelper().attribute(By.cssSelector("div[lng='30.39818839999998'] > a[img='/img/3.png']"), "img")); // выводим то что возвращает метод attribute
   }
+
+
 
 }

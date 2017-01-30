@@ -25,4 +25,12 @@ public class SiteHelper extends HelperBase {
     click(By.cssSelector("div.input-outer.to-right > input[type='submit']"));
     dream3Sec();
   }
+
+  public void searchRestOnTheSite() throws InterruptedException {
+    String city = "Київ";
+    String nameOfRest = "Slava";
+    enterCity(city);
+    enterRestName(nameOfRest);
+    searchRestButton();
+  }
 }
