@@ -8,9 +8,10 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 30.01.2017.
  */
-public class SiteRestAssertWithMainPageTest extends TestBase {
+public class SiteRestListTest extends TestBase {
 
   @Test(enabled = true)
+  public void testSiteRestList() throws InterruptedException {
     String city = "Київ";
     String nameOfRest = "Slava";
     app.getSiteHelper().enterCity(city);
