@@ -16,11 +16,6 @@ public class MainPageHelper extends HelperBase {
     super(wd);
   }
 
-  JavascriptExecutor js = (JavascriptExecutor)wd;
-
-  Actions clicker = new Actions(wd);
-
-
 
   public void fillRestFieldOnMainPageNameAddress(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
@@ -44,29 +39,6 @@ public class MainPageHelper extends HelperBase {
     click(By.linkText("Ресторани"));
     dream3Sec();
      }
-
-  public void setText(By locator){
-    wd.findElement(locator);
-  }
-
-  public String text(By locator){
-    System.out.println( locator +" locator shows " + wd.findElement(locator).getText() );
-    return wd.findElement(locator).getText();
-  }
-
-  public String attribute(By locator, String st){
-    return wd.findElement(locator).getAttribute(st);
-  }
-
-  public Boolean elementPresent(By locator) {
-    if(wd.findElement(locator)!=null){
-      System.out.println("Element is Present  " + locator);
-      return wd.findElement(locator)!=null; }
-    else {
-      System.out.println("Element is Absent  " + locator);
-      return false;
-    }
-  }
 
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
