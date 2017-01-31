@@ -29,6 +29,13 @@ public class SitePageOfRest extends TestBase {
             .text(By.cssSelector("div.cafe-info > div.links > a.url")), "www"); // проверка на присутствие иконки сайта ресторана и текста в ней www
     assertEquals(java.util.Optional.of(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(true)); // проверка на присутствие иконки сайта ресторана
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.links > a.fb"))), java.util.Optional.of(true)); // проверка на присутствие иконки фейсбука
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.links > a.tw"))), java.util.Optional.of(true)); // проверка на присутствие иконки твитера
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.links > a.inst"))), java.util.Optional.of(true)); // проверка на присутствие иконки инстаграм
+    
 
 
 
