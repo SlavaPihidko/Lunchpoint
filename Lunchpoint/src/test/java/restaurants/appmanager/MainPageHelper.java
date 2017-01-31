@@ -2,6 +2,7 @@ package restaurants.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import restaurants.model.RestDataOfMainPage;
@@ -12,7 +13,7 @@ import restaurants.model.VariantsOfNameOfMainPage;
  */
 public class MainPageHelper extends HelperBase {
 
-  public MainPageHelper(FirefoxDriver wd) {
+  public MainPageHelper(WebDriver wd) {
     super(wd);
   }
 

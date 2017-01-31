@@ -3,6 +3,7 @@ package restaurants.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -10,13 +11,13 @@ import org.openqa.selenium.interactions.Actions;
  * Created by Slava on 08.01.2017.
  */
 public class HelperBase {
-  protected FirefoxDriver wd;
+  protected WebDriver wd;
 
   JavascriptExecutor js;// = (JavascriptExecutor)wd;
 
   Actions clicker;// = new Actions(wd);
 
-  public HelperBase(FirefoxDriver wd) {
+  public HelperBase(WebDriver wd) {
     this.wd = wd;
     js = (JavascriptExecutor)wd;
     clicker = new Actions(wd);

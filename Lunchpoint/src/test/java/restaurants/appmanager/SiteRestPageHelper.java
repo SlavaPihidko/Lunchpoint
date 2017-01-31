@@ -1,6 +1,7 @@
 package restaurants.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
@@ -8,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class SiteRestPageHelper extends HelperBase {
 
-  public SiteRestPageHelper(FirefoxDriver wd) {
+  public SiteRestPageHelper(WebDriver wd) {
     super(wd);
   }
 
