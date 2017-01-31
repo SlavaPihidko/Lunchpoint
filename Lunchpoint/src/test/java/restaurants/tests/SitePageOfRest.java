@@ -35,7 +35,22 @@ public class SitePageOfRest extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.tw"))), java.util.Optional.of(true)); // проверка на присутствие иконки твитера
     assertEquals(java.util.Optional.of(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.inst"))), java.util.Optional.of(true)); // проверка на присутствие иконки инстаграм
-    
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: bill']"))), java.util.Optional.of(true)); // проверка на присутствие иконки способ оплаты наличными
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: visa']"))), java.util.Optional.of(true)); // проверка на присутствие иконки способ оплаты visa
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: mastercard']"))), java.util.Optional.of(true)); // проверка на присутствие иконки способ оплаты mastercard
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: amex']"))), java.util.Optional.of(true)); // проверка на присутствие иконки способ оплаты american card
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: diners-club']"))), java.util.Optional.of(true)); // проверка на присутствие иконки способ оплаты diners-club
+    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: maestro']"))), java.util.Optional.of(true)); // проверка на присутствие иконки способ оплаты diners-club
+
+
+
+
 
 
 
