@@ -61,14 +61,15 @@ public class SitePageOfRest extends TestBase {
     // проверка на присутствие иконки способ оплаты diners-club
     assertEquals(java.util.Optional.of(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: diners-club']"))), java.util.Optional.of(true));
-    // проверка на присутствие иконки способ оплаты diners-club
+    // проверка на присутствие иконки способ оплаты maestro
     assertEquals(java.util.Optional.of(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: maestro']"))), java.util.Optional.of(true));
-
-
-
-
-
+    // проверка на наличие и название особенности(доп. услуг)
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:first-of-type")), "Happy hours");
+    // проверка на наличие и название особенности
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:nth-of-type(2)")), "Cork-fee");
 
 
   }

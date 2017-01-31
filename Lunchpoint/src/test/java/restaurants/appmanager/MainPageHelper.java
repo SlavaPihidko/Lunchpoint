@@ -50,6 +50,7 @@ public class MainPageHelper extends HelperBase {
   }
 
   public String text(By locator){
+    System.out.println( locator +" locator shows " + wd.findElement(locator).getText() );
     return wd.findElement(locator).getText();
   }
 
