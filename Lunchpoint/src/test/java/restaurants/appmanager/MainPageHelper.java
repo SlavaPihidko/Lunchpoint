@@ -57,6 +57,16 @@ public class MainPageHelper extends HelperBase {
     return wd.findElement(locator).getAttribute(st);
   }
 
+  public Boolean elementPresent(By locator) {
+    if(wd.findElement(locator)!=null){
+      System.out.println("Element is Present  " + locator);
+      return wd.findElement(locator)!=null; }
+    else {
+      System.out.println("Element is Absent  " + locator);
+      return false;
+    }
+  }
+
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
     enterSeoUrlOfRestMainPage(restDataOfMainPage);
@@ -229,4 +239,5 @@ public class MainPageHelper extends HelperBase {
   private void enterNameOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
   }
+
 }
