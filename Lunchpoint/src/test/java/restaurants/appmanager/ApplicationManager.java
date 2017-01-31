@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -28,17 +29,17 @@ public class ApplicationManager {
   }
 
   public void init() {
-    if(browser == BrowserType.FIREFOX) {
+    if(browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
-    } else if(browser == BrowserType.CHROME) {
+    } else if(browser.equals(BrowserType.CHROME)) {
       wd = new ChromeDriver();
-    } else if(browser == BrowserType.IE) {
+    } else if(browser.equals(BrowserType.IE)) {
       wd = new InternetExplorerDriver();
     }
 
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://lptest.bigdig.com.ua/");
-    wd.manage().window().setSize(new Dimension(1366,730)); // устанавливает ширину открывающегося окна
+    wd.manage().window().setSize(new Dimension(1360,720)); // устанавливает ширину открывающегося окна
     adminHelper = new AdminHelper(wd);
     mainPageHelper = new MainPageHelper(wd);
     menuPageHelper = new MenuPageHelper(wd);
