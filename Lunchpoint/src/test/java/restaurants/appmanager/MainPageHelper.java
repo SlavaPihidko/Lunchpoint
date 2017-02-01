@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import restaurants.model.RestDataOfMainPage;
 import restaurants.model.VariantsOfNameOfMainPage;
 
@@ -133,13 +134,16 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.input-outer.rest-type span.select2-selection__arrow")); // Клик что бы закрыть выпадашку по Типам Заведения
   }
 
-  private void choiceNetworkOfRestMainPage() throws InterruptedException {
-    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
+  private void choiceNetworkOfRestMainPage(RestDataOfMainPage restDataOfMainPageAllField) throws InterruptedException {
+   /* click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
     dream3Sec();
     clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results > ul#select2-restNet-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клип по второму елементу с Сетей заведения, если  выбран изначально первый елемент
     dream1Sec();
     click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения что бы закрыть
-    dream1Sec();
+    dream1Sec();*/
+    dream3Sec();
+    new Select(wd.findElement(By.cssSelector("div.input-outer.rest-net select#restNet"))).selectByVisibleText(restDataOfMainPageAllField.getNetworkOfRest());
+    dream3Sec();
   }
 
   private void enterTwitterOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {

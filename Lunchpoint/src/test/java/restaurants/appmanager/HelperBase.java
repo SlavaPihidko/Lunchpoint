@@ -1,9 +1,6 @@
 package restaurants.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -70,12 +67,21 @@ public class HelperBase {
     return wd.findElement(locator).getAttribute(st);
   }
 
-  public Boolean elementPresent(By locator) {
+  /*public Boolean elementPresent(By locator) {
     if(wd.findElement(locator)!=null){
       System.out.println("Element is Present  " + locator);
-      return wd.findElement(locator)!=null; }
+      return true }
     else {
       System.out.println("Element is Absent  " + locator);
+      return false;
+    }
+  } */
+  // Более правильный подход для проверки присутствия елемента
+  public boolean elementPresent(By locator) {
+    try {
+      wd.findElement(locator);
+      return true;
+    } catch (NoSuchElementException ex) {
       return false;
     }
   }

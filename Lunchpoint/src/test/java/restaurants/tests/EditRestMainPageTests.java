@@ -43,7 +43,8 @@ public void testEditRestMainPageAllField() throws InterruptedException {
             "my_site123.com",
             "my_fb.com",
             "my_instagram.com",
-            "my_twitter.com");
+            "my_twitter.com",
+            "Aroma espresso bars");
     app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
