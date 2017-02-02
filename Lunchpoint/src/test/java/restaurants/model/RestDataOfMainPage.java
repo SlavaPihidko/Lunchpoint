@@ -1,5 +1,7 @@
 package restaurants.model;
 
+import org.openqa.selenium.support.ui.Select;
+
 public class RestDataOfMainPage {
   private final String nameOfRest;
   private final String addressOfRest;
@@ -18,6 +20,8 @@ public class RestDataOfMainPage {
   private String networkOfRest;
   private String typeOfRest;
   private String typeOfCuisine;
+  private String additionalServiceOfRest;
+  private String otherFeaturesOfRest;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
@@ -40,7 +44,9 @@ public class RestDataOfMainPage {
                             String twitterOfRest,
                             String networkOfRest,
                             String typeOfRest,
-                            String typeOfCuisine) {
+                            String typeOfCuisine,
+                            String additionalServiceOfRest,
+                            String otherFeaturesOfRest) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -58,6 +64,8 @@ public class RestDataOfMainPage {
     this.networkOfRest = networkOfRest;
     this.typeOfRest = typeOfRest;
     this.typeOfCuisine = typeOfCuisine;
+    this.additionalServiceOfRest = additionalServiceOfRest;
+    this.otherFeaturesOfRest = otherFeaturesOfRest;
   }
 
   public String getNameOfRest() {
@@ -126,5 +134,13 @@ public class RestDataOfMainPage {
 
   public String getTypeOfCuisine() {
     return typeOfCuisine;
+  }
+
+  public String getAdditionalServiceOfRest() {
+    return additionalServiceOfRest;
+  }
+
+  public String getOtherFeaturesOfRest() {
+    return otherFeaturesOfRest;
   }
 }

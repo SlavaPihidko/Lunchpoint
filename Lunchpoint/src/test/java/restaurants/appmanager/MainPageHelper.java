@@ -67,8 +67,8 @@ public class MainPageHelper extends HelperBase {
     choiceTypeOfCuisineOfRestMainPage(restDataOfMainPage);
     clickCheckBoxServicesOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
-    choiceAdditionalServicesOfRestMainPage();
-    choiceOtherFeaturesOfRestMainPage();
+    choiceAdditionalServicesOfRestMainPage(restDataOfMainPage);
+    choiceOtherFeaturesOfRestMainPage(restDataOfMainPage);
     clickCheckboxPaymentOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
     choiceRadiobuttonStatusOfRestMainPage();
@@ -98,20 +98,14 @@ public class MainPageHelper extends HelperBase {
     dream1Sec();
   }
 
-  private void choiceOtherFeaturesOfRestMainPage() throws InterruptedException {
-    click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Особенности заведения
-    dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures2-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента в поле Особенности заведения
-    click(By.cssSelector("div.input-outer.hint-other-features  span[dir='ltr'] span.selection ul.select2-selection__rendered")); //что бы закрыть выпадашку
-    dream1Sec();
+  private void choiceOtherFeaturesOfRestMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
+    new Select(wd.findElement(By.cssSelector("div.input-outer.hint-other-features select#restOtherFeatures2")))
+            .selectByVisibleText(restDataOfMainPage.getOtherFeaturesOfRest());
   }
 
-  private void choiceAdditionalServicesOfRestMainPage() throws InterruptedException {
-    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // Клик в поле Дополнительные услуги
-    dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restOtherFeatures-results > li:nth-of-type(1)"))).moveByOffset(5,5).click().perform(); // Выбор первого элемента для Дополнительных услуг
-    click(By.cssSelector("div.opt.hint-options span[dir='ltr'] span.selection ul.select2-selection__rendered ")); // что бы закрыть выпадашку снова клик в Дополнительных Услугах
-    dream1Sec();
+  private void choiceAdditionalServicesOfRestMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
+    new Select(wd.findElement(By.cssSelector("div.opt.hint-options select#restOtherFeatures")))
+            .selectByVisibleText(restDataOfMainPage.getAdditionalServiceOfRest());
   }
 
   private void clickCheckBoxServicesOfRestMainPage() throws InterruptedException {
