@@ -63,8 +63,8 @@ public class MainPageHelper extends HelperBase {
     enterTwitterOfRestMainPage(restDataOfMainPage);
     js.executeScript("scrollBy(0,300)");
     choiceNetworkOfRestMainPage(restDataOfMainPage);
-    choiceTypeOfRestMainPage();
-    choiceTypeOfCuisineOfRestMainPage();
+    choiceTypeOfRestMainPage(restDataOfMainPage);
+    choiceTypeOfCuisineOfRestMainPage(restDataOfMainPage);
     clickCheckBoxServicesOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
     choiceAdditionalServicesOfRestMainPage();
@@ -119,31 +119,25 @@ public class MainPageHelper extends HelperBase {
     dream1Sec();
   }
 
-  private void choiceTypeOfCuisineOfRestMainPage() throws InterruptedException {
-    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в поле Типы Кухни
+  private void choiceTypeOfCuisineOfRestMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
+    new Select(wd.findElement(By.cssSelector("div.input-outer.hint-cuisine select#restCuisine")))
+            .selectByVisibleText(restDataOfMainPage.getTypeOfCuisine());
     dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("ul#select2-restCuisine-results > li:nth-of-type(1)"))).moveByOffset(15,15).click().perform(); // Выбор первого элемента с Типов Кухни
-    click(By.cssSelector("div.input-outer.hint-cuisine  span[dir='ltr'] span.selection ul.select2-selection__rendered")); // Клик в Типах Кухни чточто бы закрыть выпадашку
+    new Select(wd.findElement(By.cssSelector("div.input-outer.hint-cuisine select#restCuisine")))
+            .selectByVisibleText("Smoked food");
     dream1Sec();
   }
 
-  private void choiceTypeOfRestMainPage() throws InterruptedException {
-    click(By.cssSelector("div.input-outer.rest-type span.select2-selection__arrow")); // Клик по Типу Заведения
+  private void choiceTypeOfRestMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
+       new Select(wd.findElement(By.cssSelector("div.input-outer.rest-type select#restType")))
+            .selectByVisibleText(restDataOfMainPage.getTypeOfRest());
     dream1Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results ul#select2-restType-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клик по первому елементу с Типов Заведения
-    click(By.cssSelector("div.input-outer.rest-type span.select2-selection__arrow")); // Клик что бы закрыть выпадашку по Типам Заведения
   }
 
   private void choiceNetworkOfRestMainPage(RestDataOfMainPage restDataOfMainPageAllField) throws InterruptedException {
-   /* click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения
-    dream3Sec();
-    clicker.moveToElement(wd.findElement(By.cssSelector("span.select2-dropdown.select2-dropdown--below span.select2-results > ul#select2-restNet-results > li:nth-of-type(2)"))).moveByOffset(5,5).click().perform(); // Клип по второму елементу с Сетей заведения, если  выбран изначально первый елемент
+       new Select(wd.findElement(By.cssSelector("div.input-outer.rest-net select#restNet")))
+            .selectByVisibleText(restDataOfMainPageAllField.getNetworkOfRest());
     dream1Sec();
-    click(By.cssSelector("div.input-outer.rest-net span.select2-selection__arrow")); // Клик по Сети Заведения что бы закрыть
-    dream1Sec();*/
-    dream3Sec();
-    new Select(wd.findElement(By.cssSelector("div.input-outer.rest-net select#restNet"))).selectByVisibleText(restDataOfMainPageAllField.getNetworkOfRest());
-    dream3Sec();
   }
 
   private void enterTwitterOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {

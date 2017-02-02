@@ -16,6 +16,8 @@ public class RestDataOfMainPage {
   private String instagramOfRest;
   private String twitterOfRest;
   private String networkOfRest;
+  private String typeOfRest;
+  private String typeOfCuisine;
 
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
@@ -36,7 +38,9 @@ public class RestDataOfMainPage {
                             String fbOfRest,
                             String instagramOfRest,
                             String twitterOfRest,
-                            String networkOfRest) {
+                            String networkOfRest,
+                            String typeOfRest,
+                            String typeOfCuisine) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -52,6 +56,8 @@ public class RestDataOfMainPage {
     this.instagramOfRest = instagramOfRest;
     this.twitterOfRest = twitterOfRest;
     this.networkOfRest = networkOfRest;
+    this.typeOfRest = typeOfRest;
+    this.typeOfCuisine = typeOfCuisine;
   }
 
   public String getNameOfRest() {
@@ -112,5 +118,13 @@ public class RestDataOfMainPage {
 
   public String getNetworkOfRest() {
     return networkOfRest;
+  }
+
+  public String getTypeOfRest() {
+    return typeOfRest;
+  }
+
+  public String getTypeOfCuisine() {
+    return typeOfCuisine;
   }
 }
