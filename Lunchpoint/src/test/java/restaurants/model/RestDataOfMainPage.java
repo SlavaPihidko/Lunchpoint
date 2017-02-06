@@ -3,8 +3,8 @@ package restaurants.model;
 import org.openqa.selenium.support.ui.Select;
 
 public class RestDataOfMainPage {
-  private final String nameOfRest;
-  private final String addressOfRest;
+  private String nameOfRest;
+  private String addressOfRest;
   private String seoOfRest;
   private String descriptionOfRest;
   private String addressOnTheMapOfRest;
@@ -26,6 +26,10 @@ public class RestDataOfMainPage {
   public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
+  }
+
+  public RestDataOfMainPage(String nameOfRest){
+    this.nameOfRest = nameOfRest;
   }
 
   public RestDataOfMainPage(String nameOfRest,

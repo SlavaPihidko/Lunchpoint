@@ -37,7 +37,7 @@ public class ApplicationManager {
       wd = new InternetExplorerDriver();
     }
 
-    wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
     wd.get("http://lptest.bigdig.com.ua/");
     wd.manage().window().setSize(new Dimension(1360,720)); // устанавливает ширину открывающегося окна
     adminHelper = new AdminHelper(wd);
