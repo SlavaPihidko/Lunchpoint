@@ -11,8 +11,14 @@ import static org.testng.Assert.assertEquals;
  */
 public class LoginTests extends TestBase {
 
+  @Test
+  public void buttonLoginPresentTest(){
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
+  }
+
   @Test(enabled = false)
-  public void loginManagerTestPos (){
+  public void loginManagerTestPosTroughEmail (){
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     assertEquals(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), true);
@@ -25,11 +31,11 @@ public class LoginTests extends TestBase {
 
   }
 
-  @Test
-  public  void loginClientTestPos(){
+  @Test(enabled = false)
+  public  void loginClientTestPosThroughEmail(){
     app.getSessionHelper().login(usernameGuest, passwordGuest);
     assertEquals(app.getMainPageHelper()
             .attribute(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"),"href"),"http://lptest.bigdig.com.ua/user/profile");
-    
+
   }
 }
