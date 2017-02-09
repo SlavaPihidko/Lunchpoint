@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class LoginTests extends TestBase {
 
-  @Test
+  @Test(enabled = false)
   public void loginManagerTestPos (){
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     assertEquals(app.getMainPageHelper()
@@ -23,5 +23,13 @@ public class LoginTests extends TestBase {
     assertEquals(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link > i.fa.fa-user")),true);
 
+  }
+
+  @Test
+  public  void loginClientTestPos(){
+    app.getSessionHelper().login(usernameGuest, passwordGuest);
+    assertEquals(app.getMainPageHelper()
+            .attribute(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"),"href"),"http://lptest.bigdig.com.ua/user/profile");
+    
   }
 }

@@ -14,7 +14,7 @@ public class TestBase {
   String usernameAdmin = "manager@lunch.ua";
   String passwordAdmin = "2CDTx8Wz";
   String usernameGuest = "slava17puh@gmail.com";
-  String passwordGuest = "bigdig12";
+  String passwordGuest = "bigdig2";
 
   @BeforeMethod
   public void setUp() throws Exception {
