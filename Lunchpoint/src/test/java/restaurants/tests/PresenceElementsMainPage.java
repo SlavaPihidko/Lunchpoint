@@ -42,7 +42,7 @@ public class PresenceElementsMainPage extends TestBase {
 
   }
 
-  @Test
+  @Test(enabled = false)
   public void presenceElementsHeaderMiddle(){
     // наличие текста
     assertEquals(app.getMainPageHelper()
@@ -65,12 +65,9 @@ public class PresenceElementsMainPage extends TestBase {
       assertEquals(app.getMainPageHelper()
               .attribute(By.cssSelector("div.header-search div.wrap form#w0 > div.input-outer.location > div#cities input#name_address"),"value"),"mustFail");
     }
-
     // наличие птички в поле для ввода города
     assertEquals(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.header-search div.wrap form#w0 > div.input-outer.location > div#cities i.fa.fa-angle-down")),true);
-
-
     // наличие поля для ввода ресторана
     assertEquals(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.header-search div.wrap form#w0 div#customSelectSearch")),true);
@@ -83,12 +80,56 @@ public class PresenceElementsMainPage extends TestBase {
     // наличие кнопки Поиска
     assertEquals(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.header-search div.wrap form#w0 div.input-outer.to-right")),true);
-
+    //  текст кнопки Поиска
     assertEquals(app.getMainPageHelper()
             .attribute(By.cssSelector("div.header-search div.wrap form#w0 div.input-outer.to-right > input"), "value"),"Поиск");
-
-
-
   }
 
+  @Test
+  public void presenceElementsHeaderDown(){
+    app.getMainPageHelper().click(By.cssSelector("div#customSelectSearch"));
+    // наличие вкладки завтраки
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(1) > a[href='/breakfasts']")),true);
+    // текст вкладки Завтраков
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(1) > a[href='/breakfasts']")),"ЗАВТРАКИ");
+    // наличие вкладки Бизнес-Ланчи
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(2) > a[href='/lunches']")),true);
+    // текст вкладки Бизнес-Ланчи
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(2) > a[href='/lunches']")),"БИЗНЕС-ЛАНЧИ");
+    // наличие вкладки Рестораны
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(3) > a[href='/restaurants']")),true);
+    // текст вкладки Рестораны
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(3) > a[href='/restaurants']")),"РЕСТОРАНЫ");
+    // наличие вкладки Резерв Стола
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(4) > a[href='/reserve']")),true);
+    // текст вкладки Резерв стола
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(4) > a[href='/reserve']")),"РЕЗЕРВ СТОЛА");
+    // наличие вкладки Доставка (disable)
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.disabled > a")),true);
+    // текст вкладки Доставка
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.disabled > a")),"ДОСТАВКА");
+    // наличие вкладки Акции
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(6) > a[href='/offers']")),true);
+    // текст вкладки Акции
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(6) > a[href='/offers']")),"АКЦИИ");
+    // наличие вкладки Афиши
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(7) > a[href='/posters']")),true);
+    // текст вкладки Афиши
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("nav.main-nav div.wrap li.top-form-submit:nth-of-type(7) > a[href='/posters']")),"АФИШИ");
+
+  }
 }
