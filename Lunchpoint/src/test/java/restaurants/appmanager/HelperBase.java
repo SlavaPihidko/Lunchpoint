@@ -35,7 +35,7 @@ public class HelperBase {
 
 
 
-  protected void type(By locator, String text) {
+  public void type(By locator, String text) {
     click(locator);
     if(text != null) { // оставляем дефолтные значения в полях
       String existingText = wd.findElement(locator).getAttribute("value");

@@ -13,7 +13,7 @@ public class TestBase {
   protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
   String usernameAdmin = "manager@lunch.ua";
   String passwordAdmin = "2CDTx8Wz";
-  String usernameGuest = "slava17puh@gmail.com";
+  String usernameGuest = "slava17puh999@gmail.com";
   String passwordGuest = "bigdig2";
 
   @BeforeMethod
