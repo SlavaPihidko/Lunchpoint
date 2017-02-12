@@ -19,10 +19,10 @@ public class LoginTestFB extends TestBase {
   @Test
   public void loginClientTestThroughFBTest() throws InterruptedException {
     app.getMainPageHelper().click(By.cssSelector("a.log-in"));
+    // работа с окнами
     app.workWithNewWindow();
     Thread.sleep(2000);
-
-    // app.getMainPageHelper().type(By.cssSelector("div.clearfix.form_row > input#email"),  "+380730442745");
+    // проверка имени пользователя после логина
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "ВИКТОРИЯ");
   }
