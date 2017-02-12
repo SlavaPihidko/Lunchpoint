@@ -1,13 +1,16 @@
 package restaurants.appmanager;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -53,6 +56,14 @@ public class ApplicationManager {
     wd.quit();
   }
 
+  public String getWindowHandle(){
+    return wd.getWindowHandle();
+  }
+
+  public Set<String> getWindowHandles(){
+    return wd.getWindowHandles();
+  }
+
   public AdminHelper getAdminHelper() {
     return adminHelper;
   }
@@ -75,5 +86,37 @@ public class ApplicationManager {
 
   public SiteRestPageHelper getSiteRestPageHelper() {
     return siteRestPageHelper;
+  }
+
+  public void workWithNewWindow() throws InterruptedException {
+
+    String originalWindow = wd.getWindowHandle();
+    final Set<String> oldWindowsSet = wd.getWindowHandles();
+
+    wd.findElement(By.cssSelector("div.log-block a.login-link.soc.fb")).click();
+    String newWindow = (new WebDriverWait(wd, 10))
+            .until(new ExpectedCondition<String>() {
+                     public String apply(WebDriver driver) {
+                       Set<String> newWindowsSet = driver.getWindowHandles();
+                       newWindowsSet.removeAll(oldWindowsSet);
+                       return newWindowsSet.size() > 0 ?
+                               newWindowsSet.iterator().next() : null;
+                     }
+                   }
+            );
+
+    wd.switchTo().window(newWindow);
+    System.out.println("New window title: " + wd.getTitle());
+    wd.findElement(By.id("email")).click();
+    wd.findElement(By.id("email")).clear();
+    wd.findElement(By.id("email")).sendKeys("+380730442745");
+    wd.findElement(By.id("pass")).click();
+    wd.findElement(By.id("pass")).clear();
+    wd.findElement(By.id("pass")).sendKeys("BigDig4Dev");
+    wd.findElement(By.id("u_0_2")).click();
+
+    wd.switchTo().window(originalWindow);
+    System.out.println("Old window title: " + wd.getTitle());
+
   }
 }

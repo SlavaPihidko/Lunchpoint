@@ -97,14 +97,4 @@ public class LoginTests extends TestBase {
             .attribute(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"),"href"),"http://lptest.bigdig.com.ua/user/profile");
   }
 
-  @Test(enabled = true)
-  public  void loginClientTestThroughFBTest(){
-    app.getMainPageHelper().click(By.cssSelector("a.log-in"));
-    //assertEquals(app.getMainPageHelper()
-     //       .attribute(By.cssSelector("div.log-block a.login-link.soc.fb"), "href"), "");
-    app.getMainPageHelper().click(By.cssSelector("div.log-block a.login-link.soc.fb"));
-    app.getMainPageHelper().type(By.cssSelector("div.clearfix.form_row > input#email"),  "+380730442745");
-    assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "ВИКТОРИЯ");
-  }
 }
