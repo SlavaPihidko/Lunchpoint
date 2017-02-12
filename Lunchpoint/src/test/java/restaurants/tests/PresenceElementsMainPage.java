@@ -13,7 +13,7 @@ import static org.testng.Assert.assertTrue;
 public class PresenceElementsMainPage extends TestBase {
 
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void presenceElementsHeaderTop(){
     // наличие логотипа ЛП
     assertEquals(app.getMainPageHelper()
@@ -42,7 +42,7 @@ public class PresenceElementsMainPage extends TestBase {
 
   }
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void presenceElementsHeaderMiddle(){
     // наличие текста
     assertEquals(app.getMainPageHelper()
@@ -85,7 +85,7 @@ public class PresenceElementsMainPage extends TestBase {
             .attribute(By.cssSelector("div.header-search div.wrap form#w0 div.input-outer.to-right > input"), "value"),"Поиск");
   }
 
-  @Test
+  @Test (enabled = true)
   public void presenceElementsHeaderDown(){
     app.getMainPageHelper().click(By.cssSelector("div#customSelectSearch"));
     // наличие вкладки завтраки
