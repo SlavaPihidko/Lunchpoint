@@ -38,7 +38,7 @@ public class MainPageHelper extends HelperBase {
   }
 
   public void gotoTabRestInAdminPanel() throws InterruptedException {
-    click(By.linkText("Ресторани"));
+    click(By.linkText("РЕСТОРАНЫ"));
     dream3Sec();
      }
 
@@ -206,7 +206,7 @@ public class MainPageHelper extends HelperBase {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
   }
 
-  public void fillNameOfRest(String[] nameDataOfRest) {
-    type(By.id("edit_restName"), nameDataOfRest[0]); // Вводим имя ресторана
+  public void fillNameOfRest(String[] nameDataOfRest, int i) {
+    type(By.id("edit_restName"), nameDataOfRest[i]); // Вводим имя ресторана
   }
 }
