@@ -50,6 +50,10 @@ public class HelperBase {
     Thread.sleep(3000);
   }
 
+  protected void dream2Sec() throws InterruptedException {
+    Thread.sleep(3000);
+  }
+
   protected void dream1Sec() throws InterruptedException {
     Thread.sleep(1000);
   }

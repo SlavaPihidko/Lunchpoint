@@ -26,7 +26,7 @@ public class AdminHelper extends HelperBase {
 
   public void gotoAddressFieldInAdminPanel() throws InterruptedException {
     click(By.name("RestaurantsLangSearch[address]"));
-    dream3Sec();
+    dream2Sec();
   }
 
   public void gotoEditRestInAdminPanel() throws InterruptedException {

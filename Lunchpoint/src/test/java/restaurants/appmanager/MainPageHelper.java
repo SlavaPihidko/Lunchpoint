@@ -33,13 +33,13 @@ public class MainPageHelper extends HelperBase {
 
   public void confirmChangesOfRestMainPage() throws InterruptedException {
     click(By.id("save_ok"));
-    dream3Sec();
+    dream2Sec();
     js.executeScript("scrollBy(0,-3300)");
   }
 
   public void gotoTabRestInAdminPanel() throws InterruptedException {
     click(By.linkText("РЕСТОРАНЫ"));
-    dream3Sec();
+    dream1Sec();
      }
 
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {

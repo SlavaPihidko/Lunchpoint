@@ -22,7 +22,6 @@ public class NameOfRestTests extends TestBase {
             "slava123"};
     String[] nameDataOfRestNegative = {"aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1", "slava"};
     for (int i = 0; i < nameDataOfRest.length; i++) {
-      //app.getAdminHelper().initOfEditRest();
       app.getAdminHelper().getAddressMainUrl();
       app.getSiteHelper().enterRestName(nameDataOfRest[i]);
       app.getSiteHelper().searchRestButton();
@@ -35,18 +34,16 @@ public class NameOfRestTests extends TestBase {
       assertEquals(app.getAdminHelper()
               .elementPresent(By.cssSelector("a[href='/manager/restaurants/update?id=2219']")), true);
       app.getAdminHelper().gotoEditRestInAdminPanel();
-      Thread.sleep(2000);
+      //Thread.sleep(2000);
       assertEquals(app.getMainPageHelper()
               .attribute(By.id("edit_restName"),"value"), nameDataOfRest[i]);
-      // for(int i=0;i<nameDataOfRest.length;i++) {
-      if (i == nameDataOfRest.length - 1) {
-        app.getMainPageHelper().fillNameOfRest(nameDataOfRest, i);
+      if (i != nameDataOfRest.length - 1) {
+        app.getMainPageHelper().fillNameOfRest(nameDataOfRest, i + 1);
         app.getMainPageHelper().saveRestMainPage();
         app.getMainPageHelper().confirmChangesOfRestMainPage();
         app.getMainPageHelper().gotoTabRestInAdminPanel();
-        // }
       } else {
-        app.getMainPageHelper().fillNameOfRest(nameDataOfRest, i + 1);
+        app.getMainPageHelper().fillNameOfRest(nameDataOfRest, i);
         app.getMainPageHelper().saveRestMainPage();
         app.getMainPageHelper().confirmChangesOfRestMainPage();
         app.getMainPageHelper().gotoTabRestInAdminPanel();
@@ -59,8 +56,7 @@ public class NameOfRestTests extends TestBase {
         app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa");
         app.getAdminHelper().gotoAddressFieldInAdminPanel();
       }
-      app.getAdminHelper().gotoEditRestInAdminPanel();
-
+        app.getAdminHelper().gotoEditRestInAdminPanel();
         app.getMainPageHelper().fillNameOfRest(nameDataOfRestNegative, y);
         app.getMainPageHelper().saveRestMainPage();
         app.getMainPageHelper().confirmChangesOfRestMainPage();
@@ -68,10 +64,9 @@ public class NameOfRestTests extends TestBase {
        if(y != nameDataOfRestNegative.length - 1) {
         app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1");
         app.getAdminHelper().gotoAddressFieldInAdminPanel();
-        //while (y == nameDataOfRestNegative.length - 1) ;
         assertEquals(app.getAdminHelper()
                 .text(By.cssSelector("table.table.table-striped.table-bordered div.empty")), "Ничего не найдено.");
-      } //while (y != nameDataOfRestNegative.length - 1);
+      }
     }
   }
 
