@@ -41,4 +41,7 @@ public class AdminHelper extends HelperBase {
   }
 
 
+  public void getAddressMainUrl() {
+    wd.get("http://lptest.bigdig.com.ua/");
+  }
 }

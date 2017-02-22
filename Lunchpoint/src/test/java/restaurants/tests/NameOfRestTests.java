@@ -2,7 +2,6 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import restaurants.model.NameDataOfRest;
 
 import static org.testng.Assert.assertEquals;
 
@@ -18,12 +17,18 @@ public class NameOfRestTests extends TestBase {
     String[] nameDataOfRest = {"slava",
             "slava ltd",
             "фотограф",
-            "q",
+            "abc",
             "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa",
             "slava123"};
     String[] nameDataOfRestNegative = {"aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1", "slava"};
     for (int i = 0; i < nameDataOfRest.length; i++) {
       //app.getAdminHelper().initOfEditRest();
+      app.getAdminHelper().getAddressMainUrl();
+      app.getSiteHelper().enterRestName(nameDataOfRest[i]);
+      app.getSiteHelper().searchRestButton();
+      assertEquals(app.getMainPageHelper()
+              .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),nameDataOfRest[i]) ;
+      app.getMainPageHelper().click(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"));
       app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", nameDataOfRest[i]);
       app.getAdminHelper().gotoAddressFieldInAdminPanel();
 
