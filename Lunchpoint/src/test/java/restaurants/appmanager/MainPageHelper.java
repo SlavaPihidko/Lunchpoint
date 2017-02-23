@@ -198,11 +198,11 @@ public class MainPageHelper extends HelperBase {
     dream3Sec();
   }
 
-  private void enterSeoUrlOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterSeoUrlOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoUrlOfRest()); // Вводим seo-url ресторана
   }
 
-  private void enterNameOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterNameOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
   }
 

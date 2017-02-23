@@ -40,8 +40,18 @@ public class AdminHelper extends HelperBase {
     gotoEditRestInAdminPanel();
   }
 
+  public void initOfEditRest(String name) throws InterruptedException {
+    searchRestInAdminPanel("RestaurantsLangSearch[name]", name);
+    gotoAddressFieldInAdminPanel();
+    gotoEditRestInAdminPanel();
+  }
+
 
   public void getAddressMainUrl() {
     wd.get("http://lptest.bigdig.com.ua/");
+  }
+
+  public void getAddressMainUrl(String seoUrl) {
+    wd.get("http://lptest.bigdig.com.ua/"+seoUrl);
   }
 }
