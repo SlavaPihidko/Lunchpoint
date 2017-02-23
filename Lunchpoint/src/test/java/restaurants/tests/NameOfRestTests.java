@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.model.RestDataOfMainPage;
 
 import static org.testng.Assert.assertEquals;
 
@@ -10,7 +11,56 @@ import static org.testng.Assert.assertEquals;
  */
 public class NameOfRestTests extends TestBase {
 
-  @Test
+  @Test(enabled = true)
+  public void testEditRestMainPageAllField() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    app.getAdminHelper().gotoAdminPanel();
+    app.getAdminHelper().initOfEditRest("Slava");
+    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava2",
+            "вул.Жолудєва 8",
+            "slavkotest123",
+            "Здесь описание ресторана",
+            "вулиця Жолудєва, 8, Київ, Украина, 03134",
+            "50.4167724,30.39818839999998",
+            "03134",
+            "0632223344",
+            "optibayukraine@gmail.com",
+            "slava17puh123@gmail.com",
+            "my_site123.com",
+            "my_fb.com",
+            "my_instagram.com",
+            "my_twitter.com",
+            "Aroma espresso bars",
+            "Бистро",
+            "BBQ",
+            "Happy hours",
+            "Cork-fee");
+    app.getMainPageHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
+    app.getMainPageHelper().saveRestMainPage();
+    app.getMainPageHelper().confirmChangesOfRestMainPage();
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite();
+    // проверяем на сайте в списке что имя ресторана такое как ему изменили
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),restDataOfMainPageAllField.getNameOfRest()) ;
+    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+    // проверяем на сайте на страничке ресторана
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div.cafe-name")), restDataOfMainPageAllField.getNameOfRest());
+
+    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPageHelper()
+            .attribute(By.id("edit_restName"),"value"), restDataOfMainPageAllField.getNameOfRest());
+    // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div.cafe-name")),restDataOfMainPageAllField.getNameOfRest());
+  }
+
+
+
+  @Test(enabled = false)
   public void nameOfRestTests() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();

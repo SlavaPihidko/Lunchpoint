@@ -51,7 +51,7 @@ public class AdminHelper extends HelperBase {
     wd.get("http://lptest.bigdig.com.ua/");
   }
 
-  public void getAddressMainUrl(String seoUrl) {
-    wd.get("http://lptest.bigdig.com.ua/"+seoUrl);
+  public void getAddressMainUrl(String url) {
+    wd.get("http://lptest.bigdig.com.ua/"+url);
   }
 }
