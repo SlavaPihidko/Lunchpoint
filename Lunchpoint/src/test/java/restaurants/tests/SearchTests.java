@@ -34,4 +34,17 @@ public class SearchTests extends TestBase {
                   .text(By.cssSelector("div[lng='30.39818839999998'] div.title")), restDataOfMainPageAllField.getNameOfRest());
 }
   }
-}
+
+  @Test(enabled = true)
+  public void searchNameThatAbsent() throws InterruptedException {
+
+    app.getSiteHelper().searchRestOnTheSite("Київ", "xxxyyy");
+
+    assertEquals(app.getMainPageHelper()
+              .text(By.cssSelector("div.results-line div.title > p")), "Показано 0 результатов");
+    assertEquals(app.getMainPageHelper()
+            .text(By.cssSelector("div.title-h1")), "Рестораны в Киеве");
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.useful-info")),true);
+    }
+  }
