@@ -41,6 +41,12 @@ public class SiteHelper extends HelperBase {
     searchRestButton();
   }
 
+  public void searchRestOnTheSite(String city, String nameOfRest) throws InterruptedException {
+    enterCity(city);
+    enterRestName(nameOfRest);
+    searchRestButton();
+  }
+
   public void choiceTheTown(String city) throws InterruptedException {
     enterCity(city);
     searchRestButton();

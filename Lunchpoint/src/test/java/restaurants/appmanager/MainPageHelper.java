@@ -185,7 +185,7 @@ public class MainPageHelper extends HelperBase {
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest()); // Вводим текст в поле Описание Ресторана
   }
 
-  private void enterVariantsOfNameOfRestMainPage(VariantsOfNameOfMainPage variantsOfNameOfMainPage) throws InterruptedException {
+  public void enterVariantsOfNameOfRestMainPage(VariantsOfNameOfMainPage variantsOfNameOfMainPage) throws InterruptedException {
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
     dream1Sec();
     wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName1()); // Вводим в поле Варианты Названий текст и Ентер
