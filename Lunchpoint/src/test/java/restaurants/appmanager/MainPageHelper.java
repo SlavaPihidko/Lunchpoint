@@ -181,7 +181,7 @@ public class MainPageHelper extends HelperBase {
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
   }
 
-  private void enterDescriptionOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterDescriptionOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.name("RestaurantsLang[description]"),restDataOfMainPage.getDescriptionOfRest()); // Вводим текст в поле Описание Ресторана
   }
 

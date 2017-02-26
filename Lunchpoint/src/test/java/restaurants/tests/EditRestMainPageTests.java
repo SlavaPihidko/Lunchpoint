@@ -30,26 +30,8 @@ public void testEditRestMainPageAllField() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava test selenium",
-            "вул.Жолудєва 8",
-            "slavkotest123",
-            "Здесь описание ресторана",
-            "вулиця Жолудєва, 8, Київ, Украина, 03134",
-            "50.4167724,30.39818839999998",
-            "03134",
-            "0632223344",
-            "optibayukraine@gmail.com",
-            "slava17puh123@gmail.com",
-            "my_site123.com",
-            "my_fb.com",
-            "my_instagram.com",
-            "my_twitter.com",
-            "Aroma espresso bars",
-            "Бистро",
-            "BBQ",
-            "Happy hours",
-            "Cork-fee");
-    app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restDataOfMainPageAllField);
+
+    app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restEditDataOfMainPageAllField);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
      }
