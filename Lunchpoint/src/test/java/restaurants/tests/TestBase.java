@@ -48,7 +48,8 @@ public class TestBase {
           "Еда с собой",
           "Бильярд");
 
-  RestDataOfMainPage restEditDataOfMainPageAllField = new RestDataOfMainPage("Slava test selenium",
+  RestDataOfMainPage restEditDataOfMainPageAllField = new RestDataOfMainPage(
+          "Slava test selenium",
           "вул.Жолудєва 8",
           "slavkotest123",
           "Здесь описание ресторана",
