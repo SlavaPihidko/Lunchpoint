@@ -23,7 +23,7 @@ public class SitePageOfRest extends TestBase {
     // проверка по типу кухни
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div.wrap div.cafe-kitchen > p")), "BBQ");
-    // проверка по типу улице
+    // проверка по названиии улице
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div.cafe-info > div.addr > p")), "вул.Жолудєва 8");
     // проверка по ном. тел
