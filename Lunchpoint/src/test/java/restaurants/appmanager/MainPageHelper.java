@@ -146,27 +146,27 @@ public class MainPageHelper extends HelperBase {
     type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest()); // Вводим Фейсбук ресторана
   }
 
-  private void enterSiteOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterSiteOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restSite"),restDataOfMainPage.getSiteOfRest()); // Вводим Сайт ресторана
   }
 
-  private void enterBookingEmailOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterBookingEmailOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.name("Restaurants[booking_email]"),restDataOfMainPage.getBookingEmailOfRest()); // Вводим Емейл для бронирования
   }
 
-  private void enterEmailOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterEmailOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.name("Restaurants[email]"),restDataOfMainPage.getEmailOfRest()); // Вводим Емейл Ресторана
   }
 
-  private void enterTelOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterTelOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest()); // Вводим телефон ресторана
   }
 
-  private void enterIndexOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterIndexOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest()); // Вводим Индекс ресторана
   }
 
-  private void enterGpsOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterGpsOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restaurants-latlng"),restDataOfMainPage.getGpsOfRest()); // Вводим координаты Ресторана
   }
 

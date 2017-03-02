@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 public class EmailsOfRestTests extends TestBase {
 
   @Test
-  public void descrOfRestTests() throws InterruptedException {
+  public void emailsOfRestTests() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();

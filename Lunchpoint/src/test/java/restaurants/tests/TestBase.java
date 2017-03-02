@@ -69,4 +69,25 @@ public class TestBase {
           "Happy hours",
           "Cork-fee");
 
+  RestDataOfMainPage restNullDataOfMainPageAllField = new RestDataOfMainPage(
+          "Slava test123",
+          "вул.Академика Белецкого, 9а",
+          "viacheslav",
+          "Здесь описание ресторана тест создание ресторана",
+          "9A, вулиця Академіка Білецького, 9А, Київ, Украина",
+          "50.430206,30.417633000000023",
+          "03126",
+          "0671112299",
+          "create123@gmail.com",
+          "test123@gmail.com",
+          "",
+          "my_first_fb.com",
+          "my_first_instagram.com",
+          "my_first_twitter.com",
+          "Carte Blanche",
+          "Винотека",
+          "Авторская",
+          "Еда с собой",
+          "Бильярд");
+
 }
