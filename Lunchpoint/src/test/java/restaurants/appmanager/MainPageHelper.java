@@ -134,15 +134,15 @@ public class MainPageHelper extends HelperBase {
     dream1Sec();
   }
 
-  private void enterTwitterOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterTwitterOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restTw"),restDataOfMainPage.getTwitterOfRest()); // Вводим Твиттер Ресторана
   }
 
-  private void enterInstagramOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterInstagramOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restInst"),restDataOfMainPage.getInstagramOfRest()); // Вводим Инстаграм Ресторана
   }
 
-  private void enterFbOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterFbOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.name("Restaurants[fb]"),restDataOfMainPage.getFbOfRest()); // Вводим Фейсбук ресторана
   }
 
