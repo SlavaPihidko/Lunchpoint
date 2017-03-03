@@ -3,11 +3,17 @@ package restaurants.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import restaurants.model.RestDataOfMainPage;
+import restaurants.model.RestDataOfNetworkList;
+import restaurants.model.RestDataOfSiteList;
 import restaurants.model.VariantsOfNameOfMainPage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Slava on 08.01.2017.
@@ -208,5 +214,17 @@ public class MainPageHelper extends HelperBase {
 
   public void fillNameOfRest(String[] nameDataOfRest, int i) {
     type(By.id("edit_restName"), nameDataOfRest[i]); // Вводим имя ресторана
+  }
+
+  public List<RestDataOfNetworkList> getNetworkList() {
+    List<RestDataOfNetworkList> nameOfNetworks = new ArrayList<RestDataOfNetworkList>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("div.input-outer.rest-net select#restNet option"));
+    for (WebElement element: elements){
+      String nameOfNetwork = element.getText();
+      System.out.println(nameOfNetwork);
+      RestDataOfNetworkList network = new RestDataOfNetworkList(nameOfNetwork);
+      nameOfNetworks.add(network);
+    }
+    return nameOfNetworks;
   }
 }
