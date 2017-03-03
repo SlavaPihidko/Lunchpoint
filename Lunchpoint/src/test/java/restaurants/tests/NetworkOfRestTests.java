@@ -16,21 +16,21 @@ import static org.testng.Assert.assertEquals;
  */
 public class NetworkOfRestTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void networkOfRestTest() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    app.getAdminHelper().gotoAdminPanel();
-    app.getAdminHelper().initOfEditRest();
+    Thread.sleep(1000);
+    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем записалось ли то значение сети ресторана которое выбрали
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")),restEditDataOfMainPageAllField.getNetworkOfRest());
   }
 
-  @Test
+  @Test(enabled = true)
   public void networkOfRestTestAllListPresent() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    app.getAdminHelper().gotoAdminPanel();
-    app.getAdminHelper().initOfEditRest();
+    Thread.sleep(1000);
+    app.getAdminHelper().getAddressMainUrl("/manager/restaurants/update?id=2219");
 
     List<RestDataOfNetworkList> objectFromWebNetwork = app.getMainPageHelper().getNetworkList();
 
@@ -53,7 +53,7 @@ public class NetworkOfRestTests extends TestBase {
       RestDataOfNetworkList network = new RestDataOfNetworkList(listNameOfNetwork[i]);
       objectHardNameNetwork.add(network);
     }
-    // сравнение множест. 
+    // сравнение множест.
       assertEquals(objectFromWebNetwork.size(), objectHardNameNetwork.size());
       assertEquals(new HashSet<Object>(objectFromWebNetwork), new HashSet<Object>(objectHardNameNetwork));
   }
