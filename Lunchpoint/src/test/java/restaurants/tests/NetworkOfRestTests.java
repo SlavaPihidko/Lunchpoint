@@ -6,6 +6,7 @@ import restaurants.model.RestDataOfNetworkList;
 import restaurants.model.RestDataOfSiteList;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -46,14 +47,14 @@ public class NetworkOfRestTests extends TestBase {
             "Мировая карта", "Мистер Сендвич", "Наша карта", "Путеводная звезда ", "Реста ",
             "Росинтер", "Сан Сити ", "Сели-Поели ", "Сеть кофеен Шоколадница", "Сеть ресторанов Mafia",
             "Смак", "Суши WOK", "Таврия В", "Территория вкуса", "Фабрика вкуса ", "Фишка ",
-            "Франс.Уа", "Якитория", "Без мережі"
+            "Франс.Уа", "Без мережі", "Якитория"
     };
     for (int i=0;i<listNameOfNetwork.length;i++){
       RestDataOfNetworkList network = new RestDataOfNetworkList(listNameOfNetwork[i]);
       objectHardNameNetwork.add(network);
     }
-    for(int i=0; i<objectFromWebNetwork.size();i++) {
+    // сравнение множест. 
       assertEquals(objectFromWebNetwork.size(), objectHardNameNetwork.size());
-      assertEquals(objectFromWebNetwork.get(i), objectHardNameNetwork.get(i));}
+      assertEquals(new HashSet<Object>(objectFromWebNetwork), new HashSet<Object>(objectHardNameNetwork));
   }
 }

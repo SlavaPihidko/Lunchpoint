@@ -59,11 +59,11 @@
       <file leaf-file-name="NetworkOfRestTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/NetworkOfRestTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1291#1314#0" expanded="true" />
+                <element signature="e#1317#1340#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1132,15 +1132,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NetworkOfRestTests - 2017.03.03 at 23h 39m 40s.xml">
-      <configuration name="NetworkOfRestTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NetworkOfRestTests - 2017.03.03 at 23h 48m 45s.xml">
-      <configuration name="NetworkOfRestTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NetworkOfRestTests - 2017.03.03 at 23h 57m 48s.xml">
-      <configuration name="NetworkOfRestTests" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="NetworkOfRestTests - 2017.03.03 at 23h 59m 15s.xml">
       <configuration name="NetworkOfRestTests" configurationId="TestNG" />
     </history-entry>
@@ -1157,6 +1148,15 @@
       <configuration name="NetworkOfRestTests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="NetworkOfRestTests - 2017.03.04 at 00h 15m 43s.xml">
+      <configuration name="NetworkOfRestTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="NetworkOfRestTests - 2017.03.04 at 00h 25m 35s.xml">
+      <configuration name="NetworkOfRestTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="NetworkOfRestTests - 2017.03.04 at 00h 29m 53s.xml">
+      <configuration name="NetworkOfRestTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="NetworkOfRestTests - 2017.03.04 at 00h 30m 44s.xml">
       <configuration name="NetworkOfRestTests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="PresenceElementsMainPage - 2017.03.04 at 00h 15m 11s.xml">
@@ -1641,11 +1641,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/NetworkOfRestTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1291#1314#0" expanded="true" />
+            <element signature="e#1317#1340#0" expanded="true" />
           </folding>
         </state>
       </provider>
