@@ -16,7 +16,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class NetworkOfRestTests extends TestBase {
 
-  @Test(enabled = true)
+  @Test(enabled = false)
   public void networkOfRestTest() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
@@ -30,7 +30,7 @@ public class NetworkOfRestTests extends TestBase {
   public void networkOfRestTestAllListPresent() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
-    app.getAdminHelper().getAddressMainUrl("/manager/restaurants/update?id=2219");
+    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
 
     List<RestDataOfNetworkList> objectFromWebNetwork = app.getMainPageHelper().getNetworkList();
 
