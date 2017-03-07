@@ -1,13 +1,17 @@
 package restaurants.tests;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfNetworkList;
 import restaurants.model.RestDataOfSiteList;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
 
 import static org.testng.Assert.assertEquals;
 
@@ -15,6 +19,11 @@ import static org.testng.Assert.assertEquals;
  * Created by Slava on 03.03.2017.
  */
 public class NetworkOfRestTests extends TestBase {
+  String userName = "bigdig_lptest";;
+  String password= "1tm5b79b";;
+  String dbURL= "jdbc:mysql://bigdig.mysql.ukraine.com.ua/bigdig_lptest";;
+  Connection conn;
+
 
   @Test(enabled = false)
   public void networkOfRestTest() throws InterruptedException {
@@ -28,33 +37,42 @@ public class NetworkOfRestTests extends TestBase {
 
   @Test(enabled = true)
   public void networkOfRestTestAllListPresent() throws InterruptedException {
+
+    List<RestDataOfNetworkList> allNetworkListFromDb = null;
+    try {
+      conn = DriverManager.getConnection(dbURL, userName, password);
+
+      Statement st = conn.createStatement();
+      ResultSet rs = st.executeQuery("select name from restaurant_chain");
+      allNetworkListFromDb = new ArrayList<RestDataOfNetworkList>();
+      while (rs.next()) {
+        RestDataOfNetworkList network = new RestDataOfNetworkList(rs.getString("name"));
+        allNetworkListFromDb.add(network);
+      }
+      System.out.println("из БД:  "+ allNetworkListFromDb);
+      rs.close();
+      st.close();
+      conn.close();
+      // Do something with the Connection
+
+
+    } catch (SQLException ex) {
+      // handle any errors
+      System.out.println("SQLException: " + ex.getMessage());
+      System.out.println("SQLState: " + ex.getSQLState());
+      System.out.println("VendorError: " + ex.getErrorCode());
+    }
+
+
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
 
     List<RestDataOfNetworkList> objectFromWebNetwork = app.getMainPageHelper().getNetworkList();
-
-    List<RestDataOfNetworkList> objectHardNameNetwork = new ArrayList<RestDataOfNetworkList>();
-    String[] listNameOfNetwork = {
-            "!Fest ", "7 Континентов ","Aroma espresso bars","Best Restaurant System",
-            "Carte Blanche ", "Coffee Life", "Confetti", "Egoисты ",
-            "FIRST LINE GROUP", "Forever Friends ", "Fresh Карта", "FreshLine", "Gastra",
-            "Good Food House", "Hesburger", "Il Molino", "Kelembet", "Kumpel 'Group ",
-            "L'Kafa Group ", "Maranello", "Mario's Trattoria", "Melrose Sensuyaki",
-            "Pees Boy Club", "Rainford ", "Restaron ", "Salateira", "Seat & Eat ", "The Loft",
-            "Woka", "Буфет", "ГурманіЯ", "Дом вкуса ", "Здесь весело!", "Итальянский Квартал",
-            "Козырная карта ", "Континент Карт ", "Линия ", "Любовь и Голод ", "Мастергуд ",
-            "Мировая карта", "Мистер Сендвич", "Наша карта", "Путеводная звезда ", "Реста ",
-            "Росинтер", "Сан Сити ", "Сели-Поели ", "Сеть кофеен Шоколадница", "Сеть ресторанов Mafia",
-            "Смак", "Суши WOK", "Таврия В", "Территория вкуса", "Фабрика вкуса ", "Фишка ",
-            "Франс.Уа", "Без мережі", "Якитория"
-    };
-    for (int i=0;i<listNameOfNetwork.length;i++){
-      RestDataOfNetworkList network = new RestDataOfNetworkList(listNameOfNetwork[i]);
-      objectHardNameNetwork.add(network);
-    }
+    System.out.println("Из Веба:  "+objectFromWebNetwork);
+    //Сравнение размеров
+    assertEquals(objectFromWebNetwork.size(), allNetworkListFromDb.size());
     // сравнение множест.
-      assertEquals(objectFromWebNetwork.size(), objectHardNameNetwork.size());
-      assertEquals(new HashSet<Object>(objectFromWebNetwork), new HashSet<Object>(objectHardNameNetwork));
+    assertEquals(new HashSet<Object>(objectFromWebNetwork), new HashSet<Object>(allNetworkListFromDb));
   }
 }

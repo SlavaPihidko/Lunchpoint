@@ -22,8 +22,7 @@ public class RestDataOfNetworkList {
   @Override
   public String toString() {
     return "RestDataOfNetworkList{" +
-            "id=" + id +
-            ", nameNetwork='" + nameNetwork + '\'' +
+            "nameNetwork='" + nameNetwork + '\'' +
             '}';
   }
 

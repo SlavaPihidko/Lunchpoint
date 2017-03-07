@@ -28,12 +28,12 @@ public class DbConnectionTest {
 
       Statement st = conn.createStatement();
       ResultSet rs = st.executeQuery("select chain_id, name from restaurant_chain");
-      List<RestDataOfNetworkList> nt = new ArrayList<RestDataOfNetworkList>();
+      List<RestDataOfNetworkList> allNetworkListFromDb = new ArrayList<RestDataOfNetworkList>();
      while (rs.next()){
-       RestDataOfNetworkList network123 = new RestDataOfNetworkList(rs.getInt("chain_id"), rs.getString("name"));
-       nt.add(network123);
+       RestDataOfNetworkList network = new RestDataOfNetworkList(rs.getInt("chain_id"), rs.getString("name"));
+       allNetworkListFromDb.add(network);
       }
-      System.out.println(nt);
+      System.out.println(allNetworkListFromDb);
       rs.close();
       st.close();
       conn.close();
