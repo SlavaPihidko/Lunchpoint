@@ -68,7 +68,8 @@ public class HelperBase {
   }
 
   public String attribute(By locator, String st){
-    System.out.println( locator +" locator shows " + wd.findElement(locator).getAttribute("value"));
+    System.out.println( locator +" locator of value shows " + wd.findElement(locator).getAttribute("value"));
+    System.out.println( locator +" locator of title  shows " + wd.findElement(locator).getAttribute("title"));
     return wd.findElement(locator).getAttribute(st);
   }
 
