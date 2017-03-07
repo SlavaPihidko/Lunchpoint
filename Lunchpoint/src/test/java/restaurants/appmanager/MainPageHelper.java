@@ -221,11 +221,11 @@ public class MainPageHelper extends HelperBase {
     List<WebElement> elements = wd.findElements(By.cssSelector("div.input-outer.rest-net select#restNet option"));
     for (WebElement element: elements){
       String nameOfNetwork = element.getText();
-      if(nameOfNetwork != "Без мережі"){
+     // if(!nameOfNetwork.equals( "Без мережі")){
       //System.out.println("Из Веба:  "+nameOfNetwork);
       RestDataOfNetworkList network = new RestDataOfNetworkList(nameOfNetwork);
       nameOfNetworks.add(network);}
-    }
+    //}
     return nameOfNetworks;
   }
 }

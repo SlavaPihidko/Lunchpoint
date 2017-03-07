@@ -49,6 +49,9 @@ public class NetworkOfRestTests extends TestBase {
         RestDataOfNetworkList network = new RestDataOfNetworkList(rs.getString("name"));
         allNetworkListFromDb.add(network);
       }
+      // создали обьект с "Без мережі" так как в БД он не хранится
+      RestDataOfNetworkList bezMereji = new RestDataOfNetworkList("Без мережі");
+      allNetworkListFromDb.add(bezMereji);
       System.out.println("из БД:  "+ allNetworkListFromDb);
       rs.close();
       st.close();
