@@ -46,7 +46,7 @@ public class ServicesOfRestTests extends TestBase {
   }
 
 
-  @Test(enabled = true)
+  @Test(enabled = false)
   public void servicesOfRestAbsenceBreakfastAndLunchTest() throws InterruptedException {
     // Отсутствие завтраков и ланчей
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -75,6 +75,55 @@ public class ServicesOfRestTests extends TestBase {
     assertEquals(app.getMainPageHelper()
             .elementPresent(By.cssSelector("div.nav.module-header li[data-id='lunches']")), false);
 
+  }
+
+  @Test(enabled = true)
+  public void servicesOfRestPresenceBookTableTest() throws InterruptedException {
+    // На наличие блока Бронирования столика
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(2000);
+    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+
+    // Если выбран то ничего не делать, если не выбран то становится выбраным
+   if (app.getMainPageHelper().elementPresent(By.cssSelector("div.opt.hint-services input#services3[checked]"))) {
+
+    } else {
+      app.getMainPageHelper().click(By.cssSelector("div.opt.hint-services div.input-outer li > label[for='services3']"));
+    }
+
+    app.getMainPageHelper().saveRestMainPage();
+    app.getMainPageHelper().confirmChangesOfRestMainPage();
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite();
+    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+    // проверка наличия блока Бронирования
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.book-table.booking-view")), true);
+  }
+
+
+  @Test(enabled = true)
+  public void servicesOfRestAbsenceBookTableTest() throws InterruptedException {
+    // На наличие блока Бронирования столика
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(2000);
+    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+
+    // Сделать не выбраным
+    if (app.getMainPageHelper().elementPresent(By.cssSelector("div.opt.hint-services input#services3[checked]"))) {
+      app.getMainPageHelper().click(By.cssSelector("div.opt.hint-services div.input-outer li > label[for='services3']"));
+    }
+
+    app.getMainPageHelper().saveRestMainPage();
+    app.getMainPageHelper().confirmChangesOfRestMainPage();
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite();
+    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+    // проверка отсутствия блока Бронирования
+    assertEquals(app.getMainPageHelper()
+            .elementPresent(By.cssSelector("div.book-table.booking-view")), false);
   }
 }
 
