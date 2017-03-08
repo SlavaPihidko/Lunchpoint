@@ -31,19 +31,23 @@ public class ServicesOfRestTests extends TestBase {
 
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
-/*
+
+    app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
-    // проверка по типу кухни ресторана на страничке ресторана
+    // проверка наличия вкладки с завтраком на страничке ресторана
+   assertEquals(app.getMainPageHelper()
+           .elementPresent(By.cssSelector("div.nav.module-header li[data-id='breakfasts']")), true);
+    // проверка наличия вкладки с ланчем на страничке ресторана
     assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("div.wrap div.cafe-kitchen > p")), "BBQ, Smoked food");
+            .elementPresent(By.cssSelector("div.nav.module-header li[data-id='lunches']")), true);
 
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+   /* app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     Thread.sleep(2000);
     // проверяем в админке на главной страничке ресторана проверяем что типы кухонь такие как перед этим записали
     assertEquals(app.getMainPageHelper()
             .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:first-of-type"),"title"), restEditDataOfMainPageAllField.getTypeOfCuisine());
     assertEquals(app.getMainPageHelper()
-            .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:nth-of-type(2)"),"title"), "Smoked food");
-  */}
+            .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:nth-of-type(2)"),"title"), "Smoked food");*/
+  }
 }
