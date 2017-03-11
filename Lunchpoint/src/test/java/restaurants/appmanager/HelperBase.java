@@ -33,6 +33,10 @@ public class HelperBase {
     wd.findElement(locator).click();
   }
 
+  public void scroll(int y0,int y1){
+    js.executeScript("scrollBy("+y0+","+y1+")");
+  }
+
 
 
   public void type(By locator, String text) {

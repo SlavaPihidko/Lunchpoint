@@ -1,15 +1,11 @@
 package restaurants.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import restaurants.model.RestDataOfMainPage;
 import restaurants.model.RestDataOfNetworkList;
-import restaurants.model.RestDataOfSiteList;
 import restaurants.model.VariantsOfNameOfMainPage;
 
 import java.util.ArrayList;
@@ -78,7 +74,7 @@ public class MainPageHelper extends HelperBase {
     clickCheckboxPaymentOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
     choiceRadiobuttonStatusOfRestMainPage();
-    choiceTypeOfScheduleOfRestMainPage();
+    choiceTypeOfScheduleForEachDayOfRestMainPage();
     js.executeScript("scrollBy(0,600)");
     choiceRadiobuttonAvgPriceOfRestMainPage();
   }
@@ -88,10 +84,12 @@ public class MainPageHelper extends HelperBase {
     dream1Sec();
   }
 
-  private void choiceTypeOfScheduleOfRestMainPage() throws InterruptedException {
-    click(By.cssSelector("div.day-type div#time_schedule1 > span")); // Клик по выпадашке для Робочих дней
+  public void choiceTypeOfScheduleForEachDayOfRestMainPage() throws InterruptedException {
+    // Клик по выпадашке для Робочих дней
+    click(By.cssSelector("div.day-type div#time_schedule1 > span"));
     dream1Sec();
-    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span")); // Клик выбора работы Рабочих Дней Ресторана
+    // Клик выбора работы Рабочих Дней Ресторана для каждого дня
+    click(By.cssSelector("div#time_schedule1 ul.select li[value='each'] > span"));
     dream1Sec();
   }
 
@@ -227,5 +225,68 @@ public class MainPageHelper extends HelperBase {
       nameOfNetworks.add(network);}
     //}
     return nameOfNetworks;
+  }
+
+  public void choiceHoursOfWorkingMon() {
+    //установка часов напонедельник от
+    click(By.cssSelector("div.each-day div.single-day:first-of-type div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper ul.ui-timepicker-list li:nth-of-type(1)"));
+    //установка часов напонедельник до
+    click(By.cssSelector("div.each-day div.single-day:first-of-type div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(49)"));
+  }
+
+  public void choiceHoursOfWorkingTue() {
+    //установка часов на вторник от
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(2) div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(2)"));
+    //установка часов на вторник до
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(2) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(10)"));
+  }
+
+  public void choiceHoursOfWorkingWen() {
+    //установка часов на среду от
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(3) div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(12)"));
+    //установка часов на среду до
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(3) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(12)"));
+  }
+
+  public void choiceHoursOfWorkingThu() {
+    //установка часов на четверг от
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(4) div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(18)"));
+    //установка часов на четверг до
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(4) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(30)"));
+  }
+
+  public void choiceHoursOfWorkingFri() {
+    //установка часов на пятницу от
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(5) div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(14)"));
+    //установка часов на пятницу до
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(5) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(31)"));
+  }
+
+  public void choiceHoursOfWorkingSat() {
+    //установка часов на субботу от
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(6) div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(15)"));
+    //установка часов на субботу до
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(6) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(32)"));
+  }
+
+  public void choiceHoursOfWorkingSun() {
+    //установка часов на восресенье от
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(7) div.outer input.time.ui-timepicker-input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(16)"));
+    //установка часов на воскресенье до
+    click(By.cssSelector("div.each-day div.single-day:nth-of-type(7) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(40)"));
   }
 }
