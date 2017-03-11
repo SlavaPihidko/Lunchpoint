@@ -3,6 +3,9 @@ package restaurants.tests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import static org.testng.Assert.assertEquals;
 
 /**
@@ -10,9 +13,9 @@ import static org.testng.Assert.assertEquals;
  */
 public class EditWorkingHours extends  TestBase {
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void editWorkingHours() throws InterruptedException {
-    // Отсутствие всех 6 методов оплаты
+    
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
@@ -57,5 +60,30 @@ public class EditWorkingHours extends  TestBase {
    //воскресенье
    assertEquals(app.getMainPageHelper()
            .text(By.cssSelector("div.drop li:nth-of-type(7) div.to-right span")),"07:30-19:30");
+ }
+
+ @Test(enabled = true)
+  public void checkHoursOfTodayTest() throws InterruptedException {
+
+   GregorianCalendar newCal = new GregorianCalendar( );
+   int day = newCal.get( Calendar.DAY_OF_WEEK );
+   System.out.println(day);
+
+   app.getAdminHelper().getAddressMainUrl();
+   app.getSiteHelper().searchRestOnTheSite();
+   app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+   app.getSiteHelper().click(By.cssSelector("div.work-time.clear > div.to-right"));
+
+   int[] dayOfWeek = {1,2,3,4,5,6,7};
+   String[] hourOfEachDay = {"07:30 - 19:30", "00:00 - 24:00", "00:30 - 04:30", "05:30 - 05:30", "08:30 - 14:30",
+           "06:30 - 15:00", "07:00 - 15:30"};
+
+   for(int i=0;i<=6;i++) {
+     if (day == dayOfWeek[i]) {
+       assertEquals(app.getMainPageHelper()
+               .text(By.cssSelector("div.work-time.clear > p")), hourOfEachDay[i]);
+     }
+   }
+
  }
 }

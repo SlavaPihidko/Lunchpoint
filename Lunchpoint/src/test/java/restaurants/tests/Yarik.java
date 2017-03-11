@@ -1,6 +1,17 @@
 package restaurants.tests;
 
 import org.testng.annotations.Test;
+import sun.util.calendar.BaseCalendar;
+import sun.util.calendar.LocalGregorianCalendar;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+//import java.sql.Date;
+
 
 /**
  * Created by Slava on 07.03.2017.
@@ -33,6 +44,27 @@ public class Yarik
     System.out.println(String.valueOf(st5)+" ravnu "+(st5==st50));
     System.out.println(String.valueOf(st6)+" ravnu "+(st6.equals(o)));
 
+    //System.out.println(BaseCalendar.Date.toString());
+    // Для получения текущего системного времени достаточно выполнить:
+    long curTime = System.currentTimeMillis();
+
+// Хотите значение типа Date, с этим временем?
+    Date curDate = new Date(curTime);
+
+// Хотите строку в формате, удобном Вам?
+    String curStringDate = new SimpleDateFormat("dd.MM.yyyy").format(curTime);
+    System.out.println(curStringDate);
+
+// Хотите Date из строки, в которой дата с известным шаблоном?
+    try {
+      Date parsedDate = new SimpleDateFormat("dd.MM.yyyy").parse("16.04.2004");
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+
+    GregorianCalendar newCal = new GregorianCalendar( );
+    int day = newCal.get( Calendar.DAY_OF_WEEK );
+    System.out.println(day);
 
 
   }
