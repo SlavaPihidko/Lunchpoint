@@ -105,7 +105,7 @@ public class ServicesOfRestTests extends TestBase {
 
   @Test(enabled = true)
   public void servicesOfRestAbsenceBookTableTest() throws InterruptedException {
-    // На наличие блока Бронирования столика
+    // На отсутствие блока Бронирования столика
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
