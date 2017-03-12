@@ -4,6 +4,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import java.io.File;
+
 /**
  * Created by Slava on 08.01.2017.
  */
@@ -49,6 +51,13 @@ public class HelperBase {
       }
     }
   }
+
+  public void attach(By locator, File file) {
+    if(file != null) { // оставляем дефолтные значения в полях
+        wd.findElement(locator).sendKeys(file.getAbsolutePath());
+      }
+    }
+
 
   protected void dream3Sec() throws InterruptedException {
     Thread.sleep(3000);

@@ -8,6 +8,7 @@ import restaurants.model.RestDataOfMainPage;
 import restaurants.model.RestDataOfNetworkList;
 import restaurants.model.VariantsOfNameOfMainPage;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -306,5 +307,9 @@ public class MainPageHelper extends HelperBase {
     //установка часов на все дни до
     click(By.cssSelector("div.all-days input:nth-of-type(2)"));
     click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(40)"));
+  }
+
+  public void changeImage(File photo) {
+    attach(By.name("rest_cover"),photo);
   }
 }
