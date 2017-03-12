@@ -289,4 +289,22 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.each-day div.single-day:nth-of-type(7) div.outer input.time.ui-timepicker-input:nth-of-type(2)"));
     click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(40)"));
   }
+
+  public void choiceTypeOfScheduleForAllDaysOfRestMainPage() throws InterruptedException {
+    // Клик по выпадашке для Робочих дней
+    click(By.cssSelector("div.day-type div#time_schedule1 > span"));
+    dream1Sec();
+    // Клик выбора работы Рабочих Дней Ресторана для всех дней
+    click(By.cssSelector("div#time_schedule1 ul.select li[value='all'] > span"));
+    dream1Sec();
+  }
+
+  public void choiceHoursForAllDays() {
+    //установка часов на все дни от
+    click(By.cssSelector("div.all-days input:first-of-type"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(2)"));
+    //установка часов на все дни до
+    click(By.cssSelector("div.all-days input:nth-of-type(2)"));
+    click(By.cssSelector("div.ui-timepicker-wrapper:last-of-type ul.ui-timepicker-list li:nth-of-type(40)"));
+  }
 }
