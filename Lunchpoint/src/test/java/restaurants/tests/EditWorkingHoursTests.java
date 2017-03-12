@@ -11,10 +11,10 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 11.03.2017.
  */
-public class EditWorkingHours extends  TestBase {
+public class EditWorkingHoursTests extends  TestBase {
 
-  @Test(enabled = false)
-  public void editWorkingHours() throws InterruptedException {
+  @Test(priority =1)
+  public void editWorkingHoursForEachDay() throws InterruptedException {
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
@@ -33,7 +33,7 @@ public class EditWorkingHours extends  TestBase {
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
 
-  @Test(enabled = false)
+  @Test(priority = 2)
   public void allHoursOfWorkingTests() throws InterruptedException {
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
@@ -62,7 +62,7 @@ public class EditWorkingHours extends  TestBase {
             .text(By.cssSelector("div.drop li:nth-of-type(7) div.to-right span")), "07:30-19:30");
   }
 
-  @Test(enabled = false)
+  @Test(priority = 3)
   public void checkHoursOfTodayAfterEachDayTest() throws InterruptedException {
 // проверка времени работы ресторана на сегодня после того как выставлено на каждый день
     GregorianCalendar newCal = new GregorianCalendar();
@@ -88,7 +88,7 @@ public class EditWorkingHours extends  TestBase {
   }
 
 
-  @Test(enabled = false)
+  @Test(priority = 4)
   public void editWorkingHoursOnAllDays() throws InterruptedException {
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -101,7 +101,7 @@ public class EditWorkingHours extends  TestBase {
   }
 
 
-  @Test(enabled = false)
+  @Test(priority = 5)
   public void allHoursOfWorkingForAllDaysTests() throws InterruptedException {
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
@@ -132,7 +132,7 @@ public class EditWorkingHours extends  TestBase {
             .text(By.cssSelector("div.drop li:nth-of-type(7) div.to-right span")), hours);
   }
 
-  @Test(enabled = true)
+  @Test(priority = 6)
   public void checkHoursOfTodayAfterAllDayTest() throws InterruptedException {
 // проверка времени работы ресторана на сегодня после того как выставлено на все дни
 
@@ -145,8 +145,6 @@ public class EditWorkingHours extends  TestBase {
 
         assertEquals(app.getMainPageHelper()
                 .text(By.cssSelector("div.work-time.clear > p")), hours);
-
-
   }
 
 }
