@@ -1,12 +1,8 @@
 package restaurants.tests;
 
-import org.apache.xpath.SourceTree;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
 import java.io.File;
-
 import static org.testng.Assert.assertEquals;
 
 /**
@@ -25,11 +21,29 @@ public class MainImageOfRestTests extends TestBase {
     app.getMainPageHelper().confirmChangesOfRestMainPage();
     app.getAdminHelper().refreshUrl();
     Thread.sleep(3000);
-    String namePhoto = app.getMainPageHelper()
+    String namePhotoFromMainPage = app.getMainPageHelper()
             .attribute(By.cssSelector("div.bg-inner > img"),"src");
-    System.out.println(namePhoto.length());
-    System.out.println(namePhoto.substring(62,73));
-    assertEquals(namePhoto.substring(62,73),"MainImg.jpg");
+
+
+    System.out.println(namePhotoFromMainPage.length());
+    System.out.println(namePhotoFromMainPage.substring(62,73));
+    assertEquals(namePhotoFromMainPage.substring(62,73),"MainImg.jpg");
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite();
+    // проверяем на сайте в списке что картинка ресторана изменилася
+    String nameImageFromList = app.getMainPageHelper()
+            .attribute(By.cssSelector("div[lng='30.39818839999998'] > a"),"img");
+    System.out.println("nameImageFromList"+nameImageFromList.length());
+    System.out.println(nameImageFromList.substring(35,46));
+    assertEquals(nameImageFromList.substring(35,46),"MainImg.jpg") ;
+
+    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+    // проверяем на сайте на страничке ресторана
+    String nameImageFromPageOfRest = app.getMainPageHelper()
+            .attribute(By.cssSelector("div.bg-inner > img"),"src");
+    System.out.println(nameImageFromPageOfRest.substring(62,73));
+    assertEquals(nameImageFromPageOfRest.substring(62,73), "MainImg.jpg");
 
   }
 
