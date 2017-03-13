@@ -28,6 +28,9 @@ public class TestBase {
   }
 
   RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
+          30.39818839999998,
+          2219,
+          "MainImgFirst.jpg",
           "Slava test123",
           "вул.Академика Белецкого, 9а",
           "viacheslav",
@@ -49,6 +52,9 @@ public class TestBase {
           "Бильярд");
 
   RestDataOfMainPage restEditDataOfMainPageAllField = new RestDataOfMainPage(
+          30.39818839999998,
+          2219,
+          "MainImg.jpg",
           "Slava test selenium",
           "вул.Жолудєва 8",
           "slavkotest123",
@@ -70,6 +76,9 @@ public class TestBase {
           "Cork-fee");
 
   RestDataOfMainPage restNullDataOfMainPageAllField = new RestDataOfMainPage(
+          30.39818839999998,
+          2219,
+          "MainImg.jpg",
           "Slava test123",
           "вул.Академика Белецкого, 9а",
           "viacheslav",

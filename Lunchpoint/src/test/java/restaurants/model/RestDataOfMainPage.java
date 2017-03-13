@@ -1,8 +1,9 @@
 package restaurants.model;
 
-import org.openqa.selenium.support.ui.Select;
-
 public class RestDataOfMainPage {
+  private double lng;
+  private int id;
+  private String nameOfMainImg;
   private String nameOfRest;
   private String addressOfRest;
   private String seoOfRest;
@@ -28,11 +29,11 @@ public class RestDataOfMainPage {
     this.addressOfRest = addressOfRest;
   }
 
-  public RestDataOfMainPage(String nameOfRest){
-    this.nameOfRest = nameOfRest;
-  }
 
-  public RestDataOfMainPage(String nameOfRest,
+   public RestDataOfMainPage(double lng,
+                            int id,
+                            String nameOfMainImg,
+                            String nameOfRest,
                             String addressOfRest,
                             String seoOfRest,
                             String descriptionOfRest,
@@ -51,6 +52,9 @@ public class RestDataOfMainPage {
                             String typeOfCuisine,
                             String additionalServiceOfRest,
                             String otherFeaturesOfRest) {
+    this.lng = lng;
+    this.id = id;
+    this.nameOfMainImg = nameOfMainImg;
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
     this.seoOfRest = seoOfRest;
@@ -70,6 +74,18 @@ public class RestDataOfMainPage {
     this.typeOfCuisine = typeOfCuisine;
     this.additionalServiceOfRest = additionalServiceOfRest;
     this.otherFeaturesOfRest = otherFeaturesOfRest;
+  }
+
+  public double getLng() {
+    return lng;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public String getNameOfMainImg() {
+    return nameOfMainImg;
   }
 
   public String getNameOfRest() {

@@ -37,31 +37,22 @@
       <file leaf-file-name="MainPageHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/MainPageHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="205" column="14" selection-start-line="205" selection-start-column="14" selection-end-line="205" selection-end-column="14" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#15905#15906#0" expanded="true" />
+                <element signature="e#15950#15951#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Invoker.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.10/fa7502ae129b9073f57cfdf7a25f11c9b0270fae/testng-6.10-sources.jar!/org/testng/internal/Invoker.java">
+      <file leaf-file-name="NameOfRestTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/NameOfRestTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10370">
-              <caret line="660" column="0" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#63912#63913#0" expanded="false" />
-                <element signature="e#63953#63954#0" expanded="false" />
-                <element signature="e#66051#66052#0" expanded="false" />
-                <element signature="e#66112#66113#0" expanded="false" />
-                <element signature="e#67128#67129#0" expanded="false" />
-                <element signature="e#67205#67206#0" expanded="false" />
-                <element signature="e#67770#67771#0" expanded="false" />
-                <element signature="e#67810#67811#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,56 +60,18 @@
       <file leaf-file-name="HelperBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/HelperBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#755#756#0" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentMethodTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/PaymentMethodTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
-              <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditWorkingHoursTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditWorkingHoursTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2516">
-              <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TelOfRestTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TelOfRestTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="782">
+              <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Yarik.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/Yarik.java">
+      <file leaf-file-name="MainImageOfRestTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/MainImageOfRestTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+            <state relative-caret-position="218">
+              <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,21 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailsOfRestTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EmailsOfRestTests.java">
+      <file leaf-file-name="SeoUrlTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SeoUrlTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="0" selection-start-line="21" selection-start-column="4" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditRestMenuPageTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditRestMenuPageTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -149,8 +92,54 @@
       <file leaf-file-name="EditRestMainPageTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditRestMainPageTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="595">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TestBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestDataOfMainPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfMainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="80" column="3" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+              <folding>
+                <element signature="e#4100#4101#0" expanded="true" />
+                <element signature="e#4130#4131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/AdminHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+              <folding>
+                <element signature="e#1484#1485#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditWorkingHoursTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditWorkingHoursTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -494,7 +483,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/ApplicationManager.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/AddToCart.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/PreviewImage.java" />
@@ -506,7 +494,6 @@
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/SiteRestPageHelper.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SiteRestListTest.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/selectingTypeOfRestTests.java" />
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfMainPage.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SelectingTypeOfRestTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfSiteList.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/PresenceElementsMainPage.java" />
@@ -515,8 +502,6 @@
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/LoginTestFB.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/NameDataOfRest.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/ApplicationManager.java" />
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SeoUrlTests.java" />
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/AdminHelper.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/SiteHelper.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/NameOfRestTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SearchTests.java" />
@@ -527,7 +512,6 @@
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TelOfRestTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SitePageOfRest.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EmailsOfRestTests.java" />
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TestBase.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/IconsSocNetworkTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/IndexOfRestTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/build.gradle" />
@@ -540,11 +524,16 @@
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/OtherFeaturesOfRestTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/ServicesOfRestTests.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/PaymentMethodTests.java" />
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/HelperBase.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/Yarik.java" />
-        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/MainPageHelper.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditWorkingHours.java" />
         <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditWorkingHoursTests.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/HelperBase.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/MainPageHelper.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/AdminHelper.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfMainPage.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SeoUrlTests.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TestBase.java" />
+        <option value="$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/MainImageOfRestTests.java" />
       </list>
     </option>
   </component>
@@ -586,7 +575,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -603,6 +592,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Lunchpoint" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lunchpoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lunchpoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -711,7 +718,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -733,106 +740,7 @@
       <recent name="restaurants" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="false" name="AdditionalServicesTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="restaurants.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Lunchpoint_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="restaurants.tests" />
-      <option name="MAIN_CLASS_NAME" value="restaurants.tests.AdditionalServicesTests" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="OtherFeaturesOfRestTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="restaurants.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Lunchpoint_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="restaurants.tests" />
-      <option name="MAIN_CLASS_NAME" value="restaurants.tests.OtherFeaturesOfRestTests" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="PaymentMethodTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="restaurants.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Lunchpoint_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="restaurants.tests" />
-      <option name="MAIN_CLASS_NAME" value="restaurants.tests.PaymentMethodTests" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="TestNG.MainImageOfRestTests.changeMainImageOnSiteListTests">
     <configuration default="false" name="EditWorkingHoursTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -866,7 +774,7 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="Yarik" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MainImageOfRestTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="restaurants.tests.*" />
@@ -878,10 +786,109 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="restaurants.tests" />
-      <option name="MAIN_CLASS_NAME" value="restaurants.tests.Yarik" />
+      <option name="MAIN_CLASS_NAME" value="restaurants.tests.MainImageOfRestTests" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainImageOfRestTests.currentWorkingDirectory" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="restaurants.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Lunchpoint_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="restaurants.tests" />
+      <option name="MAIN_CLASS_NAME" value="restaurants.tests.MainImageOfRestTests" />
+      <option name="METHOD_NAME" value="currentWorkingDirectory" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainImageOfRestTests.changeMainImageTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="restaurants.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Lunchpoint_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="restaurants.tests" />
+      <option name="MAIN_CLASS_NAME" value="restaurants.tests.MainImageOfRestTests" />
+      <option name="METHOD_NAME" value="changeMainImageTests" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainImageOfRestTests.changeMainImageOnSiteListTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="restaurants.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Lunchpoint_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="restaurants.tests" />
+      <option name="MAIN_CLASS_NAME" value="restaurants.tests.MainImageOfRestTests" />
+      <option name="METHOD_NAME" value="changeMainImageOnSiteListTests" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/Lunchpoint" />
@@ -1144,19 +1151,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.AdditionalServicesTests" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.OtherFeaturesOfRestTests" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.PaymentMethodTests" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.EditWorkingHoursTests" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.Yarik" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.EditWorkingHoursTests" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests.currentWorkingDirectory" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests.changeMainImageTests" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests.changeMainImageOnSiteListTests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.EditWorkingHoursTests" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.Yarik" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.PaymentMethodTests" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.OtherFeaturesOfRestTests" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.AdditionalServicesTests" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests.changeMainImageOnSiteListTests" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests.changeMainImageTests" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.MainImageOfRestTests.currentWorkingDirectory" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.EditWorkingHoursTests" />
       </list>
     </recent_temporary>
   </component>
@@ -1174,35 +1181,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EditWorkingHours - 2017.03.12 at 00h 37m 35s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests - 2017.03.14 at 00h 56m 23s.xml">
+      <configuration name="MainImageOfRestTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 00h 39m 11s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageOnSiteListTests - 2017.03.14 at 01h 19m 32s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageOnSiteListTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 13h 19m 48s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageOnSiteListTests - 2017.03.14 at 01h 20m 46s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageOnSiteListTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 13h 34m 38s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageOnSiteListTests - 2017.03.14 at 01h 22m 33s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageOnSiteListTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 13h 48m 42s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageTests - 2017.03.12 at 22h 34m 52s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 13h 52m 31s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageTests - 2017.03.12 at 23h 12m 09s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 13h 57m 59s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageTests - 2017.03.12 at 23h 13m 35s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHours - 2017.03.12 at 14h 04m 24s.xml">
-      <configuration name="EditWorkingHours" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageTests - 2017.03.12 at 23h 17m 02s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="EditWorkingHoursTests - 2017.03.12 at 14h 41m 21s.xml">
-      <configuration name="EditWorkingHoursTests" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageTests - 2017.03.12 at 23h 19m 31s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="Yarik - 2017.03.12 at 00h 05m 32s.xml">
-      <configuration name="Yarik" configurationId="TestNG" />
+    <history-entry file="MainImageOfRestTests_changeMainImageTests - 2017.03.12 at 23h 20m 36s.xml">
+      <configuration name="MainImageOfRestTests.changeMainImageTests" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1220,17 +1227,18 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718122" sideWeight="0.49662733" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.49662733" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3480392" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43300653" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49019608" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1242,7 +1250,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -1273,13 +1280,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/PreviewImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/ApplicationManager2.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-api/2.53.1/de4719beceae211f44c038c59691b4aea1b3ebd2/selenium-api-2.53.1-sources.jar!/org/openqa/selenium/WebDriver.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1300,17 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SeoUrlTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1404,19 +1393,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/NameOfRestTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lunchpoint/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,14 +1418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfSiteList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1464,7 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1493,7 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1504,24 +1474,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfMainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TypeOfRestTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/AdminHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1557,14 +1513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SitePageOfRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1576,41 +1524,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditRestMainPageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/HelperBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.10/fa7502ae129b9073f57cfdf7a25f11c9b0270fae/testng-6.10-sources.jar!/org/testng/internal/Invoker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10370">
           <caret line="660" column="0" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#63912#63913#0" expanded="false" />
-            <element signature="e#63953#63954#0" expanded="false" />
-            <element signature="e#66051#66052#0" expanded="false" />
-            <element signature="e#66112#66113#0" expanded="false" />
-            <element signature="e#67128#67129#0" expanded="false" />
-            <element signature="e#67205#67206#0" expanded="false" />
-            <element signature="e#67770#67771#0" expanded="false" />
-            <element signature="e#67810#67811#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1618,9 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2159">
           <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1635,7 +1549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="23" column="0" selection-start-line="21" selection-start-column="4" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1643,9 +1556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
           <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1653,24 +1563,101 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SitePageOfRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditWorkingHoursTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/HelperBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/NameOfRestTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/MainPageHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="205" column="14" selection-start-line="205" selection-start-column="14" selection-end-line="205" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#15905#15906#0" expanded="true" />
+            <element signature="e#15950#15951#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditWorkingHoursTests.java">
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/model/RestDataOfMainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+        <state relative-caret-position="1326">
+          <caret line="80" column="3" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+          <folding>
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4130#4131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/SeoUrlTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/EditRestMainPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/appmanager/AdminHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+          <folding>
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lunchpoint/src/test/java/restaurants/tests/MainImageOfRestTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

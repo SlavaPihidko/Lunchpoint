@@ -16,7 +16,11 @@ public class SeoUrlTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest("Slava");
-    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage("Slava",
+    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
+            30.39818839999998,
+            2219,
+            "MainImgFirst.jpg",
+            "Slava",
             "вул.Жолудєва 8",
             "slavkotest1234",
             "Здесь описание ресторана",
