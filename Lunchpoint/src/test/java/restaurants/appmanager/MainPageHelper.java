@@ -80,7 +80,7 @@ public class MainPageHelper extends HelperBase {
     choiceRadiobuttonAvgPriceOfRestMainPage();
   }
 
-  private void choiceRadiobuttonAvgPriceOfRestMainPage() throws InterruptedException {
+  public void choiceRadiobuttonAvgPriceOfRestMainPage() throws InterruptedException {
     click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream1Sec();
   }

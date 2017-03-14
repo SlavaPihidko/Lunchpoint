@@ -17,10 +17,10 @@ public class EmailsOfRestTests extends TestBase {
     app.getAdminHelper().initOfEditRest();
   // проверяем записалось ли то значение емейла которое вводили
     assertEquals(app.getMainPageHelper()
-            .attribute(By.name("Restaurants[email]"),"value"),restEditDataOfMainPageAllField.getEmailOfRest());
+            .attribute(By.name("Restaurants[email]"),"value"), restEditDataOfMainPg.getEmailOfRest());
     // проверяем записалось ли то значение емейла для букинга которое вводили
     assertEquals(app.getMainPageHelper()
-            .attribute(By.name("Restaurants[booking_email]"),"value"),restEditDataOfMainPageAllField.getBookingEmailOfRest());
+            .attribute(By.name("Restaurants[booking_email]"),"value"), restEditDataOfMainPg.getBookingEmailOfRest());
 
   }
 }

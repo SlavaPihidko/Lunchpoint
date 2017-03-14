@@ -25,7 +25,7 @@ public class TelOfRestTests extends TestBase {
             .text(By.cssSelector("div.tel > p"));
     System.out.println("tel="+tel);
 
-    String telExpected = restEditDataOfMainPageAllField.getTelOfRest();
+    String telExpected = restEditDataOfMainPg.getTelOfRest();
     System.out.println("telExpected = "+telExpected);
     String part1 = telExpected.substring(0,3);
     String part2 = telExpected.substring(3,6);

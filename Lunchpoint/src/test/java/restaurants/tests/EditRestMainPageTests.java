@@ -31,7 +31,7 @@ public void testEditRestMainPageAllField() throws InterruptedException {
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
 
-    app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restEditDataOfMainPageAllField);
+    app.getMainPageHelper().fillAllOfRestFieldOnMainPage(restEditDataOfMainPg);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
      }

@@ -51,7 +51,7 @@ public class TestBase {
           "Еда с собой",
           "Бильярд");
 
-  RestDataOfMainPage restEditDataOfMainPageAllField = new RestDataOfMainPage(
+  RestDataOfMainPage restEditDataOfMainPg = new RestDataOfMainPage(
           30.39818839999998,
           2219,
           "MainImg.jpg",

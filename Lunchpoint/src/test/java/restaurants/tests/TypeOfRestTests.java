@@ -27,6 +27,6 @@ public class TypeOfRestTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
     assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("span#select2-restType-container")), restEditDataOfMainPageAllField.getTypeOfRest());
+            .text(By.cssSelector("span#select2-restType-container")), restEditDataOfMainPg.getTypeOfRest());
   }
 }

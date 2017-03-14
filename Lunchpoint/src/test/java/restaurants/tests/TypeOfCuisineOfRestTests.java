@@ -25,7 +25,7 @@ public class TypeOfCuisineOfRestTests extends TestBase {
     Thread.sleep(2000);
     // проверяем в админке на главной страничке ресторана проверяем что типы кухонь такие как перед этим записали
     assertEquals(app.getMainPageHelper()
-            .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:first-of-type"),"title"), restEditDataOfMainPageAllField.getTypeOfCuisine());
+            .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:first-of-type"),"title"), restEditDataOfMainPg.getTypeOfCuisine());
     assertEquals(app.getMainPageHelper()
             .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:nth-of-type(2)"),"title"), "Smoked food");
   }

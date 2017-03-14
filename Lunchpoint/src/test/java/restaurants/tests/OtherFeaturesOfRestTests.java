@@ -16,6 +16,6 @@ public class OtherFeaturesOfRestTests extends TestBase {
     Thread.sleep(2000);
     assertEquals(app.getMainPageHelper()
                     .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:nth-of-type(2)")),
-            restEditDataOfMainPageAllField.getOtherFeaturesOfRest());
+            restEditDataOfMainPg.getOtherFeaturesOfRest());
   }
 }

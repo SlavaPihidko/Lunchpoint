@@ -16,6 +16,6 @@ public class IndexOfRestTests extends TestBase {
     app.getAdminHelper().initOfEditRest();
     // проверяем записалось ли то значение индекса которое вводили
     assertEquals(app.getMainPageHelper()
-            .attribute(By.id("restIndex"),"value"),restEditDataOfMainPageAllField.getIndexOfRest());
+            .attribute(By.id("restIndex"),"value"), restEditDataOfMainPg.getIndexOfRest());
   }
 }

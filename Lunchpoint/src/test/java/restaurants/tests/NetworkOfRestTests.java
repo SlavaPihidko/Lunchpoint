@@ -1,17 +1,13 @@
 package restaurants.tests;
 
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfNetworkList;
-import restaurants.model.RestDataOfSiteList;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import static org.testng.Assert.assertEquals;
 
@@ -32,7 +28,7 @@ public class NetworkOfRestTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем записалось ли то значение сети ресторана которое выбрали
     assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")),restEditDataOfMainPageAllField.getNetworkOfRest());
+            .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")), restEditDataOfMainPg.getNetworkOfRest());
   }
 
   @Test(enabled = true)

@@ -66,7 +66,7 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterSiteOfRestMainPage(restEditDataOfMainPageAllField);
+    app.getMainPageHelper().enterSiteOfRestMainPage(restEditDataOfMainPg);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
@@ -87,7 +87,7 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.fb"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterFbOfRestMainPage(restEditDataOfMainPageAllField);
+    app.getMainPageHelper().enterFbOfRestMainPage(restEditDataOfMainPg);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
@@ -108,7 +108,7 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.inst"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterInstagramOfRestMainPage(restEditDataOfMainPageAllField);
+    app.getMainPageHelper().enterInstagramOfRestMainPage(restEditDataOfMainPg);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
@@ -129,7 +129,7 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.tw"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterTwitterOfRestMainPage(restEditDataOfMainPageAllField);
+    app.getMainPageHelper().enterTwitterOfRestMainPage(restEditDataOfMainPg);
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
   }
