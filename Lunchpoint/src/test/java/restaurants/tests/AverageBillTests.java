@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -15,7 +16,7 @@ public class AverageBillTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().
-            getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
+            getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
     app.getMainPageHelper().choiceRadiobuttonAvgPriceOfRestMainPage();
     app.getMainPageHelper().saveRestMainPage();
     app.getMainPageHelper().confirmChangesOfRestMainPage();
@@ -30,7 +31,7 @@ public class AverageBillTests extends TestBase {
     app.getSiteHelper().searchRestOnTheSite();
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector(String.format("div[lng='%s'] > div.content div.min-bill.clear > span",
-                    restEditDataOfMainPg.getLng()))), "<100 грн");
+                    MainPgUtils.restEditDataOfMainPg.getLng()))), "<100 грн");
 
   }
 
@@ -38,7 +39,7 @@ public class AverageBillTests extends TestBase {
   public void averageBillOnSitePg() throws InterruptedException {
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
     // проверка по среднему чеку
     assertEquals(app.getMainPageHelper()
             .text(By.cssSelector("div.wrap div.min-bill.clear > span")), "<100 грн");
