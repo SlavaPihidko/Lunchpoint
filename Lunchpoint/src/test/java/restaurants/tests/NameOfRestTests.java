@@ -19,26 +19,26 @@ public class NameOfRestTests extends TestBase {
     RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
             "Slava2",
             "вул.Жолудєва 8");
-    app.getMainPageHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
 
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     // проверяем на сайте в списке что имя ресторана такое как ему изменили
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),restDataOfMainPageAllField.getNameOfRest()) ;
     app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
     // проверяем на сайте на страничке ресторана
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.cafe-name")), restDataOfMainPageAllField.getNameOfRest());
 
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .attribute(By.id("edit_restName"),"value"), restDataOfMainPageAllField.getNameOfRest());
     // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.cafe-name")),restDataOfMainPageAllField.getNameOfRest());
   }
 
@@ -62,14 +62,14 @@ public class NameOfRestTests extends TestBase {
       app.getSiteHelper().enterRestName(nameDataOfRest[i]);
       app.getSiteHelper().searchRestButton();
       // проверяем на сайте в списке что имя ресторана такое как ему изменили
-      assertEquals(app.getMainPageHelper()
+      assertEquals(app.getMainPgHelper()
               .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),nameDataOfRest[i]) ;
       app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
       // проверяем на сайте на страничке ресторана
-      assertEquals(app.getMainPageHelper()
+      assertEquals(app.getMainPgHelper()
               .text(By.cssSelector("div.cafe-name")), nameDataOfRest[i]);
       // переход в админку
-      app.getMainPageHelper().click(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"));
+      app.getMainPgHelper().click(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"));
       app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", nameDataOfRest[i]);
       app.getAdminHelper().gotoAddressFieldInAdminPanel();
       // Проверяем на налие ресторана с указаным id
@@ -77,22 +77,22 @@ public class NameOfRestTests extends TestBase {
               .elementPresent(By.cssSelector("a[href='/manager/restaurants/update?id=2219']")), true);
       app.getAdminHelper().gotoEditRestInAdminPanel();
       // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
-      assertEquals(app.getMainPageHelper()
+      assertEquals(app.getMainPgHelper()
               .attribute(By.id("edit_restName"),"value"), nameDataOfRest[i]);
       // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
-      assertEquals(app.getMainPageHelper()
+      assertEquals(app.getMainPgHelper()
               .text(By.cssSelector("div.cafe-name")),nameDataOfRest[i]);
       // делаем цикл по массиву
       if (i != nameDataOfRest.length - 1) {
-        app.getMainPageHelper().fillNameOfRest(nameDataOfRest, i + 1);
-        app.getMainPageHelper().saveRestMainPage();
-        app.getMainPageHelper().confirmChangesOfRestMainPage();
-        app.getMainPageHelper().gotoTabRestInAdminPanel();
+        app.getMainPgHelper().fillNameOfRest(nameDataOfRest, i + 1);
+        app.getMainPgHelper().saveRestMainPg();
+        app.getMainPgHelper().confirmChangesOfRestMainPg();
+        app.getMainPgHelper().gotoTabRestInAdminPanel();
       } else {
-        app.getMainPageHelper().fillNameOfRest(nameDataOfRest, i);
-        app.getMainPageHelper().saveRestMainPage();
-        app.getMainPageHelper().confirmChangesOfRestMainPage();
-        app.getMainPageHelper().gotoTabRestInAdminPanel();
+        app.getMainPgHelper().fillNameOfRest(nameDataOfRest, i);
+        app.getMainPgHelper().saveRestMainPg();
+        app.getMainPgHelper().confirmChangesOfRestMainPg();
+        app.getMainPgHelper().gotoTabRestInAdminPanel();
       }
     }
     app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", "slava123");
@@ -104,10 +104,10 @@ public class NameOfRestTests extends TestBase {
         app.getAdminHelper().gotoAddressFieldInAdminPanel();
       }
         app.getAdminHelper().gotoEditRestInAdminPanel();
-        app.getMainPageHelper().fillNameOfRest(nameDataOfRestNegative, y);
-        app.getMainPageHelper().saveRestMainPage();
-        app.getMainPageHelper().confirmChangesOfRestMainPage();
-        app.getMainPageHelper().gotoTabRestInAdminPanel();
+        app.getMainPgHelper().fillNameOfRest(nameDataOfRestNegative, y);
+        app.getMainPgHelper().saveRestMainPg();
+        app.getMainPgHelper().confirmChangesOfRestMainPg();
+        app.getMainPgHelper().gotoTabRestInAdminPanel();
        if(y != nameDataOfRestNegative.length - 1) {
         app.getAdminHelper().searchRestInAdminPanel("RestaurantsLangSearch[name]", "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1");
         app.getAdminHelper().gotoAddressFieldInAdminPanel();

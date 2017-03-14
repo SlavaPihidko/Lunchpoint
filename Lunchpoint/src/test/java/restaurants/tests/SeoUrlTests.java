@@ -39,12 +39,12 @@ public class SeoUrlTests extends TestBase {
             "BBQ",
             "Happy hours",
             "Cork-fee");
-    app.getMainPageHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
-    app.getMainPageHelper().enterSeoUrlOfRestMainPage(restDataOfMainPageAllField);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
+    app.getMainPgHelper().enterSeoUrlOfRestMainPage(restDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
     app.getAdminHelper().getAddressMainUrl("slavkotest1234");
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.cafe-name")), restDataOfMainPageAllField.getNameOfRest());
 
   }

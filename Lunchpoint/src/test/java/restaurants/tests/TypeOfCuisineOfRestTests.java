@@ -19,15 +19,15 @@ public class TypeOfCuisineOfRestTests extends TestBase {
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
     // проверка по типу кухни ресторана на страничке ресторана
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.wrap div.cafe-kitchen > p")), "BBQ, Smoked food");
 
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     Thread.sleep(2000);
     // проверяем в админке на главной страничке ресторана проверяем что типы кухонь такие как перед этим записали
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:first-of-type"),"title"), MainPgUtils.restEditDataOfMainPg.getTypeOfCuisine());
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:nth-of-type(2)"),"title"), "Smoked food");
   }
 }

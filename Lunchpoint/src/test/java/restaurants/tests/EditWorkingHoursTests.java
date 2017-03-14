@@ -19,18 +19,18 @@ public class EditWorkingHoursTests extends  TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().choiceTypeOfScheduleForEachDayOfRestMainPage();
-    app.getMainPageHelper().scroll(0, 200);
-    app.getMainPageHelper().choiceHoursOfWorkingMon();
-    app.getMainPageHelper().choiceHoursOfWorkingTue();
-    app.getMainPageHelper().choiceHoursOfWorkingWen();
-    app.getMainPageHelper().choiceHoursOfWorkingThu();
-    app.getMainPageHelper().choiceHoursOfWorkingFri();
-    app.getMainPageHelper().choiceHoursOfWorkingSat();
-    app.getMainPageHelper().choiceHoursOfWorkingSun();
+    app.getMainPgHelper().choiceTypeOfScheduleForEachDayOfRestMainPage();
+    app.getMainPgHelper().scroll(0, 200);
+    app.getMainPgHelper().choiceHoursOfWorkingMon();
+    app.getMainPgHelper().choiceHoursOfWorkingTue();
+    app.getMainPgHelper().choiceHoursOfWorkingWen();
+    app.getMainPgHelper().choiceHoursOfWorkingThu();
+    app.getMainPgHelper().choiceHoursOfWorkingFri();
+    app.getMainPgHelper().choiceHoursOfWorkingSat();
+    app.getMainPgHelper().choiceHoursOfWorkingSun();
 
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
   @Test(priority = 2)
@@ -40,25 +40,25 @@ public class EditWorkingHoursTests extends  TestBase {
     app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
     app.getSiteHelper().click(By.cssSelector("div.work-time.clear > div.to-right"));
     //понедельник
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:first-of-type div.to-right span")), "00:00-24:00");
     // вторник
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(2) div.to-right span")), "00:30-04:30");
     //среда
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(3) div.to-right span")), "05:30-05:30");
     //четверг
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(4) div.to-right span")), "08:30-14:30");
     //пятница
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(5) div.to-right span")), "06:30-15:00");
     //суббота
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(6) div.to-right span")), "07:00-15:30");
     //воскресенье
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(7) div.to-right span")), "07:30-19:30");
   }
 
@@ -80,7 +80,7 @@ public class EditWorkingHoursTests extends  TestBase {
 
     for (int i = 0; i <= 6; i++) {
       if (day == dayOfWeek[i]) {
-        assertEquals(app.getMainPageHelper()
+        assertEquals(app.getMainPgHelper()
                 .text(By.cssSelector("div.work-time.clear > p")), hourOfEachDay[i]);
       }
     }
@@ -94,10 +94,10 @@ public class EditWorkingHoursTests extends  TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().choiceTypeOfScheduleForAllDaysOfRestMainPage();
-    app.getMainPageHelper().choiceHoursForAllDays();
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().choiceTypeOfScheduleForAllDaysOfRestMainPage();
+    app.getMainPgHelper().choiceHoursForAllDays();
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
 
@@ -110,25 +110,25 @@ public class EditWorkingHoursTests extends  TestBase {
 
     String hours = "00:30-19:30";
     //понедельник
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:first-of-type div.to-right span")), hours);
     // вторник
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(2) div.to-right span")), hours);
     //среда
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(3) div.to-right span")), hours);
     //четверг
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(4) div.to-right span")), hours);
     //пятница
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(5) div.to-right span")), hours);
     //суббота
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(6) div.to-right span")), hours);
     //воскресенье
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.drop li:nth-of-type(7) div.to-right span")), hours);
   }
 
@@ -143,7 +143,7 @@ public class EditWorkingHoursTests extends  TestBase {
 
    String hours = "00:30 - 19:30";
 
-        assertEquals(app.getMainPageHelper()
+        assertEquals(app.getMainPgHelper()
                 .text(By.cssSelector("div.work-time.clear > p")), hours);
   }
 

@@ -20,17 +20,17 @@ public class SearchTests extends TestBase {
     RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
             "Slava2",
             "вул.Жолудєва 8");
-    app.getMainPageHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
+    app.getMainPgHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
     VariantsOfNameOfMainPage variantsOfNameOfMainPage = new VariantsOfNameOfMainPage("Masha\n", "Dima\n", "Саша123\n");
     String[] variantsOfNameOfMainPageMas = {"Masha\n", "Dima\n", "Саша123\n"};
-    app.getMainPageHelper().enterVariantsOfNameOfRestMainPage(variantsOfNameOfMainPage);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterVariantsOfNameOfRestMainPage(variantsOfNameOfMainPage);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
     app.getAdminHelper().getAddressMainUrl();
         for(int i=0;i<variantsOfNameOfMainPageMas.length;i++) {
           app.getSiteHelper().searchRestOnTheSite("Київ", variantsOfNameOfMainPageMas[i]);
           // проверяем на сайте в списке что имя ресторана такое как ему изменили
-          assertEquals(app.getMainPageHelper()
+          assertEquals(app.getMainPgHelper()
                   .text(By.cssSelector("div[lng='30.39818839999998'] div.title")), restDataOfMainPageAllField.getNameOfRest());
 }
   }
@@ -40,11 +40,11 @@ public class SearchTests extends TestBase {
 
     app.getSiteHelper().searchRestOnTheSite("Київ", "xxxyyy");
 
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
               .text(By.cssSelector("div.results-line div.title > p")), "Показано 0 результатов");
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.title-h1")), "Рестораны в Киеве");
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.useful-info")),true);
     }
   }

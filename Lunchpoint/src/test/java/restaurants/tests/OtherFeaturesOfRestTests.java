@@ -15,7 +15,7 @@ public class OtherFeaturesOfRestTests extends TestBase {
 
     app.getAdminHelper().getAddressMainUrl("slavkotest123");
     Thread.sleep(2000);
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
                     .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:nth-of-type(2)")),
             MainPgUtils.restEditDataOfMainPg.getOtherFeaturesOfRest());
   }

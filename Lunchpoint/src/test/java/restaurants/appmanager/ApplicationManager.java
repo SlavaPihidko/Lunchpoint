@@ -68,7 +68,7 @@ public class ApplicationManager {
     return adminHelper;
   }
 
-  public MainPageHelper getMainPageHelper() {
+  public MainPageHelper getMainPgHelper() {
     return mainPageHelper;
   }
 

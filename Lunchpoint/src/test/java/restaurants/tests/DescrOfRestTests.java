@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -18,12 +19,12 @@ public class DescrOfRestTests extends TestBase {
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
     // проверяем на сайте на страничке ресторана
-    assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("div.description div.text > p")), restDataOfMainPageAllField.getDescriptionOfRest());
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.description div.text > p")), MainPgUtils.restDataOfMainPageAllField.getDescriptionOfRest());
 
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
-    assertEquals(app.getMainPageHelper()
-            .attribute(By.name("RestaurantsLang[description]"),"value"), restDataOfMainPageAllField.getDescriptionOfRest());
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.name("RestaurantsLang[description]"),"value"), MainPgUtils.restDataOfMainPageAllField.getDescriptionOfRest());
   }
 }

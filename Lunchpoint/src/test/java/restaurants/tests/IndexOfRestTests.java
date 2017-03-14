@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -15,7 +16,7 @@ public class IndexOfRestTests extends TestBase {
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
     // проверяем записалось ли то значение индекса которое вводили
-    assertEquals(app.getMainPageHelper()
-            .attribute(By.id("restIndex"),"value"), restEditDataOfMainPg.getIndexOfRest());
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.id("restIndex"),"value"), MainPgUtils.restEditDataOfMainPg.getIndexOfRest());
   }
 }

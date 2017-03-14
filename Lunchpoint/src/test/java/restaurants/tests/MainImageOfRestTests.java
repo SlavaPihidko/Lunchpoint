@@ -2,6 +2,8 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
+
 import java.io.File;
 import static org.testng.Assert.assertEquals;
 
@@ -12,51 +14,51 @@ public class MainImageOfRestTests extends TestBase {
 
   @Test(enabled = true)
   public void changeMainImageInAdminPanelTests() throws InterruptedException {
-    File mainPhoto = new File("src/test/resources/" + restEditDataOfMainPg.getNameOfMainImg());
+    File mainPhoto = new File("src/test/resources/" + MainPgUtils.restEditDataOfMainPg.getNameOfMainImg());
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().
-            getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
-    app.getMainPageHelper().changeImage(mainPhoto);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
-    app.getAdminHelper().refreshPage();
+            getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().changeImage(mainPhoto);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
+    app.getAdminHelper().refreshPg();
     Thread.sleep(3000);
-    String namePhotoFromMainPage = app.getMainPageHelper()
+    String namePhotoFromMainPage = app.getMainPgHelper()
             .attribute(By.cssSelector("div.bg-inner > img"), "src");
 
     System.out.println("namePhotoFromMainPage: "+namePhotoFromMainPage.length());
-    int startOfName = namePhotoFromMainPage.length() - restEditDataOfMainPg.getNameOfMainImg().length();
+    int startOfName = namePhotoFromMainPage.length() - MainPgUtils.restEditDataOfMainPg.getNameOfMainImg().length();
     System.out.println(namePhotoFromMainPage.substring(startOfName, namePhotoFromMainPage.length()));
     assertEquals(namePhotoFromMainPage
-            .substring(startOfName, namePhotoFromMainPage.length()), restEditDataOfMainPg.getNameOfMainImg());
+            .substring(startOfName, namePhotoFromMainPage.length()), MainPgUtils.restEditDataOfMainPg.getNameOfMainImg());
   }
 
     @Test(enabled = true)
     public void changeMainImageOnSiteListTests() throws InterruptedException {
       app.getSiteHelper().searchRestOnTheSite();
       // проверяем на сайте в списке что картинка ресторана изменилася
-      String nameImageFromList = app.getMainPageHelper()
-              .attribute(By.cssSelector(String.format("div[lng='%s'] > a", restEditDataOfMainPg.getLng())), "img");
+      String nameImageFromList = app.getMainPgHelper()
+              .attribute(By.cssSelector(String.format("div[lng='%s'] > a", MainPgUtils.restEditDataOfMainPg.getLng())), "img");
       System.out.println("nameImageFromList: " + nameImageFromList.length());
-      int startOfName = nameImageFromList.length() - restEditDataOfMainPg.getNameOfMainImg().length();
+      int startOfName = nameImageFromList.length() - MainPgUtils.restEditDataOfMainPg.getNameOfMainImg().length();
       System.out.println(nameImageFromList.substring(startOfName, nameImageFromList.length()));
       assertEquals(nameImageFromList
-              .substring(startOfName, nameImageFromList.length()), restEditDataOfMainPg.getNameOfMainImg());
+              .substring(startOfName, nameImageFromList.length()), MainPgUtils.restEditDataOfMainPg.getNameOfMainImg());
     }
 
     @Test
     public void changeMainImageOnSitePageTests() throws InterruptedException {
       app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
     // проверяем на сайте на страничке ресторана
-    String nameImageFromPageOfRest = app.getMainPageHelper()
+    String nameImageFromPageOfRest = app.getMainPgHelper()
             .attribute(By.cssSelector("div.bg-inner > img"),"src");
-      int startOfName = nameImageFromPageOfRest.length() - restEditDataOfMainPg.getNameOfMainImg().length();
+      int startOfName = nameImageFromPageOfRest.length() - MainPgUtils.restEditDataOfMainPg.getNameOfMainImg().length();
     System.out.println(nameImageFromPageOfRest.substring(startOfName,nameImageFromPageOfRest.length()));
     assertEquals(nameImageFromPageOfRest
-            .substring(startOfName,nameImageFromPageOfRest.length()), restEditDataOfMainPg.getNameOfMainImg());
+            .substring(startOfName,nameImageFromPageOfRest.length()), MainPgUtils.restEditDataOfMainPg.getNameOfMainImg());
   }
 
   @Test(enabled = false)

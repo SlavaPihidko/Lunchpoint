@@ -3,7 +3,7 @@ package restaurants.tests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfNetworkList;
-import restaurants.utils.DataBase;
+import restaurants.utils.DataBaseUtils;
 import restaurants.utils.MainPgUtils;
 
 import java.sql.*;
@@ -24,7 +24,7 @@ public class NetworkOfRestTests extends TestBase {
     Thread.sleep(1000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем записалось ли то значение сети ресторана которое выбрали
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")), MainPgUtils.restEditDataOfMainPg.getNetworkOfRest());
   }
 
@@ -33,9 +33,9 @@ public class NetworkOfRestTests extends TestBase {
 
     List<RestDataOfNetworkList> allNetworkListFromDb = null;
     try {
-      DataBase.conn = DriverManager.getConnection(DataBase.dbURL, DataBase.userName, DataBase.password);
+      DataBaseUtils.conn = DriverManager.getConnection(DataBaseUtils.dbURL, DataBaseUtils.userName, DataBaseUtils.password);
 
-      Statement st = DataBase.conn.createStatement();
+      Statement st = DataBaseUtils.conn.createStatement();
       ResultSet rs = st.executeQuery("select name from restaurant_chain");
       allNetworkListFromDb = new ArrayList<RestDataOfNetworkList>();
       while (rs.next()) {
@@ -48,7 +48,7 @@ public class NetworkOfRestTests extends TestBase {
       System.out.println("из БД:  "+ allNetworkListFromDb);
       rs.close();
       st.close();
-      DataBase.conn.close();
+      DataBaseUtils.conn.close();
       // Do something with the Connection
 
 
@@ -64,7 +64,7 @@ public class NetworkOfRestTests extends TestBase {
     Thread.sleep(1000);
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
 
-    List<RestDataOfNetworkList> objectFromWebNetwork = app.getMainPageHelper().getNetworkList();
+    List<RestDataOfNetworkList> objectFromWebNetwork = app.getMainPgHelper().getNetworkList();
     System.out.println("Из Веба:  "+objectFromWebNetwork);
     //Сравнение размеров
     assertEquals(objectFromWebNetwork.size(), allNetworkListFromDb.size());

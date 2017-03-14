@@ -31,7 +31,7 @@ public class MainPgUtils {
           "Cork-fee");
 
 
-  RestDataOfMainPage restNullDataOfMainPageAllField = new RestDataOfMainPage(
+  public static final RestDataOfMainPage restNullDataOfMainPageAllField = new RestDataOfMainPage(
           30.39818839999998,
           2219,
           "MainImg.jpg",
@@ -55,7 +55,7 @@ public class MainPgUtils {
           "Еда с собой",
           "Бильярд");
 
-  RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
+  public static final RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
           30.39818839999998,
           2219,
           "MainImgFirst.jpg",

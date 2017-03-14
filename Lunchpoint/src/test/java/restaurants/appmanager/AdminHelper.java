@@ -55,7 +55,7 @@ public class AdminHelper extends HelperBase {
     wd.get("http://lptest.bigdig.com.ua/"+url);
   }
 
-  public void refreshPage() {
+  public void refreshPg() {
     wd.navigate().refresh();
   }
 }

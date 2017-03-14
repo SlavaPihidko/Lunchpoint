@@ -22,7 +22,7 @@ public class TelOfRestTests extends TestBase {
     app.getSiteHelper().click(By.cssSelector("div.tel span.spoiler > span"));
     Thread.sleep(500);
     // проверяем на сайте на страничке ресторана
-    String tel = app.getMainPageHelper()
+    String tel = app.getMainPgHelper()
             .text(By.cssSelector("div.tel > p"));
     System.out.println("tel="+tel);
 
@@ -41,12 +41,12 @@ public class TelOfRestTests extends TestBase {
     System.out.println("telKleim ="+telKleim);
 
 
-   assertEquals(app.getMainPageHelper()
+   assertEquals(app.getMainPgHelper()
            .text(By.cssSelector("div.tel > p")), telKleim );
 
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем в админке на главной страничке ресторана в поле ввода тел ресторана что тел такой как перед этим записали
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .attribute(By.xpath("//input[@name='phone[]']"),"value"), telKleim);
   }
 }

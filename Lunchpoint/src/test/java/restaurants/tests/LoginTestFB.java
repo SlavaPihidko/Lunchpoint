@@ -2,11 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
-import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
 
@@ -18,12 +14,12 @@ public class LoginTestFB extends TestBase {
 
   @Test
   public void loginClientTestThroughFBTest() throws InterruptedException {
-    app.getMainPageHelper().click(By.cssSelector("a.log-in"));
+    app.getMainPgHelper().click(By.cssSelector("a.log-in"));
     // работа с окнами
     app.workWithNewWindow();
     Thread.sleep(2000);
     // проверка имени пользователя после логина
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "ВИКТОРИЯ");
   }
 }

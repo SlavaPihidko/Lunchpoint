@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -16,11 +17,11 @@ public class EmailsOfRestTests extends TestBase {
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
   // проверяем записалось ли то значение емейла которое вводили
-    assertEquals(app.getMainPageHelper()
-            .attribute(By.name("Restaurants[email]"),"value"), restEditDataOfMainPg.getEmailOfRest());
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.name("Restaurants[email]"),"value"), MainPgUtils.restEditDataOfMainPg.getEmailOfRest());
     // проверяем записалось ли то значение емейла для букинга которое вводили
-    assertEquals(app.getMainPageHelper()
-            .attribute(By.name("Restaurants[booking_email]"),"value"), restEditDataOfMainPg.getBookingEmailOfRest());
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.name("Restaurants[booking_email]"),"value"), MainPgUtils.restEditDataOfMainPg.getBookingEmailOfRest());
 
   }
 }

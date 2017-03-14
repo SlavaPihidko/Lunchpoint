@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -16,7 +17,7 @@ public class IconsSocNetworkTests extends TestBase {
       app.getSiteRestPageHelper().goToRestPage();
 
       // проверка на присутствие иконки сайта ресторана
-      assertEquals(java.util.Optional.of(app.getMainPageHelper()
+      assertEquals(java.util.Optional.of(app.getMainPgHelper()
               .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(true));
     }
 
@@ -26,7 +27,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSiteRestPageHelper().goToRestPage();
 
     // проверка на присутствие иконки FB ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.fb"))), java.util.Optional.of(true));
   }
 
@@ -36,7 +37,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSiteRestPageHelper().goToRestPage();
 
     // проверка на присутствие иконки твиттера ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.tw"))), java.util.Optional.of(true));
   }
 
@@ -46,7 +47,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSiteRestPageHelper().goToRestPage();
 
     // проверка на присутствие иконки инстаграма ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.inst"))), java.util.Optional.of(true));
   }
 
@@ -55,20 +56,20 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPageHelper().enterSiteOfRestMainPage(restNullDataOfMainPageAllField);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterSiteOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
 
     app.getAdminHelper().getAddressMainUrl("slavkotest1234");
 
     // проверка на отсутствие иконки сайта ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterSiteOfRestMainPage(restEditDataOfMainPg);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterSiteOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
   @Test(enabled = true)
@@ -76,20 +77,20 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPageHelper().enterFbOfRestMainPage(restNullDataOfMainPageAllField);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterFbOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
 
     app.getAdminHelper().getAddressMainUrl("slavkotest1234");
 
     // проверка на отсутствие иконки сайта ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.fb"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterFbOfRestMainPage(restEditDataOfMainPg);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterFbOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
   @Test(enabled = true)
@@ -97,20 +98,20 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPageHelper().enterInstagramOfRestMainPage(restNullDataOfMainPageAllField);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterInstagramOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
 
     app.getAdminHelper().getAddressMainUrl("slavkotest1234");
 
     // проверка на отсутствие иконки сайта ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.inst"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterInstagramOfRestMainPage(restEditDataOfMainPg);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterInstagramOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
   @Test(enabled = true)
@@ -118,19 +119,19 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPageHelper().enterTwitterOfRestMainPage(restNullDataOfMainPageAllField);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterTwitterOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
 
     app.getAdminHelper().getAddressMainUrl("slavkotest1234");
 
     // проверка на отсутствие иконки сайта ресторана
-    assertEquals(java.util.Optional.of(app.getMainPageHelper()
+    assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.tw"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPageHelper().enterTwitterOfRestMainPage(restEditDataOfMainPg);
-    app.getMainPageHelper().saveRestMainPage();
-    app.getMainPageHelper().confirmChangesOfRestMainPage();
+    app.getMainPgHelper().enterTwitterOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 }

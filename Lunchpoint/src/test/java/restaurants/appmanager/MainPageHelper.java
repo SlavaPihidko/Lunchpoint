@@ -29,12 +29,12 @@ public class MainPageHelper extends HelperBase {
     js.executeScript("scrollBy(0,2000)");
   }
 
-  public void saveRestMainPage() throws InterruptedException {
+  public void saveRestMainPg() throws InterruptedException {
     click(By.cssSelector("div.input-outer.to-right > #btn_form_general"));
     dream3Sec();
   }
 
-  public void confirmChangesOfRestMainPage() throws InterruptedException {
+  public void confirmChangesOfRestMainPg() throws InterruptedException {
     click(By.id("save_ok"));
     dream2Sec();
     js.executeScript("scrollBy(0,-3300)");
@@ -77,10 +77,10 @@ public class MainPageHelper extends HelperBase {
     choiceRadiobuttonStatusOfRestMainPage();
     choiceTypeOfScheduleForEachDayOfRestMainPage();
     js.executeScript("scrollBy(0,600)");
-    choiceRadiobuttonAvgPriceOfRestMainPage();
+    choiceRadiobutAvgPriceOfRestMainPg();
   }
 
-  public void choiceRadiobuttonAvgPriceOfRestMainPage() throws InterruptedException {
+  public void choiceRadiobutAvgPriceOfRestMainPg() throws InterruptedException {
     click(By.cssSelector("div.ranger-outer > div.Slider.ranger label[for='pos0']")); // Клик выбора средней цены
     dream1Sec();
   }

@@ -1,6 +1,7 @@
 package restaurants.tests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -14,8 +15,8 @@ public class AdditionalServicesTests extends TestBase {
 
     app.getAdminHelper().getAddressMainUrl("slavkotest123");
     Thread.sleep(2000);
-    assertEquals(app.getMainPageHelper()
+    assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:first-of-type")),
-            restEditDataOfMainPg.getAdditionalServiceOfRest());
+            MainPgUtils.restEditDataOfMainPg.getAdditionalServiceOfRest());
   }
 }
