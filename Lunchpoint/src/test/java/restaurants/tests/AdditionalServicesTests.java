@@ -13,7 +13,7 @@ public class AdditionalServicesTests extends TestBase {
   @Test
   public void additionalServicesTest() throws InterruptedException {
 
-    app.getAdminHelper().getAddressMainUrl("slavkotest123");
+    app.getAdminHelper().getAddressMainUrl(MainPgUtils.restEditDataOfMainPg.getSeoUrlOfRest());
     Thread.sleep(2000);
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:first-of-type")),
