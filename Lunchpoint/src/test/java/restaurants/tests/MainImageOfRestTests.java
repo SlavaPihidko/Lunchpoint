@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class MainImageOfRestTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void changeMainImageInAdminPanelTests() throws InterruptedException {
     File mainPhoto = new File("src/test/resources/" + restEditDataOfMainPageAllField.getNameOfMainImg());
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -34,23 +34,27 @@ public class MainImageOfRestTests extends TestBase {
     @Test(enabled = true)
     public void changeMainImageOnSiteListTests() throws InterruptedException {
       app.getSiteHelper().searchRestOnTheSite();
-    //app.getAdminHelper().getAddressMainUrl(String.format(restEditDataOfMainPageAllField.getSeoUrlOfRest()));
-    // проверяем на сайте в списке что картинка ресторана изменилася
-    String nameImageFromList = app.getMainPageHelper()
-            .attribute(By.cssSelector(String.format("div[lng='%s'] > a", restEditDataOfMainPageAllField.getLng())),"img");
-
-    System.out.println("nameImageFromList: "+nameImageFromList.length());
+      // проверяем на сайте в списке что картинка ресторана изменилася
+      String nameImageFromList = app.getMainPageHelper()
+              .attribute(By.cssSelector(String.format("div[lng='%s'] > a", restEditDataOfMainPageAllField.getLng())), "img");
+      System.out.println("nameImageFromList: " + nameImageFromList.length());
       int startOfName = nameImageFromList.length() - restEditDataOfMainPageAllField.getNameOfMainImg().length();
-    System.out.println(nameImageFromList.substring(startOfName,nameImageFromList.length()));
-    assertEquals(nameImageFromList
-            .substring(startOfName,nameImageFromList.length()),restEditDataOfMainPageAllField.getNameOfMainImg()) ;
-
-    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+      System.out.println(nameImageFromList.substring(startOfName, nameImageFromList.length()));
+      assertEquals(nameImageFromList
+              .substring(startOfName, nameImageFromList.length()), restEditDataOfMainPageAllField.getNameOfMainImg());
+    }
+    @Test
+    public void changeMainImageOnSitePageTests() throws InterruptedException {
+      app.getSiteHelper().searchRestOnTheSite();
+    app.getSiteHelper()
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPageAllField.getLng())));
     // проверяем на сайте на страничке ресторана
     String nameImageFromPageOfRest = app.getMainPageHelper()
             .attribute(By.cssSelector("div.bg-inner > img"),"src");
-    System.out.println(nameImageFromPageOfRest.substring(62,73));
-    assertEquals(nameImageFromPageOfRest.substring(62,73), "MainImg.jpg");
+      int startOfName = nameImageFromPageOfRest.length() - restEditDataOfMainPageAllField.getNameOfMainImg().length();
+    System.out.println(nameImageFromPageOfRest.substring(startOfName,nameImageFromPageOfRest.length()));
+    assertEquals(nameImageFromPageOfRest
+            .substring(startOfName,nameImageFromPageOfRest.length()), restEditDataOfMainPageAllField.getNameOfMainImg());
 
   }
 
