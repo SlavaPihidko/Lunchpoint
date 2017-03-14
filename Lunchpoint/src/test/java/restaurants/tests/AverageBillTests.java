@@ -25,17 +25,18 @@ public class AverageBillTests extends TestBase {
     app.getMainPgHelper().confirmChangesOfRestMainPg();
     app.getAdminHelper().refreshPg();
     Thread.sleep(3000);
-    assertEquals(app.getMainPgHelper()
-            .attribute(By.cssSelector("div.Slider.ranger label[for='pos0']"),"data-text"), AvgBillUtils.avgBillData.getAvgSum1());
+    String avgBillFromMainPg = app.getMainPgHelper()
+            .attribute(By.cssSelector("div.Slider.ranger label[for='pos0']"),"data-text");
+    assertEquals(avgBillFromMainPg, AvgBillUtils.avgBillData.getAvgSum1());
   }
 
   @Test
   public void averageBillInSiteLsTest() throws InterruptedException {
     app.getSiteHelper().searchRestOnTheSite(town,nameOrRest);
-    assertEquals(app.getMainPgHelper()
+    String avgBillFromListPg = app.getMainPgHelper()
             .text(By.cssSelector(String.format("div[lng='%s'] > div.content div.min-bill.clear > span",
-                    MainPgUtils.restEditDataOfMainPg.getLng()))), AvgBillUtils.avgBillData.getAvgSum1());
-
+                    MainPgUtils.restEditDataOfMainPg.getLng())));
+    assertEquals(avgBillFromListPg, AvgBillUtils.avgBillData.getAvgSum1());
   }
 
   @Test

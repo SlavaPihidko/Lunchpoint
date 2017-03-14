@@ -39,7 +39,7 @@ public class AddressOfRestTests extends TestBase {
   app.getSiteHelper().searchRestOnTheSite(city, nameOfRest);
     app.getSiteHelper().click(By.cssSelector(String.format("div[lng='%s'] div.title",
             MainPgUtils.restEditDataOfMainPg.getLng())));
-    // проверяем на сайте на страничке ресторана
+    // проверяем на сайте на страничке ресторана что адрес ресторана такой как ему изменили
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.cafe-info > div.addr > p")), MainPgUtils.restEditDataOfMainPg.getAddressOfRest());
 
