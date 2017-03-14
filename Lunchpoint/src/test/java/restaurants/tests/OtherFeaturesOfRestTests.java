@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -16,6 +17,6 @@ public class OtherFeaturesOfRestTests extends TestBase {
     Thread.sleep(2000);
     assertEquals(app.getMainPageHelper()
                     .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:nth-of-type(2)")),
-            restEditDataOfMainPg.getOtherFeaturesOfRest());
+            MainPgUtils.restEditDataOfMainPg.getOtherFeaturesOfRest());
   }
 }

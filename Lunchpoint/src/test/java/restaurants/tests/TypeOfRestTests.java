@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -27,6 +28,6 @@ public class TypeOfRestTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
     assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("span#select2-restType-container")), restEditDataOfMainPg.getTypeOfRest());
+            .text(By.cssSelector("span#select2-restType-container")), MainPgUtils.restEditDataOfMainPg.getTypeOfRest());
   }
 }

@@ -2,6 +2,7 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -25,7 +26,7 @@ public class TypeOfCuisineOfRestTests extends TestBase {
     Thread.sleep(2000);
     // проверяем в админке на главной страничке ресторана проверяем что типы кухонь такие как перед этим записали
     assertEquals(app.getMainPageHelper()
-            .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:first-of-type"),"title"), restEditDataOfMainPg.getTypeOfCuisine());
+            .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:first-of-type"),"title"), MainPgUtils.restEditDataOfMainPg.getTypeOfCuisine());
     assertEquals(app.getMainPageHelper()
             .attribute(By.cssSelector("div.input-outer.hint-cuisine span.selection li.select2-selection__choice:nth-of-type(2)"),"title"), "Smoked food");
   }

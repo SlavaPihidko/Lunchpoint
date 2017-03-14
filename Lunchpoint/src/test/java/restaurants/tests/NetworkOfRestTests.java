@@ -3,6 +3,8 @@ package restaurants.tests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfNetworkList;
+import restaurants.utils.DataBase;
+import restaurants.utils.MainPgUtils;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,11 +17,6 @@ import static org.testng.Assert.assertEquals;
  * Created by Slava on 03.03.2017.
  */
 public class NetworkOfRestTests extends TestBase {
-  String userName = "bigdig_lptest";;
-  String password= "1tm5b79b";;
-  String dbURL= "jdbc:mysql://bigdig.mysql.ukraine.com.ua/bigdig_lptest";;
-  Connection conn;
-
 
   @Test(enabled = false)
   public void networkOfRestTest() throws InterruptedException {
@@ -28,7 +25,7 @@ public class NetworkOfRestTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
     // проверяем записалось ли то значение сети ресторана которое выбрали
     assertEquals(app.getMainPageHelper()
-            .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")), restEditDataOfMainPg.getNetworkOfRest());
+            .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")), MainPgUtils.restEditDataOfMainPg.getNetworkOfRest());
   }
 
   @Test(enabled = true)
@@ -36,9 +33,9 @@ public class NetworkOfRestTests extends TestBase {
 
     List<RestDataOfNetworkList> allNetworkListFromDb = null;
     try {
-      conn = DriverManager.getConnection(dbURL, userName, password);
+      DataBase.conn = DriverManager.getConnection(DataBase.dbURL, DataBase.userName, DataBase.password);
 
-      Statement st = conn.createStatement();
+      Statement st = DataBase.conn.createStatement();
       ResultSet rs = st.executeQuery("select name from restaurant_chain");
       allNetworkListFromDb = new ArrayList<RestDataOfNetworkList>();
       while (rs.next()) {
@@ -51,7 +48,7 @@ public class NetworkOfRestTests extends TestBase {
       System.out.println("из БД:  "+ allNetworkListFromDb);
       rs.close();
       st.close();
-      conn.close();
+      DataBase.conn.close();
       // Do something with the Connection
 
 
