@@ -75,7 +75,7 @@ public class MainPageHelper extends HelperBase {
     clickCheckboxPaymentOfRestMainPage();
     js.executeScript("scrollBy(0,300)");
     choiceRadiobuttonStatusOfRestMainPage();
-    choiceTypeOfScheduleForEachDayOfRestMainPage();
+    choiceTypeOfScheduleForEachDayOfRestMainPg();
     js.executeScript("scrollBy(0,600)");
     choiceRadiobutAvgPriceOfRestMainPg();
   }
@@ -85,7 +85,7 @@ public class MainPageHelper extends HelperBase {
     dream1Sec();
   }
 
-  public void choiceTypeOfScheduleForEachDayOfRestMainPage() throws InterruptedException {
+  public void choiceTypeOfScheduleForEachDayOfRestMainPg() throws InterruptedException {
     // Клик по выпадашке для Робочих дней
     click(By.cssSelector("div.day-type div#time_schedule1 > span"));
     dream1Sec();
