@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import restaurants.model.RestDataOfMainPage;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 16.02.2017.
@@ -16,10 +18,7 @@ public class NameOfRestTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest("Slava");
-    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
-            "Slava2",
-            "вул.Жолудєва 8");
-    app.getMainPgHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
+    app.getMainPgHelper().enterNameOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -27,19 +26,21 @@ public class NameOfRestTests extends TestBase {
     app.getSiteHelper().searchRestOnTheSite();
     // проверяем на сайте в списке что имя ресторана такое как ему изменили
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),restDataOfMainPageAllField.getNameOfRest()) ;
-    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+            .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),restEditDataOfMainPg.getNameOfRest()) ;
+    app.getSiteHelper()
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
     // проверяем на сайте на страничке ресторана
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div.cafe-name")), restDataOfMainPageAllField.getNameOfRest());
+            .text(By.cssSelector("div.cafe-name")), restEditDataOfMainPg.getNameOfRest());
 
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
     assertEquals(app.getMainPgHelper()
-            .attribute(By.id("edit_restName"),"value"), restDataOfMainPageAllField.getNameOfRest());
+            .attribute(By.id("edit_restName"),"value"), restEditDataOfMainPg.getNameOfRest());
     // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div.cafe-name")),restDataOfMainPageAllField.getNameOfRest());
+            .text(By.cssSelector("div.cafe-name")),restEditDataOfMainPg.getNameOfRest());
   }
 
 
