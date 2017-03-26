@@ -31,7 +31,7 @@ public class MainPgUtils {
           "Cork-fee");
 
 
-  public static final RestDataOfMainPage restNullDataOfMainPageAllField = new RestDataOfMainPage(
+  public static final RestDataOfMainPage restDefaultDataOfMainPageAllField = new RestDataOfMainPage(
           30.39818839999998,
           2219,
           "MainImg.jpg",

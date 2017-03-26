@@ -16,15 +16,17 @@ public class DescrOfRestTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
 
-    app.getSiteHelper().searchRestOnTheSite();
-    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+    app.getSiteHelper().searchRestOnTheSite("Київ","Slava");
+    app.getSiteHelper()
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
     // проверяем на сайте на страничке ресторана
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div.description div.text > p")), MainPgUtils.restDataOfMainPageAllField.getDescriptionOfRest());
+            .text(By.cssSelector("div.description div.text > p")), MainPgUtils.restEditDataOfMainPg.getDescriptionOfRest());
 
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
+    // проверяем в админке на главной страничке ресторана в поле ввода описания ресторана что описание такое как перед этим записали
     assertEquals(app.getMainPgHelper()
-            .attribute(By.name("RestaurantsLang[description]"),"value"), MainPgUtils.restDataOfMainPageAllField.getDescriptionOfRest());
+            .attribute(By.name("RestaurantsLang[description]"),"value"), MainPgUtils.restEditDataOfMainPg.getDescriptionOfRest());
   }
 }

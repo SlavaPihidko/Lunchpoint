@@ -56,7 +56,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterSiteOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().enterSiteOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -77,7 +77,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterFbOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().enterFbOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -98,7 +98,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterInstagramOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().enterInstagramOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -119,7 +119,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterTwitterOfRestMainPage(MainPgUtils.restNullDataOfMainPageAllField);
+    app.getMainPgHelper().enterTwitterOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
