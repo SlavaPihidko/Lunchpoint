@@ -12,30 +12,33 @@ import java.util.HashSet;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.DataBaseUtils.*;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 03.03.2017.
  */
 public class NetworkOfRestTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test(priority = 1)
   public void networkOfRestTest() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     // проверяем записалось ли то значение сети ресторана которое выбрали
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")), MainPgUtils.restEditDataOfMainPg.getNetworkOfRest());
+            .text(By.cssSelector("div.input-outer.rest-net span#select2-restNet-container")), restEditDataOfMainPg.getNetworkOfRest());
   }
 
-  @Test(enabled = true)
+  @Test(priority = 2)
   public void networkOfRestTestAllListPresent() throws InterruptedException {
 
     List<RestDataOfNetworkList> allNetworkListFromDb = null;
     try {
-      DataBaseUtils.conn = DriverManager.getConnection(DataBaseUtils.dbURL, DataBaseUtils.userName, DataBaseUtils.password);
+      conn = DriverManager.getConnection(dbURL, userName, password);
 
-      Statement st = DataBaseUtils.conn.createStatement();
+      Statement st = conn.createStatement();
       ResultSet rs = st.executeQuery("select name from restaurant_chain");
       allNetworkListFromDb = new ArrayList<RestDataOfNetworkList>();
       while (rs.next()) {
@@ -48,7 +51,7 @@ public class NetworkOfRestTests extends TestBase {
       System.out.println("из БД:  "+ allNetworkListFromDb);
       rs.close();
       st.close();
-      DataBaseUtils.conn.close();
+      conn.close();
       // Do something with the Connection
 
 
@@ -62,7 +65,8 @@ public class NetworkOfRestTests extends TestBase {
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
 
     List<RestDataOfNetworkList> objectFromWebNetwork = app.getMainPgHelper().getNetworkList();
     System.out.println("Из Веба:  "+objectFromWebNetwork);

@@ -2,8 +2,10 @@ package restaurants.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 11.03.2017.
@@ -15,7 +17,8 @@ public class PaymentMethodTests extends TestBase {
       // Наличие всех 6 методов оплаты
       app.getSessionHelper().login(usernameAdmin, passwordAdmin);
       Thread.sleep(2000);
-      app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+      app.getAdminHelper()
+              .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
 
       // наличка/ Если выбран то елемент остается выбраным
       if (app.getMainPgHelper().elementPresent(By.cssSelector("div.opt input#payment0[checked='true']"))) {
@@ -62,7 +65,8 @@ public class PaymentMethodTests extends TestBase {
 
       app.getAdminHelper().getAddressMainUrl();
       app.getSiteHelper().searchRestOnTheSite();
-      app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+      app.getSiteHelper()
+              .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
       // проверка на присутствие иконки способ оплаты наличными
       assertEquals(app.getMainPgHelper()
               .elementPresent(By.cssSelector("div.cafe-info > div.pay-methods > img[alt='payment method: bill']")), true);
@@ -89,7 +93,8 @@ public class PaymentMethodTests extends TestBase {
     // Отсутствие всех 6 методов оплаты
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
 
     // наличка/ Если выбран то елемент становится не  выбраным
     if (app.getMainPgHelper().elementPresent(By.cssSelector("div.opt input#payment0[checked='true']"))) {
@@ -121,7 +126,8 @@ public class PaymentMethodTests extends TestBase {
 
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
-    app.getSiteHelper().click(By.cssSelector("div[lng='30.39818839999998'] div.title"));
+    app.getSiteHelper()
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
     // проверка на отсутствие блока оплаты на страничке ресторана
     assertEquals(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.pay-methods")), false);
