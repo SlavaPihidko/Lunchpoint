@@ -6,36 +6,27 @@ import restaurants.model.RestDataOfMainPage;
 import restaurants.model.VariantsOfNameOfMainPage;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 23.02.2017.
  */
 public class SearchTests extends TestBase {
 
-  @Test(enabled = true)
+  @Test(priority = 1)
   public void searchTestVariantsOfNames() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    app.getAdminHelper().gotoAdminPanel();
-    app.getAdminHelper().initOfEditRest("Slava");
-    RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
-            "Slava2",
-            "вул.Жолудєва 8");
-    app.getMainPgHelper().enterNameOfRestMainPage(restDataOfMainPageAllField);
-    VariantsOfNameOfMainPage variantsOfNameOfMainPage = new VariantsOfNameOfMainPage("Masha\n", "Dima\n", "Саша123\n");
+
     String[] variantsOfNameOfMainPageMas = {"Masha\n", "Dima\n", "Саша123\n"};
-    app.getMainPgHelper().enterVariantsOfNameOfRestMainPage(variantsOfNameOfMainPage);
-    app.getMainPgHelper().saveRestMainPg();
-    app.getMainPgHelper().confirmChangesOfRestMainPg();
-    app.getAdminHelper().getAddressMainUrl();
         for(int i=0;i<variantsOfNameOfMainPageMas.length;i++) {
           app.getSiteHelper().searchRestOnTheSite("Київ", variantsOfNameOfMainPageMas[i]);
-          // проверяем на сайте в списке что имя ресторана такое как ему изменили
+          // проверяем на сайте в списке что поиск нашел именно тот ресторан
           assertEquals(app.getMainPgHelper()
-                  .text(By.cssSelector("div[lng='30.39818839999998'] div.title")), restDataOfMainPageAllField.getNameOfRest());
-}
+                  .text(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng()))), restEditDataOfMainPg.getNameOfRest());
+        }
   }
 
-  @Test(enabled = true)
+  @Test(priority = 2)
   public void searchNameThatAbsent() throws InterruptedException {
 
     app.getSiteHelper().searchRestOnTheSite("Київ", "xxxyyy");
