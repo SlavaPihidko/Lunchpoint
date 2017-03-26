@@ -1,7 +1,8 @@
-package restaurants.tests;
+package restaurants.tests.MainPageOfRestTests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import java.util.Calendar;
@@ -12,7 +13,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 11.03.2017.
  */
-public class EditWorkingHoursTests extends  TestBase {
+public class EditWorkingHoursTests extends TestBase {
 
   @Test(priority =1)
   public void editWorkingHoursForEachDay() throws InterruptedException {

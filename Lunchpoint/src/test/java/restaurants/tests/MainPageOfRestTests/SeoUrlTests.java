@@ -1,8 +1,9 @@
-package restaurants.tests;
+package restaurants.tests.MainPageOfRestTests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfMainPage;
+import restaurants.tests.TestBase;
 
 import static org.testng.Assert.assertEquals;
 import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;

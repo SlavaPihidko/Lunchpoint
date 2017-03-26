@@ -1,6 +1,7 @@
-package restaurants.tests;
+package restaurants.tests.MainPageOfRestTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;

@@ -1,8 +1,9 @@
-package restaurants.tests;
+package restaurants.tests.MainPageOfRestTests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfNetworkList;
+import restaurants.tests.TestBase;
 import restaurants.utils.DataBaseUtils;
 import restaurants.utils.MainPgUtils;
 
