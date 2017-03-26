@@ -13,14 +13,14 @@ public class LoginTestFB extends TestBase {
   public WebDriver wd;
 
   @Test
-  public void loginClientTestThroughFBTest() throws InterruptedException {
+  public void loginClientThroughFBTest() throws InterruptedException {
     app.getMainPgHelper().click(By.cssSelector("a.log-in"));
     // работа с окнами
     app.workWithNewWindow();
     Thread.sleep(2000);
     // проверка имени пользователя после логина
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "ВИКТОРИЯ");
+            .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "JOHN");
   }
 }
 

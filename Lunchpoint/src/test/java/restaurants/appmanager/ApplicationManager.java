@@ -109,10 +109,10 @@ public class ApplicationManager {
     System.out.println("New window title: " + wd.getTitle());
     wd.findElement(By.id("email")).click();
     wd.findElement(By.id("email")).clear();
-    wd.findElement(By.id("email")).sendKeys("+380730442745");
+    wd.findElement(By.id("email")).sendKeys("mltest@ukr.net");
     wd.findElement(By.id("pass")).click();
     wd.findElement(By.id("pass")).clear();
-    wd.findElement(By.id("pass")).sendKeys("BigDig4Dev");
+    wd.findElement(By.id("pass")).sendKeys("bigdig");
     wd.findElement(By.id("u_0_2")).click();
 
     wd.switchTo().window(originalWindow);
