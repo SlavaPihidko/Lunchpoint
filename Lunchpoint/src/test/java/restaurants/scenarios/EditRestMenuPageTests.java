@@ -1,6 +1,7 @@
-package restaurants.tests;
+package restaurants.scenarios;
 
 import org.testng.annotations.Test;
+import restaurants.tests.TestBase;
 
 /**
  * Created by Slava on 08.01.2017.

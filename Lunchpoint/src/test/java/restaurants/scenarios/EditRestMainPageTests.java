@@ -1,8 +1,9 @@
-package restaurants.tests;
+package restaurants.scenarios;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.model.RestDataOfMainPage;
+import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;

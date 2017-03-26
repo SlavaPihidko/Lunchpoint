@@ -1,4 +1,6 @@
-package restaurants.tests;
+package restaurants.scenarios;
+
+import restaurants.tests.TestBase;
 
 /**
  * Created by Slava on 27.02.2017.
