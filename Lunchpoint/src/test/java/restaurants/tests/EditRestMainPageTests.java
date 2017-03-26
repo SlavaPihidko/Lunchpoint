@@ -6,6 +6,7 @@ import restaurants.model.RestDataOfMainPage;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 public class EditRestMainPageTests extends TestBase {
 
@@ -30,9 +31,9 @@ public class EditRestMainPageTests extends TestBase {
 public void testEditRestMainPageAllField() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
-    app.getAdminHelper().initOfEditRest();
+    app.getAdminHelper().initOfEditRest("Slava");
 
-    app.getMainPgHelper().fillAllOfRestFieldOnMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().fillAllOfRestFieldOnMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
      }
