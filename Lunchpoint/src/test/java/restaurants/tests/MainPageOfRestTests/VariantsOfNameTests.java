@@ -19,7 +19,7 @@ public class VariantsOfNameTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
 
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     Thread.sleep(2000);
     // проверяем в админке на главной страничке ресторана что варианты названий сохранились
     assertEquals(app.getMainPgHelper()
