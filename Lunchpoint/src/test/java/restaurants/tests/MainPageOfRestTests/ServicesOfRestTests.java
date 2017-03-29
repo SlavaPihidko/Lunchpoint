@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class ServicesOfRestTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test(priority = 1)
   public void servicesOfRestPresenceBreakfastAndLunchTest() throws InterruptedException {
     // Наличие завтраков и ланчей
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -47,7 +47,7 @@ public class ServicesOfRestTests extends TestBase {
   }
 
 
-  @Test(enabled = false)
+  @Test(priority = 2)
   public void servicesOfRestAbsenceBreakfastAndLunchTest() throws InterruptedException {
     // Отсутствие завтраков и ланчей
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -78,7 +78,7 @@ public class ServicesOfRestTests extends TestBase {
 
   }
 
-  @Test(enabled = true)
+  @Test(priority = 3)
   public void servicesOfRestPresenceBookTableTest() throws InterruptedException {
     // На наличие блока Бронирования столика
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
