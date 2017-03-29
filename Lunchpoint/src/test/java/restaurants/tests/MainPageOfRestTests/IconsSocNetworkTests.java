@@ -4,8 +4,9 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
-
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.*;
 
 /**
  * Created by Slava on 02.03.2017.
@@ -18,8 +19,8 @@ public class IconsSocNetworkTests extends TestBase {
       app.getSiteRestPageHelper().goToRestPage();
 
       // проверка на присутствие иконки сайта ресторана
-      assertEquals(java.util.Optional.of(app.getMainPgHelper()
-              .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(true));
+      assertEquals(app.getMainPgHelper()
+              .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url")), true);
     }
 
   @Test(enabled = true)
@@ -57,7 +58,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterSiteOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
+    app.getMainPgHelper().enterSiteOfRestMainPage(restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -68,7 +69,7 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPgHelper().enterSiteOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().enterSiteOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
@@ -78,7 +79,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterFbOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
+    app.getMainPgHelper().enterFbOfRestMainPage(restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -89,7 +90,7 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.fb"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
-    app.getMainPgHelper().enterFbOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+    app.getMainPgHelper().enterFbOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
@@ -99,7 +100,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterInstagramOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
+    app.getMainPgHelper().enterInstagramOfRestMainPage(restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -110,8 +111,8 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.inst"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper()
-            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
-    app.getMainPgHelper().enterInstagramOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().enterInstagramOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
@@ -121,7 +122,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
-    app.getMainPgHelper().enterTwitterOfRestMainPage(MainPgUtils.restDefaultDataOfMainPageAllField);
+    app.getMainPgHelper().enterTwitterOfRestMainPage(restDefaultDataOfMainPageAllField);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
@@ -132,8 +133,8 @@ public class IconsSocNetworkTests extends TestBase {
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.tw"))), java.util.Optional.of(false));
     // устновка прежднего состояния
     app.getAdminHelper()
-            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
-    app.getMainPgHelper().enterTwitterOfRestMainPage(MainPgUtils.restEditDataOfMainPg);
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().enterTwitterOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }

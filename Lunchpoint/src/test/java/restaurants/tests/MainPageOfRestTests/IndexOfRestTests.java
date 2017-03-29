@@ -6,6 +6,7 @@ import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 03.03.2017.
@@ -18,6 +19,6 @@ public class IndexOfRestTests extends TestBase {
     app.getAdminHelper().initOfEditRest();
     // проверяем записалось ли то значение индекса которое вводили
     assertEquals(app.getMainPgHelper()
-            .attribute(By.id("restIndex"),"value"), MainPgUtils.restEditDataOfMainPg.getIndexOfRest());
+            .attribute(By.id("restIndex"),"value"), restEditDataOfMainPg.getIndexOfRest());
   }
 }

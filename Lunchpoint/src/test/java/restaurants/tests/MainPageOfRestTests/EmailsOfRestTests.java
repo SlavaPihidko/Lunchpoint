@@ -6,6 +6,7 @@ import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 02.03.2017.
@@ -19,10 +20,10 @@ public class EmailsOfRestTests extends TestBase {
     app.getAdminHelper().initOfEditRest();
   // проверяем записалось ли то значение емейла которое вводили
     assertEquals(app.getMainPgHelper()
-            .attribute(By.name("Restaurants[email]"),"value"), MainPgUtils.restEditDataOfMainPg.getEmailOfRest());
+            .attribute(By.name("Restaurants[email]"),"value"), restEditDataOfMainPg.getEmailOfRest());
     // проверяем записалось ли то значение емейла для букинга которое вводили
     assertEquals(app.getMainPgHelper()
-            .attribute(By.name("Restaurants[booking_email]"),"value"), MainPgUtils.restEditDataOfMainPg.getBookingEmailOfRest());
+            .attribute(By.name("Restaurants[booking_email]"),"value"), restEditDataOfMainPg.getBookingEmailOfRest());
 
   }
 }

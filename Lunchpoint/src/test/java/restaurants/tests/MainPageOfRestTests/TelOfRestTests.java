@@ -47,7 +47,8 @@ public class TelOfRestTests extends TestBase {
    assertEquals(app.getMainPgHelper()
            .text(By.cssSelector("div.tel > p")), telKleim );
 
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     // проверяем в админке на главной страничке ресторана в поле ввода тел ресторана что тел такой как перед этим записали
     assertEquals(app.getMainPgHelper()
             .attribute(By.xpath("//input[@name='phone[]']"),"value"), telKleim);
