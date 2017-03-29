@@ -3,10 +3,9 @@ package restaurants.tests.MainPageOfRestTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.tests.TestBase;
-import restaurants.utils.MainPgUtils;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertEquals;
-import static restaurants.utils.MainPgUtils.*;
+import static restaurants.utils.MainPgUtils.restDefaultDataOfMainPageAllField;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 02.03.2017.
@@ -14,17 +13,17 @@ import static restaurants.utils.MainPgUtils.*;
 public class IconsSocNetworkTests extends TestBase {
 
   @Test(enabled = true)
-    public void iconSocNetworkSiteTestPresent()  throws InterruptedException {
-      app.getSiteHelper().searchRestOnTheSite();
-      app.getSiteRestPageHelper().goToRestPage();
+  public void iconSocNetworkSiteTestPresent() throws InterruptedException {
+    app.getSiteHelper().searchRestOnTheSite();
+    app.getSiteRestPageHelper().goToRestPage();
 
-      // проверка на присутствие иконки сайта ресторана
-      assertEquals(app.getMainPgHelper()
-              .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url")), true);
-    }
+    // проверка на присутствие иконки сайта ресторана
+    assertEquals(app.getMainPgHelper()
+            .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url")), true);
+  }
 
   @Test(enabled = true)
-  public void iconSocNetworkFaceBookTestPresent()  throws InterruptedException {
+  public void iconSocNetworkFaceBookTestPresent() throws InterruptedException {
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteRestPageHelper().goToRestPage();
 
@@ -34,7 +33,7 @@ public class IconsSocNetworkTests extends TestBase {
   }
 
   @Test(enabled = true)
-  public void iconSocNetworkTwitterTestPresent()  throws InterruptedException {
+  public void iconSocNetworkTwitterTestPresent() throws InterruptedException {
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteRestPageHelper().goToRestPage();
 
@@ -44,7 +43,7 @@ public class IconsSocNetworkTests extends TestBase {
   }
 
   @Test(enabled = true)
-  public void iconSocNetworkInstagramTestPresent()  throws InterruptedException {
+  public void iconSocNetworkInstagramTestPresent() throws InterruptedException {
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteRestPageHelper().goToRestPage();
 
@@ -54,7 +53,7 @@ public class IconsSocNetworkTests extends TestBase {
   }
 
   @Test(enabled = true)
-  public void iconSocNetworkSiteTestAbsence()  throws InterruptedException {
+  public void iconSocNetworkSiteTestAbsence() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
@@ -62,20 +61,21 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl("slavkotest1234");
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.url"))), java.util.Optional.of(false));
     // устновка прежднего состояния
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     app.getMainPgHelper().enterSiteOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
   @Test(enabled = true)
-  public void iconSocNetworkFaceBookTestAbsence()  throws InterruptedException {
+  public void iconSocNetworkFaceBookTestAbsence() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
@@ -83,20 +83,21 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl("slavkotest1234");
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.cafe-info > div.links > a.fb"))), java.util.Optional.of(false));
     // устновка прежднего состояния
-    app.getAdminHelper().getAddressMainUrl("manager/restaurants/update?id=2219");
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     app.getMainPgHelper().enterFbOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
   @Test(enabled = true)
-  public void iconSocNetworkInstagramAbsence()  throws InterruptedException {
+  public void iconSocNetworkInstagramAbsence() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
@@ -104,7 +105,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl("slavkotest1234");
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
@@ -118,7 +119,7 @@ public class IconsSocNetworkTests extends TestBase {
   }
 
   @Test(enabled = true)
-  public void iconSocNetworkTwitterTestAbsence()  throws InterruptedException {
+  public void iconSocNetworkTwitterTestAbsence() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest();
@@ -126,7 +127,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl("slavkotest1234");
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
