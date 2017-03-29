@@ -5,6 +5,7 @@ import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.*;
 
 /**
  * Created by Slava on 08.03.2017.
@@ -14,10 +15,11 @@ public class AdditionalServicesTests extends TestBase {
   @Test
   public void additionalServicesTest() throws InterruptedException {
 
-    app.getAdminHelper().getAddressMainUrl(MainPgUtils.restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
     Thread.sleep(2000);
+    // проверка на страничке ресторана дополнительные услуги
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.features-outer div.features div[dir='ltr'] > li.wi-fi:first-of-type")),
-            MainPgUtils.restEditDataOfMainPg.getAdditionalServiceOfRest());
+            restEditDataOfMainPg.getAdditionalServiceOfRest());
   }
 }
