@@ -19,10 +19,8 @@ public class NameOfRestTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().initOfEditRest("Slava");
-    app.getMainPgHelper().enterNameOfRestMainPage(restEditDataOfMainPg);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
-
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     // проверяем на сайте в списке что имя ресторана такое как ему изменили
