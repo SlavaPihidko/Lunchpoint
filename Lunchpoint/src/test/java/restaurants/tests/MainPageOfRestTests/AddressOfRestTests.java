@@ -6,6 +6,7 @@ import restaurants.tests.TestBase;
 import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.*;
 
 /**
  * Created by Slava on 01.03.2017.
@@ -19,11 +20,11 @@ public class AddressOfRestTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper().
-            getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
+            getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     // проверяем в админке на главной страничке ресторана в поле адреса ресторана
     // что адрес такой как перед этим записали
     assertEquals(app.getMainPgHelper()
-            .attribute(By.id("restAddress"), "value"), MainPgUtils.restEditDataOfMainPg.getAddressOfRest());
+            .attribute(By.id("restAddress"), "value"), restEditDataOfMainPg.getAddressOfRest());
   }
 
   @Test(priority = 2)
@@ -31,18 +32,18 @@ public class AddressOfRestTests extends TestBase {
     app.getSiteHelper().searchRestOnTheSite(city, nameOfRest);
     // проверяем на сайте в списке что адрес ресторана такой как ему изменили
     String addressFromList = app.getMainPgHelper().text(By.cssSelector(String.format("div[lng='%s'] div.address",
-            MainPgUtils.restEditDataOfMainPg.getLng())));
-    assertEquals(addressFromList, MainPgUtils.restEditDataOfMainPg.getAddressOfRest());
+            restEditDataOfMainPg.getLng())));
+    assertEquals(addressFromList, restEditDataOfMainPg.getAddressOfRest());
   }
 
 @Test(priority = 3)
     public void addressOfRestPageLsTest() throws InterruptedException {
   app.getSiteHelper().searchRestOnTheSite(city, nameOfRest);
     app.getSiteHelper().click(By.cssSelector(String.format("div[lng='%s'] div.title",
-            MainPgUtils.restEditDataOfMainPg.getLng())));
+            restEditDataOfMainPg.getLng())));
     // проверяем на сайте на страничке ресторана что адрес ресторана такой как ему изменили
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div.cafe-info > div.addr > p")), MainPgUtils.restEditDataOfMainPg.getAddressOfRest());
+            .text(By.cssSelector("div.cafe-info > div.addr > p")), restEditDataOfMainPg.getAddressOfRest());
 
   }
 }
