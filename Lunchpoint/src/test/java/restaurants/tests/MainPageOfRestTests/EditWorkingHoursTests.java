@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static org.testng.Assert.assertEquals;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
  * Created by Slava on 11.03.2017.
@@ -21,7 +22,7 @@ public class EditWorkingHoursTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper()
-            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     app.getMainPgHelper().choiceTypeOfScheduleForEachDayOfRestMainPg();
     app.getMainPgHelper().scroll(0, 200);
     app.getMainPgHelper().choiceHoursOfWorkingMon();
@@ -41,7 +42,7 @@ public class EditWorkingHoursTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
     app.getSiteHelper().click(By.cssSelector("div.work-time.clear > div.to-right"));
     //понедельник
     assertEquals(app.getMainPgHelper()
@@ -76,7 +77,7 @@ public class EditWorkingHoursTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
     app.getSiteHelper().click(By.cssSelector("div.work-time.clear > div.to-right"));
 
     int[] dayOfWeek = {1, 2, 3, 4, 5, 6, 7};
@@ -99,7 +100,7 @@ public class EditWorkingHoursTests extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
     app.getAdminHelper()
-            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", MainPgUtils.restEditDataOfMainPg.getId()));
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     app.getMainPgHelper().choiceTypeOfScheduleForAllDaysOfRestMainPage();
     app.getMainPgHelper().choiceHoursForAllDays();
     app.getMainPgHelper().saveRestMainPg();
@@ -112,7 +113,7 @@ public class EditWorkingHoursTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
     app.getSiteHelper().click(By.cssSelector("div.work-time.clear > div.to-right"));
 
     String hours = "00:30-19:30";
@@ -146,7 +147,7 @@ public class EditWorkingHoursTests extends TestBase {
     app.getAdminHelper().getAddressMainUrl();
     app.getSiteHelper().searchRestOnTheSite();
     app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", MainPgUtils.restEditDataOfMainPg.getLng())));
+            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
    // app.getSiteHelper().click(By.cssSelector("div.work-time.clear > div.to-right"));
 
    String hours = "00:30 - 19:30";
