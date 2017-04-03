@@ -8,6 +8,34 @@ public class CommentsDataOfRest {
   private String comment;
 
   public CommentsDataOfRest(int id, String comment){
+  this.id=id;
+    this.comment=comment;
+  }
 
+  @Override
+  public String toString() {
+    return "CommentsDataOfRest{" +
+            "id=" + id +
+            ", comment='" + comment + '\'' +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    CommentsDataOfRest that = (CommentsDataOfRest) o;
+
+    if (id != that.id) return false;
+    return comment != null ? comment.equals(that.comment) : that.comment == null;
+
+  }
+
+  @Override
+  public int hashCode() {
+    int result = id;
+    result = 31 * result + (comment != null ? comment.hashCode() : 0);
+    return result;
   }
 }
