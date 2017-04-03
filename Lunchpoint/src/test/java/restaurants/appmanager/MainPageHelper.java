@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import restaurants.model.CommentsDataOfRest;
 import restaurants.model.RestDataOfMainPage;
 import restaurants.model.RestDataOfNetworkList;
 import restaurants.model.VariantsOfNameOfMainPage;
@@ -311,5 +312,17 @@ public class MainPageHelper extends HelperBase {
 
   public void changeImage(File photo) {
     attach(By.name("rest_cover"),photo);
+  }
+
+  public List<CommentsDataOfRest> getCommentsList() {
+    List<CommentsDataOfRest> commentsFromWeb = new ArrayList<CommentsDataOfRest>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed review-item clear div.review-main div.text"));
+    for(WebElement element:elements ) {
+      String comment = element.getTagName();
+      CommentsDataOfRest comments = new CommentsDataOfRest(comment);
+      List<WebElement> elements2 = wd.findElements(By.cssSelector("div.reviews-feed review-item clear"));
+    }
+
+    //return commentsList;
   }
 }
