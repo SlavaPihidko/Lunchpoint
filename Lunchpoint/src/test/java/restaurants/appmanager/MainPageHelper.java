@@ -314,10 +314,11 @@ public class MainPageHelper extends HelperBase {
     attach(By.name("rest_cover"),photo);
   }
 
-  public List<CommentsDataOfRest> getCommentsList() {
+  public List<CommentsDataOfRest> getCommentsList() throws InterruptedException {
     click(By.cssSelector("div.inner-toggle-full"));
+    Thread.sleep(1000);
 
-    List<CommentsDataOfRest> commentsFromWebStr = new ArrayList<CommentsDataOfRest>();
+   /* List<CommentsDataOfRest> commentsFromWebStr = new ArrayList<CommentsDataOfRest>();
     List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear div.review-main div.text > p"));
     for(WebElement element:elements ) {
       String comment = element.getText();
@@ -332,10 +333,21 @@ public class MainPageHelper extends HelperBase {
         String id = element1.getAttribute("data");
         CommentsDataOfRest ids = new CommentsDataOfRest(id);
         commentsFromWebIds.add(ids);
+        System.out.println("commentsFromWebIds : " + commentsFromWebIds);
 
       }
       //return commentsFromWebIds;
     return commentsFromWebStr;
+    */
+    List<CommentsDataOfRest> commentsFromWeb = new ArrayList<CommentsDataOfRest>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear"));
+    for(WebElement element:elements ) {
+      String id = element.getAttribute("data");
+      String comment = element.getText();
+     commentsFromWeb.add(new CommentsDataOfRest(id ,comment));
+      //System.out.println("commentsFromWebStr: " + commentsFromWeb);
+    }
+    return commentsFromWeb;
     }
   }
 

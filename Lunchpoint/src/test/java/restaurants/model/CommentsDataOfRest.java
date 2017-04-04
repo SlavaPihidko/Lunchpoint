@@ -4,10 +4,10 @@ package restaurants.model;
  * Created by Slava on 31.03.2017.
  */
 public class CommentsDataOfRest {
-  private int id;
+  private String id;
   private String comment;
 
-  public CommentsDataOfRest(int id, String comment) {
+  public CommentsDataOfRest(String id, String comment) {
     this.id = id;
     this.comment = comment;
   }
@@ -16,14 +16,14 @@ public class CommentsDataOfRest {
     this.comment = comment;
   }
 
-  public CommentsDataOfRest(int id) {
+  /*public CommentsDataOfRest(String id) {
     this.id = id;
-  }
+  }*/
 
   @Override
   public String toString() {
     return "CommentsDataOfRest{" +
-            "id=" + id +
+            "id='" + id + '\'' +
             ", comment='" + comment + '\'' +
             '}';
   }
@@ -35,14 +35,14 @@ public class CommentsDataOfRest {
 
     CommentsDataOfRest that = (CommentsDataOfRest) o;
 
-    if (id != that.id) return false;
+    if (id != null ? !id.equals(that.id) : that.id != null) return false;
     return comment != null ? comment.equals(that.comment) : that.comment == null;
 
   }
 
   @Override
   public int hashCode() {
-    int result = id;
+    int result = id != null ? id.hashCode() : 0;
     result = 31 * result + (comment != null ? comment.hashCode() : 0);
     return result;
   }
