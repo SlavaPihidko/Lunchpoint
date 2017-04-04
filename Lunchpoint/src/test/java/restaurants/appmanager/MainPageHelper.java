@@ -343,8 +343,9 @@ public class MainPageHelper extends HelperBase {
     List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear"));
     for(WebElement element:elements ) {
       String id = element.getAttribute("data");
-      String comment = element.getText();
-     commentsFromWeb.add(new CommentsDataOfRest(id ,comment));
+      String commentDirty = element.getText();
+      String [] comment = commentDirty.split("\n");
+     commentsFromWeb.add(new CommentsDataOfRest(id ,comment[5]));
       //System.out.println("commentsFromWebStr: " + commentsFromWeb);
     }
     return commentsFromWeb;
