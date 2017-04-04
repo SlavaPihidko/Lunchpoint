@@ -7,9 +7,17 @@ public class CommentsDataOfRest {
   private int id;
   private String comment;
 
-  public CommentsDataOfRest(int id, String comment){
-  this.id=id;
-    this.comment=comment;
+  public CommentsDataOfRest(int id, String comment) {
+    this.id = id;
+    this.comment = comment;
+  }
+
+  public CommentsDataOfRest(String comment) {
+    this.comment = comment;
+  }
+
+  public CommentsDataOfRest(int id) {
+    this.id = id;
   }
 
   @Override

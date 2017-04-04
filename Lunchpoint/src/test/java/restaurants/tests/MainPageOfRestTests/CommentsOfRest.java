@@ -22,35 +22,34 @@ public class CommentsOfRest extends TestBase {
 
   @Test
   public void commentsOfRest() throws InterruptedException {
-    List<CommentsDataOfRest> commentsFromDb=null;
-    try{
-      conn = DriverManager.getConnection(dbURL,userName,password);
+    /*List<CommentsDataOfRest> commentsFromDb = null;
+    try {
+      conn = DriverManager.getConnection(dbURL, userName, password);
       Statement st = conn.createStatement();
       ResultSet rs = st.executeQuery("SELECT comment_id, text FROM  comments  WHERE restaurant_id=2219");
       commentsFromDb = new ArrayList<CommentsDataOfRest>();
-      while (rs.next()){
-        CommentsDataOfRest comment = new CommentsDataOfRest(rs.getInt("comment_id"),rs.getString("text"));
+      while (rs.next()) {
+        CommentsDataOfRest comment = new CommentsDataOfRest(rs.getInt("comment_id"), rs.getString("text"));
         commentsFromDb.add(comment);
 
-        System.out.println("commentsFromDb :" + commentsFromDb );
+        System.out.println("commentsFromDb :" + commentsFromDb);
       }
 
       rs.close();
       st.close();
       conn.close();
-    }
-    catch (SQLException ex) {
+    } catch (SQLException ex) {
       // handle any errors
       System.out.println("SQLException: " + ex.getMessage());
       System.out.println("SQLState: " + ex.getSQLState());
       System.out.println("VendorError: " + ex.getErrorCode());
     }
-
+*/
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
     app.getAdminHelper()
             .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     List<CommentsDataOfRest> commentsFromWebMainPg = app.getMainPgHelper().getCommentsList();
-    System.out.println("commentsFromWebMainPg : "+ commentsFromWebMainPg);
+    System.out.println("commentsFromWebMainPg : " + commentsFromWebMainPg);
   }
 }

@@ -315,14 +315,26 @@ public class MainPageHelper extends HelperBase {
   }
 
   public List<CommentsDataOfRest> getCommentsList() {
-    List<CommentsDataOfRest> commentsFromWeb = new ArrayList<CommentsDataOfRest>();
+    /*List<CommentsDataOfRest> commentsFromWebStr = new ArrayList<CommentsDataOfRest>();
     List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed review-item clear div.review-main div.text"));
     for(WebElement element:elements ) {
       String comment = element.getTagName();
       CommentsDataOfRest comments = new CommentsDataOfRest(comment);
-      List<WebElement> elements2 = wd.findElements(By.cssSelector("div.reviews-feed review-item clear"));
+      commentsFromWebStr.add(comments);
+      System.out.println("commentsFromWebStr: "+commentsFromWebStr);
+      */
+    click(By.cssSelector("div.inner-toggle-full"));
+    List<CommentsDataOfRest> commentsFromWebIds = new ArrayList<CommentsDataOfRest>();
+      List<WebElement> elements2 = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear"));
+      for(WebElement element1:elements2){
+        String id = element1.getAttribute("data");
+        CommentsDataOfRest ids = new CommentsDataOfRest(id);
+        commentsFromWebIds.add(ids);
+
+      }
+      return commentsFromWebIds;
     }
 
-    //return commentsList;
+    //commentsFromWebStr;
   }
-}
+
