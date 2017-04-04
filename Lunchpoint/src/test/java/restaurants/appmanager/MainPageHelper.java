@@ -315,15 +315,17 @@ public class MainPageHelper extends HelperBase {
   }
 
   public List<CommentsDataOfRest> getCommentsList() {
-    /*List<CommentsDataOfRest> commentsFromWebStr = new ArrayList<CommentsDataOfRest>();
-    List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed review-item clear div.review-main div.text"));
+    click(By.cssSelector("div.inner-toggle-full"));
+
+    List<CommentsDataOfRest> commentsFromWebStr = new ArrayList<CommentsDataOfRest>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear div.review-main div.text > p"));
     for(WebElement element:elements ) {
-      String comment = element.getTagName();
+      String comment = element.getText();
       CommentsDataOfRest comments = new CommentsDataOfRest(comment);
       commentsFromWebStr.add(comments);
-      System.out.println("commentsFromWebStr: "+commentsFromWebStr);
-      */
-    click(By.cssSelector("div.inner-toggle-full"));
+      System.out.println("commentsFromWebStr: " + commentsFromWebStr);
+    }
+
     List<CommentsDataOfRest> commentsFromWebIds = new ArrayList<CommentsDataOfRest>();
       List<WebElement> elements2 = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear"));
       for(WebElement element1:elements2){
@@ -332,9 +334,9 @@ public class MainPageHelper extends HelperBase {
         commentsFromWebIds.add(ids);
 
       }
-      return commentsFromWebIds;
+      //return commentsFromWebIds;
+    return commentsFromWebStr;
     }
-
-    //commentsFromWebStr;
   }
+
 
