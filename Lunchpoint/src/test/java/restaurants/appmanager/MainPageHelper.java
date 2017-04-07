@@ -342,6 +342,12 @@ public class MainPageHelper extends HelperBase {
     List<CommentsDataOfRest> commentsFromWeb = new ArrayList<CommentsDataOfRest>();
     List<WebElement> elements = wd.findElements(By.cssSelector("div.reviews-feed div.review-item.clear"));
     for(WebElement element:elements ) {
+      /*if(elementPresent(By.cssSelector("div.reply-toggle-full"))){
+        click(By.cssSelector("div.reply-toggle-full"));
+        Thread.sleep(1000);
+      } else {
+        System.out.println("NET ELEMENTA");
+      }*/
       String id = element.getAttribute("data");
       String commentDirty = element.getText();
       String [] comment = commentDirty.split("\n");

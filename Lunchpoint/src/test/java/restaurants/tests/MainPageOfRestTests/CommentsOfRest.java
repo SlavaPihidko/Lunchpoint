@@ -28,7 +28,7 @@ public class CommentsOfRest extends TestBase {
     try {
       conn = DriverManager.getConnection(dbURL, userName, password);
       Statement st = conn.createStatement();
-      ResultSet rs = st.executeQuery("SELECT comment_id, text FROM  comments  WHERE restaurant_id=2219");
+      ResultSet rs = st.executeQuery("SELECT comment_id, text FROM  comments  WHERE restaurant_id=2219 and `parent_id`=0");
       commentsFromDb = new ArrayList<CommentsDataOfRest>();
       while (rs.next()) {
         CommentsDataOfRest comment = new CommentsDataOfRest(rs.getString("comment_id"), rs.getString("text"));
@@ -56,7 +56,7 @@ public class CommentsOfRest extends TestBase {
     //Сравнение размеров
     assertEquals(commentsFromDb.size(), commentsFromWebMainPg.size());
     // сравнение множест.
-    //assertEquals(new HashSet<Object>(objectFromWebNetwork), new HashSet<Object>(allNetworkListFromDb));
+    assertEquals(new HashSet<Object>(commentsFromDb), new HashSet<Object>(commentsFromWebMainPg));
 
   }
 }
