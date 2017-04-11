@@ -2,11 +2,10 @@ package restaurants.tests.MainPageOfRestTests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import restaurants.model.RestDataOfMainPage;
 import restaurants.tests.TestBase;
 
 import static org.testng.Assert.assertEquals;
-import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
+//import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
 import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
@@ -19,7 +18,7 @@ public class SeoUrlTests extends TestBase {
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
     // Проверка на страничке ресторана что имя ресторана соответствует переходу по ЮРЛу
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.cafe-name")), restEditDataOfMainPg.getNameOfRest());
@@ -28,6 +27,6 @@ public class SeoUrlTests extends TestBase {
             .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     // Проверка в админке в поле SEO url
     assertEquals(app.getMainPgHelper()
-            .attribute(By.id("edit_seo_url"), "value" ),restEditDataOfMainPg.getSeoUrlOfRest());
+            .attribute(By.id("edit_seo_url"), "value" ),restEditDataOfMainPg.getSeoOfRest());
   }
 }

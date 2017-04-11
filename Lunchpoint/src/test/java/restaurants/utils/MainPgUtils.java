@@ -6,76 +6,48 @@ import restaurants.model.RestDataOfMainPage;
  * Created by Slava on 14.03.2017.
  */
 public class MainPgUtils {
-  public static final RestDataOfMainPage restEditDataOfMainPg = new RestDataOfMainPage(
-          30.39818839999998,
-          2219,
-          "MainImg.jpg",
-          "Slava test selenium",
-          "вул.Жолудєва 8",
-          "slavkotest123",
-          "Здесь описание ресторана",
-          "вулиця Жолудєва, 8, Київ, Украина, 03134",
-          "50.4167724,30.39818839999998",
-          "03134",
-          "0632223344",
-          "optibayukraine@gmail.com",
-          "slava17puh123@gmail.com",
-          "my_site123.com",
-          "my_fb.com",
-          "my_instagram.com",
-          "my_twitter.com",
-          "Aroma espresso bars",
-          "Бистро",
-          "BBQ",
-          "Happy hours",
-          "Cork-fee");
+  public static final RestDataOfMainPage restEditDataOfMainPg = new RestDataOfMainPage()
+          .withLng(30.39818839999998)
+          .withId(2219)
+          .withNameOfMainImg("MainImg.jpg")
+          .withNameOfRest("Slava test selenium")
+          .withAddressOfRest("вул.Жолудєва 8")
+          .withSeoOfRest("slavkotest123")
+          .withDescriptionOfRest("Здесь описание ресторана")
+          .withAddressOnTheMapOfRest("вулиця Жолудєва, 8, Київ, Украина, 03134")
+          .withGpsOfRest("50.4167724,30.39818839999998")
+          .withIndexOfRest("03134")
+          .withTelOfRest("0632223344")
+          .withEmailOfRest("optibayukraine@gmail.com")
+          .withBookingEmailOfRest("slava17puh123@gmail.com")
+          .withSiteOfRest("my_site123.com")
+          .withFbOfRest("my_fb.com")
+          .withInstagramOfRest("my_instagram.com")
+          .withTwitterOfRest("my_twitter.com")
+          .withNetworkOfRest("Aroma espresso bars")
+          .withTypeOfRest("Бистро")
+          .withTypeOfCuisine("BBQ")
+          .withAdditionalServiceOfRest("Happy hours")
+          .withOtherFeaturesOfRest("Cork-fee");
 
 
-  public static final RestDataOfMainPage restDefaultDataOfMainPageAllField = new RestDataOfMainPage(
-          30.39818839999998,
-          2219,
-          "MainImg.jpg",
-          "Slava test123",
-          "вул.Академика Белецкого, 9а",
-          "viacheslav",
-          "Здесь описание ресторана тест создание ресторана",
-          "9A, вулиця Академіка Білецького, 9А, Київ, Украина",
-          "50.430206,30.417633000000023",
-          "03126",
-          "0671112299",
-          "create123@gmail.com",
-          "test123@gmail.com",
-          "",
-          "",
-          "",
-          "",
-          "Carte Blanche",
-          "Винотека",
-          "Авторская",
-          "Еда с собой",
-          "Бильярд");
-
-  public static final RestDataOfMainPage restDataOfMainPageAllField = new RestDataOfMainPage(
-          30.39818839999998,
-          2219,
-          "MainImgFirst.jpg",
-          "Slava test123",
-          "вул.Академика Белецкого, 9а",
-          "viacheslav",
-          "Здесь описание ресторана тест создание ресторана",
-          "9A, вулиця Академіка Білецького, 9А, Київ, Украина",
-          "50.430206,30.417633000000023",
-          "03126",
-          "0671112299",
-          "create123@gmail.com",
-          "test123@gmail.com",
-          "my_first_site.com",
-          "my_first_fb.com",
-          "my_first_instagram.com",
-          "my_first_twitter.com",
-          "Carte Blanche",
-          "Винотека",
-          "Авторская",
-          "Еда с собой",
-          "Бильярд");
+  public static final RestDataOfMainPage restDefaultDataOfMainPageAllField = new RestDataOfMainPage()
+          .withLng(30.39818839999998)
+          .withId(2219)
+          .withNameOfMainImg("MainImg.jpg")
+          .withNameOfRest("Slava test123")
+          .withAddressOfRest("вул.Академика Белецкого, 9а")
+          .withSeoOfRest("viacheslav")
+          .withDescriptionOfRest("Здесь описание ресторана тест создание ресторана")
+          .withAddressOnTheMapOfRest("9A, вулиця Академіка Білецького, 9А, Київ, Украина")
+          .withGpsOfRest("50.430206,30.417633000000023")
+          .withIndexOfRest("03126")
+          .withTelOfRest("0671112299")
+          .withEmailOfRest("create123@gmail.com")
+          .withBookingEmailOfRest("test123@gmail.com")
+          .withNetworkOfRest("Carte Blanche")
+          .withTypeOfRest("Винотека")
+          .withTypeOfCuisine("Авторская")
+          .withAdditionalServiceOfRest("Еда с собой")
+          .withOtherFeaturesOfRest("Бильярд");
 }

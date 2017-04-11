@@ -61,7 +61,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
@@ -83,7 +83,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
@@ -105,7 +105,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()
@@ -127,7 +127,7 @@ public class IconsSocNetworkTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
 
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
 
     // проверка на отсутствие иконки сайта ресторана
     assertEquals(java.util.Optional.of(app.getMainPgHelper()

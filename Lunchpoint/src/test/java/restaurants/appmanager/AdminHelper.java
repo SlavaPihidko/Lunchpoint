@@ -58,4 +58,8 @@ public class AdminHelper extends HelperBase {
   public void refreshPg() {
     wd.navigate().refresh();
   }
+
+  public void createNewRestButton() {
+    click(By.cssSelector("a.btn.btn-create"));
+  }
 }

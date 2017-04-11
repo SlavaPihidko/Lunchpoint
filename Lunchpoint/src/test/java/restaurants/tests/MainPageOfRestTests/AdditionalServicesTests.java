@@ -2,7 +2,6 @@ package restaurants.tests.MainPageOfRestTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.tests.TestBase;
-import restaurants.utils.MainPgUtils;
 
 import static org.testng.Assert.assertEquals;
 import static restaurants.utils.MainPgUtils.*;
@@ -15,7 +14,7 @@ public class AdditionalServicesTests extends TestBase {
   @Test
   public void additionalServicesTest() throws InterruptedException {
 
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoUrlOfRest());
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
     Thread.sleep(2000);
     // проверка на страничке ресторана дополнительные услуги
     assertEquals(app.getMainPgHelper()

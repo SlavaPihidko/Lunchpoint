@@ -183,7 +183,7 @@ public class MainPageHelper extends HelperBase {
     // Сейчас это обойду и буду жестко вставлять значение в поле GPS
   }
 
-  private void enterAddressOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
+  public void enterAddressOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restAddress"),restDataOfMainPage.getAddressOfRest());
   }
 
@@ -205,7 +205,7 @@ public class MainPageHelper extends HelperBase {
   }
 
   public void enterSeoUrlOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
-    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoUrlOfRest()); // Вводим seo-url ресторана
+    type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest()); // Вводим seo-url ресторана
   }
 
   public void enterNameOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {

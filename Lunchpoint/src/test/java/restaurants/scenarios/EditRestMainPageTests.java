@@ -11,7 +11,7 @@ import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 public class EditRestMainPageTests extends TestBase {
 
-  @Test(enabled = false)
+  /*@Test(enabled = false)
   public void testEditRestMainPageNameAddress() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
@@ -26,7 +26,7 @@ public class EditRestMainPageTests extends TestBase {
     app.getAdminHelper().gotoAddressFieldInAdminPanel();//
     assertEquals(app.getMainPgHelper().text(By.xpath("//tr[@data-key]/td[2]/a")), "Slava test selenium");// проверка имени
     assertEquals(app.getMainPgHelper().text(By.xpath("//tr[@data-key]/td[3]/a")),"вул.Жолудєва 8");// проверка адреса
-  }
+  }*/
 
   @Test(enabled = true)
 public void testEditRestMainPageAllField() throws InterruptedException {

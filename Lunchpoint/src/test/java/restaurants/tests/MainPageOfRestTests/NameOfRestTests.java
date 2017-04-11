@@ -6,7 +6,7 @@ import restaurants.model.RestDataOfMainPage;
 import restaurants.tests.TestBase;
 
 import static org.testng.Assert.assertEquals;
-import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
+//import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
 import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**

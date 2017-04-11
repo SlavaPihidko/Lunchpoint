@@ -1,6 +1,9 @@
 package restaurants.model;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 public class RestDataOfMainPage {
+
   private double lng;
   private int id;
   private String nameOfMainImg;
@@ -24,12 +27,12 @@ public class RestDataOfMainPage {
   private String additionalServiceOfRest;
   private String otherFeaturesOfRest;
 
-  public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
+  /*public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;
-  }
+  }*/
 
-
+/*
    public RestDataOfMainPage(double lng,
                             int id,
                             String nameOfMainImg,
@@ -75,7 +78,7 @@ public class RestDataOfMainPage {
     this.additionalServiceOfRest = additionalServiceOfRest;
     this.otherFeaturesOfRest = otherFeaturesOfRest;
   }
-
+*/
   public double getLng() {
     return lng;
   }
@@ -96,7 +99,7 @@ public class RestDataOfMainPage {
     return addressOfRest;
   }
 
-  public String getSeoUrlOfRest() {
+  public String getSeoOfRest() {
     return seoOfRest;
   }
 
@@ -162,5 +165,204 @@ public class RestDataOfMainPage {
 
   public String getOtherFeaturesOfRest() {
     return otherFeaturesOfRest;
+  }
+
+
+  public void setLng(double lng) {
+    this.lng = lng;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public void setNameOfMainImg(String nameOfMainImg) {
+    this.nameOfMainImg = nameOfMainImg;
+  }
+
+  public void setNameOfRest(String nameOfRest) {
+    this.nameOfRest = nameOfRest;
+  }
+
+  public void setAddressOfRest(String addressOfRest) {
+    this.addressOfRest = addressOfRest;
+  }
+
+  public void setSeoOfRest(String seoOfRest) {
+    this.seoOfRest = seoOfRest;
+  }
+
+  public void setDescriptionOfRest(String descriptionOfRest) {
+    this.descriptionOfRest = descriptionOfRest;
+  }
+
+  public void setAddressOnTheMapOfRest(String addressOnTheMapOfRest) {
+    this.addressOnTheMapOfRest = addressOnTheMapOfRest;
+  }
+
+  public void setGpsOfRest(String gpsOfRest) {
+    this.gpsOfRest = gpsOfRest;
+  }
+
+  public void setIndexOfRest(String indexOfRest) {
+    this.indexOfRest = indexOfRest;
+  }
+
+  public void setTelOfRest(String telOfRest) {
+    this.telOfRest = telOfRest;
+  }
+
+  public void setEmailOfRest(String emailOfRest) {
+    this.emailOfRest = emailOfRest;
+  }
+
+  public void setBookingEmailOfRest(String bookingEmailOfRest) {
+    this.bookingEmailOfRest = bookingEmailOfRest;
+  }
+
+  public void setSiteOfRest(String siteOfRest) {
+    this.siteOfRest = siteOfRest;
+  }
+
+  public void setFbOfRest(String fbOfRest) {
+    this.fbOfRest = fbOfRest;
+  }
+
+  public void setInstagramOfRest(String instagramOfRest) {
+    this.instagramOfRest = instagramOfRest;
+  }
+
+  public void setTwitterOfRest(String twitterOfRest) {
+    this.twitterOfRest = twitterOfRest;
+  }
+
+  public void setNetworkOfRest(String networkOfRest) {
+    this.networkOfRest = networkOfRest;
+  }
+
+  public void setTypeOfRest(String typeOfRest) {
+    this.typeOfRest = typeOfRest;
+  }
+
+  public void setTypeOfCuisine(String typeOfCuisine) {
+    this.typeOfCuisine = typeOfCuisine;
+  }
+
+  public void setAdditionalServiceOfRest(String additionalServiceOfRest) {
+    this.additionalServiceOfRest = additionalServiceOfRest;
+  }
+
+  public void setOtherFeaturesOfRest(String otherFeaturesOfRest) {
+    this.otherFeaturesOfRest = otherFeaturesOfRest;
+  }
+
+  public RestDataOfMainPage withLng(double lng) {
+    this.lng = lng;
+    return this;
+  }
+
+  public RestDataOfMainPage withId(int id) {
+    this.id = id;
+    return this;
+  }
+
+  public RestDataOfMainPage withNameOfMainImg(String nameOfMainImg) {
+    this.nameOfMainImg = nameOfMainImg;
+    return this;
+  }
+
+  public RestDataOfMainPage withNameOfRest(String nameOfRest) {
+    this.nameOfRest = nameOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withAddressOfRest(String addressOfRest) {
+    this.addressOfRest = addressOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withSeoOfRest(String seoOfRest) {
+    this.seoOfRest = seoOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withDescriptionOfRest(String descriptionOfRest) {
+    this.descriptionOfRest = descriptionOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withAddressOnTheMapOfRest(String addressOnTheMapOfRest) {
+    this.addressOnTheMapOfRest = addressOnTheMapOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withGpsOfRest(String gpsOfRest) {
+    this.gpsOfRest = gpsOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withIndexOfRest(String indexOfRest) {
+    this.indexOfRest = indexOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withTelOfRest(String telOfRest) {
+    this.telOfRest = telOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withEmailOfRest(String emailOfRest) {
+    this.emailOfRest = emailOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withBookingEmailOfRest(String bookingEmailOfRest) {
+    this.bookingEmailOfRest = bookingEmailOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withSiteOfRest(String siteOfRest) {
+    this.siteOfRest = siteOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withFbOfRest(String fbOfRest) {
+    this.fbOfRest = fbOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withInstagramOfRest(String instagramOfRest) {
+    this.instagramOfRest = instagramOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withTwitterOfRest(String twitterOfRest) {
+    this.twitterOfRest = twitterOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withNetworkOfRest(String networkOfRest) {
+    this.networkOfRest = networkOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withTypeOfRest(String typeOfRest) {
+    this.typeOfRest = typeOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withTypeOfCuisine(String typeOfCuisine) {
+    this.typeOfCuisine = typeOfCuisine;
+    return this;
+  }
+
+  public RestDataOfMainPage withAdditionalServiceOfRest(String additionalServiceOfRest) {
+    this.additionalServiceOfRest = additionalServiceOfRest;
+    return this;
+  }
+
+  public RestDataOfMainPage withOtherFeaturesOfRest(String otherFeaturesOfRest) {
+    this.otherFeaturesOfRest = otherFeaturesOfRest;
+    return this;
   }
 }
