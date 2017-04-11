@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
+
 /**
  * Created by Slava on 27.02.2017.
  */
@@ -45,9 +47,8 @@ public class CreateRestViaAdminPage extends TestBase {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     app.getAdminHelper().gotoAdminPanel();
     app.getAdminHelper().createNewRestButton();
-    app.getMainPgHelper().enterNameOfRestMainPage(restDefaultDataOfMainPageAllField);
-    app.getMainPgHelper().enterAddressOfRestMainPage(restDefaultDataOfMainPageAllField);
-    app.getMainPgHelper().enterSeoUrlOfRestMainPage(restDefaultDataOfMainPageAllField);
-
+    app.getMainPgHelper().fillAllOfRestFieldOnMainPage(restDefaultDataOfMainPageAllField);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 }

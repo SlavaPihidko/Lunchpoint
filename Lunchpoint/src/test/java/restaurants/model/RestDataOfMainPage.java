@@ -167,7 +167,7 @@ public class RestDataOfMainPage {
     return otherFeaturesOfRest;
   }
 
-
+/*
   public void setLng(double lng) {
     this.lng = lng;
   }
@@ -255,7 +255,7 @@ public class RestDataOfMainPage {
   public void setOtherFeaturesOfRest(String otherFeaturesOfRest) {
     this.otherFeaturesOfRest = otherFeaturesOfRest;
   }
-
+*/
   public RestDataOfMainPage withLng(double lng) {
     this.lng = lng;
     return this;

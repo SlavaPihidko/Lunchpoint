@@ -1,1 +1,5 @@
-{"restData":[{"nameOfRest":"test1","addressOfRest":"test2","seoOfRest":"test3"}]}
+{"restData":[{"nameOfRest":"Slava test123","addressOfRest":"вул.Академика Белецкого, 9а","seoOfRest":"viacheslav","descriptionOfRest":"Здесь описание ресторана тест создание ресторана",
+"addressOnTheMapOfRest":"9A, вулиця Академіка Білецького, 9А, Київ, Украина","gpsOfRest":"50.430206,30.417633000000023",
+"indexOfRest":"03126","telOfRest":"0671112299","emailOfRest":"create123@gmail.com","bookingEmailOfRest":"test123@gmail.com",
+"siteOfRest":"","fbOfRest":"","instagramOfRest":"","twitterOfRest":"",
+"networkOfRest":"Carte Blanche","typeOfRest":"Винотека","typeOfCuisine":"Авторская","additionalServiceOfRest":"Еда с собой","otherFeaturesOfRest":"Бильярд"}]}
