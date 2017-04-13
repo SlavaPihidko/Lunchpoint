@@ -1,0 +1,62 @@
+<list>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 0</nameOfRest>
+    <addressOfRest>ulitsa 0</addressOfRest>
+    <seoOfRest>testing 0</seoOfRest>
+    <indexOfRest>333 0</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 1</nameOfRest>
+    <addressOfRest>ulitsa 1</addressOfRest>
+    <seoOfRest>testing 1</seoOfRest>
+    <indexOfRest>333 1</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 2</nameOfRest>
+    <addressOfRest>ulitsa 2</addressOfRest>
+    <seoOfRest>testing 2</seoOfRest>
+    <indexOfRest>333 2</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 3</nameOfRest>
+    <addressOfRest>ulitsa 3</addressOfRest>
+    <seoOfRest>testing 3</seoOfRest>
+    <indexOfRest>333 3</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 4</nameOfRest>
+    <addressOfRest>ulitsa 4</addressOfRest>
+    <seoOfRest>testing 4</seoOfRest>
+    <indexOfRest>333 4</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 5</nameOfRest>
+    <addressOfRest>ulitsa 5</addressOfRest>
+    <seoOfRest>testing 5</seoOfRest>
+    <indexOfRest>333 5</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 6</nameOfRest>
+    <addressOfRest>ulitsa 6</addressOfRest>
+    <seoOfRest>testing 6</seoOfRest>
+    <indexOfRest>333 6</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 7</nameOfRest>
+    <addressOfRest>ulitsa 7</addressOfRest>
+    <seoOfRest>testing 7</seoOfRest>
+    <indexOfRest>333 7</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 8</nameOfRest>
+    <addressOfRest>ulitsa 8</addressOfRest>
+    <seoOfRest>testing 8</seoOfRest>
+    <indexOfRest>333 8</indexOfRest>
+  </RestDataOfMainPage>
+  <RestDataOfMainPage>
+    <nameOfRest>Test 9</nameOfRest>
+    <addressOfRest>ulitsa 9</addressOfRest>
+    <seoOfRest>testing 9</seoOfRest>
+    <indexOfRest>333 9</indexOfRest>
+  </RestDataOfMainPage>
+</list>

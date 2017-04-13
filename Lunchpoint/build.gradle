@@ -10,4 +10,7 @@ dependencies{
 	compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.8'
 	compile 'mysql:mysql-connector-java:5.1.41'
+	compile 'org.gosu-lang.gosu.managed:gw-jcommander:1.48'
+	compile 'com.thoughtworks.xstream:xstream:1.4.9'
+	compile 'com.google.code.gson:gson:2.8.0'
 }

@@ -1,18 +1,29 @@
 package restaurants.model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-public class RestDataOfMainPage {
+import java.util.List;
 
+@XStreamAlias("RestDataOfMainPage")
+public class RestDataOfMainPage {
+  @XStreamOmitField
   private double lng;
+  @XStreamOmitField
   private int id;
   private String nameOfMainImg;
+  @Expose
   private String nameOfRest;
+  @Expose
   private String addressOfRest;
+  @Expose
   private String seoOfRest;
   private String descriptionOfRest;
   private String addressOnTheMapOfRest;
   private String gpsOfRest;
+  @Expose
   private String indexOfRest;
   private String telOfRest;
   private String emailOfRest;
@@ -27,6 +38,11 @@ public class RestDataOfMainPage {
   private String additionalServiceOfRest;
   private String otherFeaturesOfRest;
 
+  List<RestDataOfMainPage> restData;
+
+  public List<RestDataOfMainPage> getRestData() {
+    return restData;
+  }
   /*public RestDataOfMainPage(String nameOfRest, String addressOfRest ) {
     this.nameOfRest = nameOfRest;
     this.addressOfRest = addressOfRest;

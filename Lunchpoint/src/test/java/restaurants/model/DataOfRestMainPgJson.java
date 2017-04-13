@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by Slava on 11.04.2017.
  */
-public class DataOfRestMainPgJson {
+/*public class DataOfRestMainPgJson {
   List<RestDataOfMainPage> restData;
 
   public List<RestDataOfMainPage> getRestData() {
@@ -16,3 +16,4 @@ public class DataOfRestMainPgJson {
     this.restData = restData;
   }
 }
+*/

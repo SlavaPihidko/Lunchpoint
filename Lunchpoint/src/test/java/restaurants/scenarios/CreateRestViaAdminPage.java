@@ -5,7 +5,7 @@ import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import restaurants.model.DataOfRestMainPgJson;
+//import restaurants.model.DataOfRestMainPgJson;
 import restaurants.model.RestDataOfMainPage;
 import restaurants.tests.TestBase;
 
@@ -35,7 +35,9 @@ public class CreateRestViaAdminPage extends TestBase {
 ////      list.add(new Object[] {new RestDataOfMainPage().withNameOfRest(split[0]).withAddressOfRest(split[1]).withSeoOfRest(split[2])});
 //      line = reader.readLine();
 //    }
-    DataOfRestMainPgJson mappedJson = mapper.readValue(new File("src\\test\\resources\\forRest.json"), DataOfRestMainPgJson.class);
+
+
+    RestDataOfMainPage mappedJson = mapper.readValue(new File("src\\test\\resources\\forRest.json"), RestDataOfMainPage.class);
     for (RestDataOfMainPage data : mappedJson.getRestData()) {
       list.add(new Object[] {data});
     }
