@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="MainPageOfRestTests" >
+        <classes>
+            <class name="restaurants.tests.MainPageOfRestTests.NameOfRestTests" />
+            <class name="restaurants.tests.MainPageOfRestTests.SeoUrlTests" />
+            <class name="restaurants.tests.MainPageOfRestTests.VariantsOfNameTests" />
+        </classes>
+    </test>
