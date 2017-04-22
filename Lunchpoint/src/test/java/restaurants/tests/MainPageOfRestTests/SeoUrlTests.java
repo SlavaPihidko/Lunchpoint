@@ -13,7 +13,7 @@ import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
  */
 public class SeoUrlTests extends TestBase {
 
-  @Test
+  @Test(enabled = true)
   public void seoUrlTest() throws InterruptedException {
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
