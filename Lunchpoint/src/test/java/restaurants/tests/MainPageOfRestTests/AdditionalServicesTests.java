@@ -14,7 +14,8 @@ public class AdditionalServicesTests extends TestBase {
   @Test
   public void additionalServicesTest() throws InterruptedException {
 
-    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+//    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+    app.getAdminHelper().getAddressMainUrl("slavkotest123");
     Thread.sleep(2000);
     // проверка на страничке ресторана дополнительные услуги
     assertEquals(app.getMainPgHelper()
