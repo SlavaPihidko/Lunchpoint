@@ -1,3 +1,4 @@
+/*
 package restaurants.tests;
 
 import org.testng.annotations.Test;
@@ -11,11 +12,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 //import java.sql.Date;
-
-
-/**
- * Created by Slava on 07.03.2017.
- */
+*/
+/*
 public class Yarik
 {
   @Test
@@ -69,3 +67,4 @@ public class Yarik
 
   }
 }
+*/
