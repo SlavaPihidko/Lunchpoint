@@ -27,17 +27,17 @@ public class TestBase {
   protected String usernameGuest = "slava17puh999@gmail.com";
   protected String passwordGuest = "bigdig2";
 
-  @BeforeSuite
+  @BeforeMethod
   public void setUp() throws Exception {
     app.init();
   }
 
-  @AfterSuite(alwaysRun = true)
+  @AfterMethod(alwaysRun = true)
   public void tearDown() {
     app.stop();
   }
 
-  @BeforeMethod
+  /*@BeforeMethod
   public void logTestStart(Method m, Object[] p){
     logger.info("Start test "+ m.getName() + " with parameters "+ Arrays.asList(p));
 
@@ -47,5 +47,5 @@ public class TestBase {
   public void logTestStop(Method m){
     logger.info("Stop test "+ m.getName());
   }
-
+*/
 }

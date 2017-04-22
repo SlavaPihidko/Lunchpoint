@@ -16,6 +16,21 @@ import static restaurants.utils.VariantsOfNameUtils.*;
 public class VariantsOfNameTests extends TestBase {
   @Test
   public void variantsOfNameTest() throws InterruptedException {
+
+    if(app == null ) {
+      System.out.println("app equals Null");
+    } else {
+      System.out.println("app is not Null");
+    }
+    System.out.println(usernameAdmin);
+    System.out.println(passwordAdmin);
+
+    if(app.getSessionHelper() == null) {
+      System.out.println("app.getSessionHelper() equals Null");
+    } else {
+      System.out.println("app.getSessionHelper() is not Null");
+    }
+
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
 

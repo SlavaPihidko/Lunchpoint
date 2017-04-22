@@ -1,5 +1,7 @@
 package restaurants.tests.MainPageOfRestTests;
 
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.xpath.SourceTree;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.tests.TestBase;
@@ -15,6 +17,20 @@ public class SeoUrlTests extends TestBase {
 
   @Test(enabled = true)
   public void seoUrlTest() throws InterruptedException {
+
+    if(app == null ) {
+      System.out.println("app equals Null");
+    } else {
+      System.out.println("app is not Null");
+    }
+    System.out.println(usernameAdmin);
+    System.out.println(passwordAdmin);
+
+    if(app.getSessionHelper() == null) {
+      System.out.println("app.getSessionHelper() equals Null");
+    } else {
+      System.out.println("app.getSessionHelper() is not Null");
+    }
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(2000);
