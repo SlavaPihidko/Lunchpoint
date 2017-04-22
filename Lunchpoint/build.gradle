@@ -31,3 +31,7 @@ task testScenarios(type:Test) {
 		suites 'src/test/resources/testng-scenarios.xml'
 	}
 }
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
