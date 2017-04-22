@@ -8,3 +8,4 @@
             <class name="restaurants.tests.MainPageOfRestTests.VariantsOfNameTests" />
         </classes>
     </test>
+</suite>
