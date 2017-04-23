@@ -1,4 +1,4 @@
-/*package restaurants.scenarios;
+package restaurants.scenarios;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import org.codehaus.jackson.map.DeserializationConfig;
@@ -19,7 +19,7 @@ import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 /**
  * Created by Slava on 27.02.2017.
  */
-/*
+
 public class CreateRestViaAdminPage extends TestBase {
 
   @DataProvider
@@ -55,4 +55,3 @@ public class CreateRestViaAdminPage extends TestBase {
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 }
-*/

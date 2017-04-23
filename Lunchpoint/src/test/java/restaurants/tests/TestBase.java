@@ -21,7 +21,7 @@ public class TestBase {
 
   Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-  protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+  protected static final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
   protected String usernameAdmin = "manager@lunch.ua";
   protected String passwordAdmin = "2CDTx8Wz";
   protected String usernameGuest = "slava17puh999@gmail.com";
