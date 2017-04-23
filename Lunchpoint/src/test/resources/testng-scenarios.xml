@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="1" >
      <test name="scenarios">
         <classes>
-            <class name="restaurants.scenarios.CreateRestViaAdminPage"/>
+            <class name="restaurants.scenarios.EditRestMainPageTests"/>
         </classes>
     </test>
 </suite>

@@ -21,18 +21,19 @@ public class TestBase {
 
   Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-  protected static final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+  protected static ApplicationManager app;
   protected String usernameAdmin = "manager@lunch.ua";
   protected String passwordAdmin = "2CDTx8Wz";
   protected String usernameGuest = "slava17puh999@gmail.com";
   protected String passwordGuest = "bigdig2";
 
-  @BeforeMethod
+  @BeforeSuite
   public void setUp() throws Exception {
+    app  = new ApplicationManager(BrowserType.CHROME);
     app.init();
   }
 
-  @AfterMethod(alwaysRun = true)
+  @AfterSuite(alwaysRun = true)
   public void tearDown() {
     app.stop();
   }

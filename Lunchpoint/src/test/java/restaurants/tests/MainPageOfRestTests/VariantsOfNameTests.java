@@ -31,8 +31,8 @@ public class VariantsOfNameTests extends TestBase {
       System.out.println("app.getSessionHelper() is not Null");
     }
 
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(2000);
+   // app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    //Thread.sleep(2000);
 
     app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     Thread.sleep(2000);
