@@ -20,9 +20,9 @@ test {
 	useTestNG()
 }
 
-task testMainPageOfRestTests(type:Test) {
+task testMainPageOfRestNameOfRest(type:Test) {
 	useTestNG{
-		suites 'src/test/resources/testng-MainPageOfRestTests.xml'
+		suites 'src/test/resources/MainPageOfRestTestsNameOfRest.xml'
 	}
 }
 

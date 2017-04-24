@@ -4,8 +4,6 @@
     <test name="MainPageOfRestTests" >
         <classes>
             <class name="restaurants.tests.MainPageOfRestTests.NameOfRestTests" />
-            <class name="restaurants.tests.MainPageOfRestTests.SeoUrlTests" />
-            <class name="restaurants.tests.MainPageOfRestTests.VariantsOfNameTests" />
         </classes>
     </test>
 </suite>

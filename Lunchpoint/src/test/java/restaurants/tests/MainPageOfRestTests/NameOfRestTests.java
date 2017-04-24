@@ -23,6 +23,7 @@ public class NameOfRestTests extends TestBase {
             "фотограф",
             "?/\\|,.!@#$%^&*()-=+)_",
             "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa",
+          "Slava test selenium"
   };
 
   private String[] nameDataOfRestNegative = {
@@ -151,6 +152,13 @@ public class NameOfRestTests extends TestBase {
     // проверяем на сайте на страничке ресторана
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.cafe-name")), nameDataOfRest[3]);
+  }
+
+  @Test(priority = 6)
+  public void returnToEditNameState() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(1000);
+    app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[4]);
   }
 
 
