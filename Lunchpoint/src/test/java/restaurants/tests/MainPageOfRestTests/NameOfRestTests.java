@@ -32,6 +32,7 @@ public class NameOfRestTests extends TestBase {
   };
 
 
+  @Test(priority = 1)
   public void testViewNameOfRest() throws InterruptedException {
 
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -56,6 +57,7 @@ public class NameOfRestTests extends TestBase {
             .text(By.cssSelector("div.cafe-name")),restEditDataOfMainPg.getNameOfRest());
   }
 
+  @Test(priority = 2)
   public void testPossMinSymbols() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
@@ -76,6 +78,7 @@ public class NameOfRestTests extends TestBase {
             .text(By.cssSelector("div.cafe-name")), nameDataOfRest[0]);
   }
 
+  @Test(priority = 3)
   public void testPossKirillSymbols() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
@@ -102,6 +105,7 @@ public class NameOfRestTests extends TestBase {
             .text(By.cssSelector("div.cafe-name")), nameDataOfRest[1]);
   }
 
+  @Test(priority = 4)
   public void testPossSpecSymbols() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
@@ -122,6 +126,7 @@ public class NameOfRestTests extends TestBase {
             .text(By.cssSelector("div.cafe-name")), nameDataOfRest[2]);
   }
 
+  @Test(priority = 5)
   public void testPossMaxSymbols() throws InterruptedException {
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
