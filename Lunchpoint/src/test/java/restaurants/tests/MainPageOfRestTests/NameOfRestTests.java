@@ -35,7 +35,6 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 1)
   public void testViewNameOfRest() throws InterruptedException {
-
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     Thread.sleep(1000);
     app.getSiteHelper().searchRestOnTheSite("Київ","Slava");
@@ -60,8 +59,8 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 2)
   public void testPossMinSymbols() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(1000);
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[0]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -81,8 +80,8 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 3)
   public void testPossKirillSymbols() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(1000);
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[1]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -108,8 +107,8 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 4)
   public void testPossSpecSymbols() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(1000);
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[2]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -129,8 +128,8 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 5)
   public void testPossMaxSymbols() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(1000);
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[3]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -156,9 +155,12 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 6)
   public void returnToEditNameState() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(1000);
-    app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[4]);
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
+    app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().enterNameOfRestMainPage(restEditDataOfMainPg.getNameOfRest());
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
 
 
