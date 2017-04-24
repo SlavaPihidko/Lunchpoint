@@ -13,6 +13,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import static restaurants.tests.TestBase.app;
+import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
+
 /**
  * Created by Slava on 08.01.2017.
  */
@@ -212,6 +215,10 @@ public class MainPageHelper extends HelperBase {
     type(By.id("edit_restName"), restDataOfMainPage.getNameOfRest()); // Вводим имя ресторана
   }
 
+  public void enterNameOfRestMainPage(String restDataOfMainPage) {
+    type(By.id("edit_restName"), restDataOfMainPage); // Вводим имя ресторана
+  }
+
   public void fillNameOfRest(String[] nameDataOfRest, int i) {
     type(By.id("edit_restName"), nameDataOfRest[i]); // Вводим имя ресторана
   }
@@ -356,6 +363,14 @@ public class MainPageHelper extends HelperBase {
     }
     return commentsFromWeb;
     }
+
+  public void changeTheNameOfRest(String s) throws InterruptedException {
+    app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
+    enterNameOfRestMainPage(s);
+    saveRestMainPg();
+    confirmChangesOfRestMainPg();
+    //app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+  }
   }
 
 

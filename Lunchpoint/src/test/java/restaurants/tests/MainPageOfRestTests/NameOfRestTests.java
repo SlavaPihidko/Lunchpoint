@@ -3,7 +3,9 @@ package restaurants.tests.MainPageOfRestTests;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.internal.PackageUtils;
 import restaurants.model.RestDataOfMainPage;
 import restaurants.tests.TestBase;
 
@@ -16,33 +18,28 @@ import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
  */
 public class NameOfRestTests extends TestBase {
 
-  @Test(enabled = true)
+  private String[] nameDataOfRest = {
+            "s",
+            "фотограф",
+            "?/\\|,.!@#$%^&*()-=+)_",
+            "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa",
+  };
+
+  private String[] nameDataOfRestNegative = {
+          "",
+          "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1",
+          "slava test selenium"
+  };
+
+
   public void testViewNameOfRest() throws InterruptedException {
 
-    if(app == null ) {
-      System.out.println("app equals Null");
-    } else {
-      System.out.println("app is not Null");
-    }
-    System.out.println(usernameAdmin);
-    System.out.println(passwordAdmin);
-
-    if(app.getSessionHelper() == null) {
-      System.out.println("app.getSessionHelper() equals Null");
-    } else {
-      System.out.println("app.getSessionHelper() is not Null");
-    }
-
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    app.getAdminHelper().gotoAdminPanel();
-    app.getAdminHelper().initOfEditRest("Slava");
-    app.getMainPgHelper().saveRestMainPg();
-    app.getMainPgHelper().confirmChangesOfRestMainPg();
-    app.getAdminHelper().getAddressMainUrl();
-    app.getSiteHelper().searchRestOnTheSite();
+    Thread.sleep(1000);
+    app.getSiteHelper().searchRestOnTheSite("Київ","Slava");
     // проверяем на сайте в списке что имя ресторана такое как ему изменили
     assertEquals(app.getMainPgHelper()
-            .text(By.cssSelector("div[lng='30.39818839999998'] div.title")),restEditDataOfMainPg.getNameOfRest()) ;
+            .text(By.cssSelector(String.format("div[lng='%s'] div.title",restEditDataOfMainPg.getLng()))),restEditDataOfMainPg.getNameOfRest()) ;
     app.getSiteHelper()
             .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
     // проверяем на сайте на страничке ресторана
@@ -59,21 +56,117 @@ public class NameOfRestTests extends TestBase {
             .text(By.cssSelector("div.cafe-name")),restEditDataOfMainPg.getNameOfRest());
   }
 
+  public void testPossMinSymbols() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(1000);
+    app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[0]);
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(1000);
+
+    // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.id("edit_restName"),"value"), nameDataOfRest[0]);
+    // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")),nameDataOfRest[0]);
+
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+    // проверяем на сайте на страничке ресторана
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")), nameDataOfRest[0]);
+  }
+
+  public void testPossKirillSymbols() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(1000);
+    app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[1]);
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(1000);
+
+    // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.id("edit_restName"),"value"), nameDataOfRest[1]);
+    // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")),nameDataOfRest[1]);
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite("Київ",nameDataOfRest[1]);
+    // проверяем на сайте в списке что имя ресторана такое как ему изменили
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector(String.format("div[lng='%s'] div.title",restEditDataOfMainPg.getLng()))),nameDataOfRest[1]) ;
+
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+    // проверяем на сайте на страничке ресторана
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")), nameDataOfRest[1]);
+  }
+
+  public void testPossSpecSymbols() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(1000);
+    app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[2]);
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(1000);
+
+    // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.id("edit_restName"),"value"), nameDataOfRest[2]);
+    // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")),nameDataOfRest[2]);
+
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+    // проверяем на сайте на страничке ресторана
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")), nameDataOfRest[2]);
+  }
+
+  public void testPossMaxSymbols() throws InterruptedException {
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(1000);
+    app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[3]);
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(1000);
+
+    // проверяем в админке на главной страничке ресторана в поле ввода названия ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .attribute(By.id("edit_restName"),"value"), nameDataOfRest[3]);
+    // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")),nameDataOfRest[3]);
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite("Київ",nameDataOfRest[3]);
+    // проверяем на сайте в списке что имя ресторана такое как ему изменили
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector(String.format("div[lng='%s'] div.title",restEditDataOfMainPg.getLng()))),nameDataOfRest[3]) ;
+
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+    // проверяем на сайте на страничке ресторана
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")), nameDataOfRest[3]);
+  }
+
 
 
   @Test(enabled = false)
   public void testViewAllNamesOfRest() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    app.getAdminHelper().gotoAdminPanel();
-    String[] nameDataOfRest = {"slava",
-            "slava ltd",
+   /* String[] nameDataOfRest = {
+            "s",
             "фотограф",
-            "abc",
-            "слава ?/\\|,.!@#$%^&*()-=+)_",
+            "?/\\|,.!@#$%^&*()-=+)_",
             "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa",
-            "slava123"};
-    // вконце создаем с именем slava что бы вернуть в состояние по умолчанию
-    String[] nameDataOfRestNegative = {"aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1", "slava"};
+    };*/
+    // вконце создаем с именем slava test selenium что бы вернуть в состояние по умолчанию
+//    String[] nameDataOfRestNegative = {
+//            "",
+//            "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1",
+//            "slava test selenium"
+//    };
+    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+    Thread.sleep(1000);
+    //app.getAdminHelper().gotoAdminPanel();
     for (int i = 0; i < nameDataOfRest.length; i++) {
       app.getAdminHelper().getAddressMainUrl();
       app.getSiteHelper().enterRestName(nameDataOfRest[i]);

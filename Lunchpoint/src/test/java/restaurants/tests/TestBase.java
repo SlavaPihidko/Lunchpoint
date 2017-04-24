@@ -21,7 +21,7 @@ public class TestBase {
 
   Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-  protected static ApplicationManager app;
+  public static ApplicationManager app;
   protected String usernameAdmin = "manager@lunch.ua";
   protected String passwordAdmin = "2CDTx8Wz";
   protected String usernameGuest = "slava17puh999@gmail.com";
