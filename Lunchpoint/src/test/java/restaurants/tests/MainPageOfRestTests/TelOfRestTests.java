@@ -15,8 +15,10 @@ public class TelOfRestTests extends TestBase {
 
   @Test
   public void addressOfRestTest() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(2000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
 
     app.getSiteHelper().searchRestOnTheSite();
 
@@ -53,4 +55,27 @@ public class TelOfRestTests extends TestBase {
     assertEquals(app.getMainPgHelper()
             .attribute(By.xpath("//input[@name='phone[]']"),"value"), telKleim);
   }
+
+  @Test
+  public void testAddTelNumber() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
+
+    app.getMainPgHelper().addTelNumber();
+    Thread.sleep(100);
+    app.getMainPgHelper().enterTelOfRestMainPage("0632223355");
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(2000);
+
+    String secondTelNumber = app.getMainPgHelper().attribute(By.xpath("(//input[@name='phone[]'])[2]"), "value");
+    System.out.println(secondTelNumber);
+    assertEquals(secondTelNumber, "+38 (063) 222-33-55");
+  }
+
 }

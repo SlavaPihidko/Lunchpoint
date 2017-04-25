@@ -173,6 +173,10 @@ public class MainPageHelper extends HelperBase {
     type(By.xpath("//input[@name='phone[]']"),restDataOfMainPage.getTelOfRest()); // Вводим телефон ресторана
   }
 
+  public void enterTelOfRestMainPage(String numberOfPhone) {
+    type(By.xpath("(//input[@name='phone[]'])[2]"),numberOfPhone); // Вводим телефон ресторана
+  }
+
   public void enterIndexOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("restIndex"),restDataOfMainPage.getIndexOfRest()); // Вводим Индекс ресторана
   }
@@ -380,6 +384,10 @@ public class MainPageHelper extends HelperBase {
 
   public void deleteOfNameVariant(int numberOfElement) {
     click(By.cssSelector(String.format("div.input-outer span.select2-selection.select2-selection--multiple li.select2-selection__choice:nth-of-type(%s) span.select2-selection__choice__remove", numberOfElement)));
+  }
+
+  public void addTelNumber() {
+    click(By.cssSelector("div.add-more-input"));
   }
 }
 

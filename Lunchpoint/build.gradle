@@ -22,7 +22,7 @@ test {
 
 task testMainPageOfRestNameOfRest(type:Test) {
 	useTestNG{
-		suites 'src/test/resources/MainPageOfRestTestsNameOfRest.xml'
+		suites 'src/test/resources/MainPageOfRestTests.xml'
 	}
 }
 
