@@ -7,7 +7,8 @@ import restaurants.model.VariantsOfNameOfMainPage;
  */
 public class VariantsOfNameUtils {
   public static final VariantsOfNameOfMainPage variantsOfName = new VariantsOfNameOfMainPage(
-          "Dima",
-          "Kolya",
-          "Masha");
+          "Dima\n",
+          "Kolya\n",
+          "Masha\n",
+          "Саша123\n");
 }

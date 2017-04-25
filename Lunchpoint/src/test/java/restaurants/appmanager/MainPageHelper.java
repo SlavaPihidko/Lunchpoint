@@ -15,6 +15,7 @@ import java.util.List;
 
 import static restaurants.tests.TestBase.app;
 import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
+import static restaurants.utils.VariantsOfNameUtils.variantsOfName;
 
 /**
  * Created by Slava on 08.01.2017.
@@ -52,8 +53,9 @@ public class MainPageHelper extends HelperBase {
   public void fillAllOfRestFieldOnMainPage(RestDataOfMainPage restDataOfMainPage) throws InterruptedException {
     enterNameOfRestMainPage(restDataOfMainPage);
     enterSeoUrlOfRestMainPage(restDataOfMainPage);
-    VariantsOfNameOfMainPage variantsOfNameOfMainPage = new VariantsOfNameOfMainPage("Masha\n", "Dima\n", "Kolya\n");
-    enterVariantsOfNameOfRestMainPage(variantsOfNameOfMainPage);
+//    VariantsOfNameOfMainPage variantsOfNameOfMainPage =
+//            new VariantsOfNameOfMainPage("Masha\n", "Dima\n", "Kolya\n", "Саша123\n");
+    enterVariantsOfNameOfRestMainPage(variantsOfName);
     enterDescriptionOfRestMainPage(restDataOfMainPage);
     enterAddressOfRestMainPage(restDataOfMainPage);
     //enterAddressOnTheMapOfRestMainPage(restDataOfMainPage);
@@ -204,8 +206,12 @@ public class MainPageHelper extends HelperBase {
     click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
     dream1Sec();
     wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName3());
+    click(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered")); // Кликаем в поле Варианты Названий
+    dream1Sec();
+    wd.findElement(By.cssSelector("div.input-outer span.selection ul.select2-selection__rendered input.select2-search__field")).sendKeys(variantsOfNameOfMainPage.getVarName4());
     dream3Sec();
   }
+
 
   public void enterSeoUrlOfRestMainPage(RestDataOfMainPage restDataOfMainPage) {
     type(By.id("edit_seo_url"),restDataOfMainPage.getSeoOfRest()); // Вводим seo-url ресторана
@@ -371,6 +377,10 @@ public class MainPageHelper extends HelperBase {
     confirmChangesOfRestMainPg();
     //app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
   }
+
+  public void deleteOfNameVariant(int numberOfElement) {
+    click(By.cssSelector(String.format("div.input-outer span.select2-selection.select2-selection--multiple li.select2-selection__choice:nth-of-type(%s) span.select2-selection__choice__remove", numberOfElement)));
   }
+}
 
 
