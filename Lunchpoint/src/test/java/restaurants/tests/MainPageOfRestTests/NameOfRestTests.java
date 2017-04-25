@@ -22,14 +22,12 @@ public class NameOfRestTests extends TestBase {
             "s",
             "фотограф",
             "?/\\|,.!@#$%^&*()-=+)_",
-            "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa",
-          "Slava test selenium"
+            "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa"
   };
 
   private String[] nameDataOfRestNegative = {
           "",
-          "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1",
-          "slava test selenium"
+          "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1"
   };
 
 
@@ -58,7 +56,7 @@ public class NameOfRestTests extends TestBase {
   }
 
   @Test(priority = 2)
-  public void testPossMinSymbols() throws InterruptedException {
+  public void testPosMinSymbols() throws InterruptedException {
 //    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
 //    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[0]);
@@ -79,7 +77,7 @@ public class NameOfRestTests extends TestBase {
   }
 
   @Test(priority = 3)
-  public void testPossKirillSymbols() throws InterruptedException {
+  public void testPosKirillSymbols() throws InterruptedException {
 //    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
 //    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[1]);
@@ -106,7 +104,7 @@ public class NameOfRestTests extends TestBase {
   }
 
   @Test(priority = 4)
-  public void testPossSpecSymbols() throws InterruptedException {
+  public void testPosSpecSymbols() throws InterruptedException {
 //    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
 //    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[2]);
@@ -127,7 +125,7 @@ public class NameOfRestTests extends TestBase {
   }
 
   @Test(priority = 5)
-  public void testPossMaxSymbols() throws InterruptedException {
+  public void testPosMaxSymbols() throws InterruptedException {
 //    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
 //    Thread.sleep(1000);
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[3]);
@@ -153,7 +151,39 @@ public class NameOfRestTests extends TestBase {
             .text(By.cssSelector("div.cafe-name")), nameDataOfRest[3]);
   }
 
-  @Test(priority = 6)
+
+  @Test(priority = 7)
+  public void testNegWithoutSymbols() throws InterruptedException {
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
+    app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().enterNameOfRestMainPage(nameDataOfRestNegative[0]);
+    app.getMainPgHelper().saveRestMainPg();
+    Thread.sleep(500);
+
+    // проверяем в админке на главной страничке ресторана что вывелось error-msg
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.input-outer.has-error div.error-msg")), "Укажите название ресторана");
+  }
+
+  @Test(priority = 8)
+  public void testNegMoreSymbols() throws InterruptedException {
+//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+//    Thread.sleep(1000);
+    app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().enterNameOfRestMainPage(nameDataOfRestNegative[1]);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
+    Thread.sleep(500);
+    String positivePart = nameDataOfRestNegative[1].substring(0,46);
+    System.out.println(positivePart.length());
+
+    // проверяем в админке на главной страничке ресторана что сохранилось лишь первые 46 символов
+    assertEquals(app.getMainPgHelper()
+           .attribute(By.id("edit_restName"),"value"), positivePart);
+  }
+
+  @Test(priority = 9)
   public void returnToEditNameState() throws InterruptedException {
 //    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
 //    Thread.sleep(1000);
@@ -162,8 +192,6 @@ public class NameOfRestTests extends TestBase {
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
   }
-
-
 
   @Test(enabled = false)
   public void testViewAllNamesOfRest() throws InterruptedException {
