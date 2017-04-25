@@ -23,8 +23,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 1)
   public void testViewNameOfRest() throws InterruptedException {
-    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getSiteHelper().searchRestOnTheSite("Київ","Slava");
     // проверяем на сайте в списке что имя ресторана такое как ему изменили
     assertEquals(app.getMainPgHelper()
@@ -47,8 +49,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 2)
   public void testPosMinSymbols() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[0]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -68,8 +72,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 3)
   public void testPosKirillSymbols() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[1]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -95,8 +101,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 4)
   public void testPosSpecSymbols() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[2]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -116,8 +124,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 5)
   public void testPosMaxSymbols() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getMainPgHelper().changeTheNameOfRest(nameDataOfRest[3]);
     app.getAdminHelper().refreshPg();
     Thread.sleep(1000);
@@ -144,8 +154,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 7)
   public void testNegWithoutSymbols() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
     app.getMainPgHelper().enterNameOfRestMainPage(nameDataOfRestNegative[0]);
     app.getMainPgHelper().saveRestMainPg();
@@ -158,8 +170,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 8)
   public void testNegMoreSymbols() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
     app.getMainPgHelper().enterNameOfRestMainPage(nameDataOfRestNegative[1]);
     app.getMainPgHelper().saveRestMainPg();
@@ -191,8 +205,10 @@ public class NameOfRestTests extends TestBase {
 
   @Test(priority = 9)
   public void returnToEditNameState() throws InterruptedException {
-//    app.getSessionHelper().login(usernameAdmin, passwordAdmin);
-//    Thread.sleep(1000);
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
     app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s",restEditDataOfMainPg.getId()));
     app.getMainPgHelper().enterNameOfRestMainPage(restEditDataOfMainPg.getNameOfRest());
     app.getMainPgHelper().saveRestMainPg();
