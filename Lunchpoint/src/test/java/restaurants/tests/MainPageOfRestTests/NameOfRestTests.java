@@ -8,28 +8,18 @@ import org.testng.annotations.Test;
 import org.testng.internal.PackageUtils;
 import restaurants.model.RestDataOfMainPage;
 import restaurants.tests.TestBase;
+import restaurants.utils.NameOfRestsUtils;
 
 import static org.testng.Assert.assertEquals;
 //import static restaurants.utils.MainPgUtils.restDataOfMainPageAllField;
 import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
+import static restaurants.utils.NameOfRestsUtils.nameDataOfRest;
+import static restaurants.utils.NameOfRestsUtils.nameDataOfRestNegative;
 
 /**
  * Created by Slava on 16.02.2017.
  */
 public class NameOfRestTests extends TestBase {
-
-  private String[] nameDataOfRest = {
-            "s",
-            "фотограф",
-            "?/\\|,.!@#$%^&*()-=+)_",
-            "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa"
-  };
-
-  private String[] nameDataOfRestNegative = {
-          "",
-          "aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaaa aaaa1"
-  };
-
 
   @Test(priority = 1)
   public void testViewNameOfRest() throws InterruptedException {
