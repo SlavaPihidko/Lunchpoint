@@ -174,13 +174,29 @@ public class NameOfRestTests extends TestBase {
     app.getMainPgHelper().enterNameOfRestMainPage(nameDataOfRestNegative[1]);
     app.getMainPgHelper().saveRestMainPg();
     app.getMainPgHelper().confirmChangesOfRestMainPg();
-    Thread.sleep(500);
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(1000);
+
     String positivePart = nameDataOfRestNegative[1].substring(0,46);
     System.out.println(positivePart.length());
 
     // проверяем в админке на главной страничке ресторана что сохранилось лишь первые 46 символов
     assertEquals(app.getMainPgHelper()
            .attribute(By.id("edit_restName"),"value"), positivePart);
+    // проверяем в админке на главной страничке ресторана в шапке ресторана что имя такое как перед этим записали
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")), positivePart);
+
+    app.getAdminHelper().getAddressMainUrl();
+    app.getSiteHelper().searchRestOnTheSite("Київ",positivePart);
+    // проверяем на сайте в списке что имя ресторана такое как ему изменили
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector(String.format("div[lng='%s'] div.title",restEditDataOfMainPg.getLng()))),positivePart) ;
+
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
+    // проверяем на сайте на страничке ресторана
+    assertEquals(app.getMainPgHelper()
+            .text(By.cssSelector("div.cafe-name")), positivePart);
   }
 
   @Test(priority = 9)
