@@ -70,8 +70,8 @@ public class MainPageHelper extends HelperBase {
     enterFbOfRestMainPage(restDataOfMainPage);
     enterInstagramOfRestMainPage(restDataOfMainPage);
     enterTwitterOfRestMainPage(restDataOfMainPage);
-    js.executeScript("scrollBy(0,300)");
-    choiceNetworkOfRestMainPage(restDataOfMainPage);
+    js.executeScript("scrollBy(0,320)");
+    //choiceNetworkOfRestMainPage(restDataOfMainPage);
     choiceTypeOfRestMainPage(restDataOfMainPage);
     choiceTypeOfCuisineOfRestMainPage(restDataOfMainPage);
     clickCheckBoxServicesOfRestMainPage();
