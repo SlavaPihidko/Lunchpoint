@@ -11,4 +11,11 @@ public class VariantsOfNameUtils {
           "Kolya\n",
           "Masha\n",
           "Саша123\n");
+
+
+  public static final VariantsOfNameOfMainPage variantsOfNameWithOutN = new VariantsOfNameOfMainPage(
+          "Dima",
+          "Kolya",
+          "Masha",
+          "Саша123");
 }
