@@ -13,7 +13,7 @@ import static org.testng.Assert.assertEquals;
 public class LoginTestViaFB extends TestBase {
   public WebDriver wd;
 
-  @Test
+  @Test(priority = 1)
   public void testLoginClientThroughFB() throws InterruptedException {
     app.getMainPgHelper().click(By.cssSelector("a.log-in"));
     // работа с окнами
@@ -22,6 +22,22 @@ public class LoginTestViaFB extends TestBase {
     // проверка имени пользователя после логина
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "JOHN");
+  }
+
+  @Test(priority = 2)
+  public void testLogOutClientFB() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameGuest, passwordGuest);
+      Thread.sleep(1000);
+    }
+    app.getSiteHelper().click(By.cssSelector("a.user-profile-link"));
+    Thread.sleep(500);
+    app.getAdminHelper().click(By.cssSelector("li.logout-user > a"));
+    app.getAdminHelper().getAddressMainUrl();
+    Thread.sleep(1000);
+    // наличия елемента кнопки Входа
+    assertEquals(app.getMainPgHelper()
+            .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
 }

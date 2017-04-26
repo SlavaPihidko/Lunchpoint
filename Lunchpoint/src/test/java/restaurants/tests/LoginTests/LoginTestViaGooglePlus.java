@@ -25,4 +25,20 @@ public class LoginTestViaGooglePlus extends TestBase {
             .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "CD");
   }
 
+  @Test(priority = 2)
+  public void testLogOutClientGoogle() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameGuest, passwordGuest);
+      Thread.sleep(1000);
+    }
+    app.getSiteHelper().click(By.cssSelector("a.user-profile-link"));
+    Thread.sleep(500);
+    app.getAdminHelper().click(By.cssSelector("li.logout-user > a"));
+    app.getAdminHelper().getAddressMainUrl();
+    Thread.sleep(1000);
+    // наличия елемента кнопки Входа
+    assertEquals(app.getMainPgHelper()
+            .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
+  }
+
 }
