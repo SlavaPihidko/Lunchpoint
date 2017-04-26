@@ -9,17 +9,17 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 09.02.2017.
  */
-public class LoginTests extends TestBase {
+public class LoginTestsViaForm extends TestBase {
 
-  @Test (enabled = false)
+  @Test (priority = 1)
   public void buttonLoginPresentTest(){
     // наличия елемента кнопки Входа
     assertEquals(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
-  @Test(enabled = false)
-  public void formLoginPresentTest(){
+  @Test(priority = 2)
+  public void formLoginPresentTest() throws InterruptedException {
     app.getMainPgHelper().click(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"));
     // наличие формы входа
     assertEquals(app.getMainPgHelper()
@@ -69,9 +69,11 @@ public class LoginTests extends TestBase {
     // текст футера блока входа
     assertEquals(app.getMainPgHelper()
             .text(By.cssSelector("div.popup-modal-inner.popup-modal-login div.popup-footer div.line.log > p")),"Вы еще не с нами? Присоединяйтесь!");
+  app.getAdminHelper().getAddressMainUrl();
+    Thread.sleep(500);
   }
 
-  @Test(enabled = false)
+  @Test(priority = 3)
   public void loginManagerTestPosTroughEmailTest (){
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     // наличия елемента профайла после входа
@@ -89,12 +91,45 @@ public class LoginTests extends TestBase {
 
   }
 
-  @Test(enabled = false)
-  public  void loginClientTestPosThroughEmailTest(){
-    app.getSessionHelper().login(usernameGuest, passwordGuest);
+  @Test(priority = 4)
+  public void testLogOutManager() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
+    app.getSiteHelper().click(By.cssSelector("a.user-profile-link"));
+    app.getAdminHelper().click(By.cssSelector("button.btn.btn-link"));
+    app.getAdminHelper().getAddressMainUrl();
+    // наличия елемента кнопки Входа
+    assertEquals(app.getMainPgHelper()
+            .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
+  }
+
+  @Test(priority = 5)
+  public  void loginClientTestPosThroughEmailTest() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameGuest, passwordGuest);
+      Thread.sleep(1000);
+    }
     // проверка правильности ссылки для профайла Юзера
     assertEquals(app.getMainPgHelper()
             .attribute(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"),"href"),"http://lptest.bigdig.com.ua/user/profile");
+  }
+
+  @Test(priority = 6)
+  public void testLogOutClient() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameGuest, passwordGuest);
+      Thread.sleep(1000);
+    }
+    app.getSiteHelper().click(By.cssSelector("a.user-profile-link"));
+    Thread.sleep(500);
+    app.getAdminHelper().click(By.cssSelector("li.logout-user > a"));
+    app.getAdminHelper().getAddressMainUrl();
+    Thread.sleep(1000);
+    // наличия елемента кнопки Входа
+    assertEquals(app.getMainPgHelper()
+            .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
 }

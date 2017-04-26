@@ -32,6 +32,12 @@ task testScenarios(type:Test) {
 	}
 }
 
+task testSuiteLogin(type:Test) {
+	useTestNG{
+		suites 'src/test/resources/testng-login.xml'
+	}
+}
+
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
