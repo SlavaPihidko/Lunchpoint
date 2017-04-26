@@ -9,17 +9,20 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 09.02.2017.
  */
+@Test(priority = 1)
 public class LoginTestsViaForm extends TestBase {
 
-  @Test (priority = 1)
+  @Test
   public void buttonLoginPresentTest(){
+    System.out.println("======LoginTestsViaForm Test1=======");
     // наличия елемента кнопки Входа
     assertEquals(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
-  @Test(priority = 2)
+  @Test(dependsOnMethods ="buttonLoginPresentTest" )
   public void formLoginPresentTest() throws InterruptedException {
+    System.out.println("======LoginTestsViaForm Test2=========");
     app.getMainPgHelper().click(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"));
     // наличие формы входа
     assertEquals(app.getMainPgHelper()
@@ -73,8 +76,9 @@ public class LoginTestsViaForm extends TestBase {
     Thread.sleep(500);
   }
 
-  @Test(priority = 3)
+  @Test(dependsOnMethods = "formLoginPresentTest")
   public void loginManagerTestPosTroughEmailTest (){
+    System.out.println("==========LoginTestsViaForm Test3==========");
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
     // наличия елемента профайла после входа
     assertEquals(app.getMainPgHelper()
@@ -91,8 +95,9 @@ public class LoginTestsViaForm extends TestBase {
 
   }
 
-  @Test(priority = 4)
+  @Test(dependsOnMethods = "loginManagerTestPosTroughEmailTest")
   public void testLogOutManager() throws InterruptedException {
+    System.out.println("========LoginTestsViaForm Test4==========");
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameAdmin, passwordAdmin);
       Thread.sleep(1000);
@@ -105,8 +110,9 @@ public class LoginTestsViaForm extends TestBase {
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
-  @Test(priority = 5)
+@Test(dependsOnMethods = "testLogOutManager")
   public  void loginClientTestPosThroughEmailTest() throws InterruptedException {
+    System.out.println("=======LoginTestsViaForm Test5=======");
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameGuest, passwordGuest);
       Thread.sleep(1000);
@@ -116,8 +122,9 @@ public class LoginTestsViaForm extends TestBase {
             .attribute(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link"),"href"),"http://lptest.bigdig.com.ua/user/profile");
   }
 
-  @Test(priority = 6)
+@Test(dependsOnMethods = "loginClientTestPosThroughEmailTest")
   public void testLogOutClient() throws InterruptedException {
+    System.out.println("======LoginTestsViaForm Test6=======");
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameGuest, passwordGuest);
       Thread.sleep(1000);

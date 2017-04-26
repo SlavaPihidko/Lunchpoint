@@ -10,11 +10,13 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 12.02.2017.
  */
+@Test(priority = 2)
 public class LoginTestViaFB extends TestBase {
   public WebDriver wd;
 
-  @Test(priority = 1)
+  @Test
   public void testLoginClientThroughFB() throws InterruptedException {
+    System.out.println("=========LoginTestViaFB Test 1======= ");
     app.getMainPgHelper().click(By.cssSelector("a.log-in"));
     // работа с окнами
     app.getSiteHelper().workWithNewWindowForFB();
@@ -24,8 +26,9 @@ public class LoginTestViaFB extends TestBase {
             .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "JOHN");
   }
 
-  @Test(priority = 2)
+@Test(dependsOnMethods = "testLoginClientThroughFB")
   public void testLogOutClientFB() throws InterruptedException {
+    System.out.println("======LoginTestViaFB Test 2========== ");
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameGuest, passwordGuest);
       Thread.sleep(1000);

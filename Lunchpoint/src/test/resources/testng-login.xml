@@ -3,9 +3,9 @@
 <suite name="Suite1" verbose="1" >
     <test name="LoginTests">
         <classes>
-            <class name="restaurants.tests.LoginTests.LoginTestsViaForm"/>
-            <class name="restaurants.tests.LoginTests.LoginTestViaFB"/>
-            <class name="restaurants.tests.LoginTests.LoginTestViaGooglePlus"/>
+            <class name="restaurants.tests.LoginTests.LoginTestsViaForm" />
+            <class name="restaurants.tests.LoginTests.LoginTestViaFB" />
+            <class name="restaurants.tests.LoginTests.LoginTestViaGooglePlus" />
         </classes>
     </test>
 </suite>
