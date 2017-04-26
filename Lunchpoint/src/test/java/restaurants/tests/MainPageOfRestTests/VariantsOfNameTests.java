@@ -25,6 +25,7 @@ public class VariantsOfNameTests extends TestBase {
 
     app.getAdminHelper().getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
     Thread.sleep(2000);
+    app.getSiteHelper().scroll(0,100);
     // проверяем в админке на главной страничке ресторана что варианты названий сохранились
     assertEquals(app.getMainPgHelper()
             .attribute(By.cssSelector("div.input-outer span.select2-selection.select2-selection--multiple li.select2-selection__choice:first-of-type"),"title"), variantsOfName.getVarName1());
