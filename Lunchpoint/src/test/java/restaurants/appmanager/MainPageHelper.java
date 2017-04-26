@@ -391,7 +391,7 @@ public class MainPageHelper extends HelperBase {
   }
 
   public void delTelNumber() {
-    click(By.cssSelector("div.del-phone:last-of-type"));
+   click(By.cssSelector("div.del-phone:last-of-type"));
   }
 }
 

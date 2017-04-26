@@ -93,4 +93,17 @@ public class TelOfRestTests extends TestBase {
     assertEquals(app.getMainPgHelper().elementPresent(By.xpath("(//input[@name='phone[]'])[2]")), false);
   }
 
+  @Test(priority = 4)
+  public void testToReturnEditTelState() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().enterTelOfRestMainPage(restEditDataOfMainPg);
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
+  }
+
 }
