@@ -4,10 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import restaurants.model.RestDataOfSiteList;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.SplittableRandom;
 
 /**
@@ -75,5 +78,73 @@ public class SiteHelper extends HelperBase {
       restsFromTypeOfRest.add(rest);
     }
     return restsFromTypeOfRest;
+  }
+
+  public void workWithNewWindowForFB() throws InterruptedException {
+
+    String originalWindow = wd.getWindowHandle();
+    final Set<String> oldWindowsSet = wd.getWindowHandles();
+
+    wd.findElement(By.cssSelector("div.log-block a.login-link.soc.fb")).click();
+    String newWindow = (new WebDriverWait(wd, 10))
+            .until(new ExpectedCondition<String>() {
+                     public String apply(WebDriver driver) {
+                       Set<String> newWindowsSet = driver.getWindowHandles();
+                       newWindowsSet.removeAll(oldWindowsSet);
+                       return newWindowsSet.size() > 0 ?
+                               newWindowsSet.iterator().next() : null;
+                     }
+                   }
+            );
+
+    wd.switchTo().window(newWindow);
+    System.out.println("New window title: " + wd.getTitle());
+    wd.findElement(By.id("email")).click();
+    wd.findElement(By.id("email")).clear();
+    wd.findElement(By.id("email")).sendKeys("mltest@ukr.net");
+    wd.findElement(By.id("pass")).click();
+    wd.findElement(By.id("pass")).clear();
+    wd.findElement(By.id("pass")).sendKeys("bigdig");
+    wd.findElement(By.id("u_0_2")).click();
+
+    wd.switchTo().window(originalWindow);
+    System.out.println("Old window title: " + wd.getTitle());
+
+  }
+
+  public void workWithNewWindowForGoogle() throws InterruptedException {
+    String originalWindow = wd.getWindowHandle();
+    final Set<String> oldWindowsSet = wd.getWindowHandles();
+
+    wd.findElement(By.cssSelector("div.log-block a.login-link.soc.google")).click();
+    String newWindow = (new WebDriverWait(wd, 10))
+            .until(new ExpectedCondition<String>() {
+                     public String apply(WebDriver driver) {
+                       Set<String> newWindowsSet = driver.getWindowHandles();
+                       newWindowsSet.removeAll(oldWindowsSet);
+                       return newWindowsSet.size() > 0 ?
+                               newWindowsSet.iterator().next() : null;
+                     }
+                   }
+            );
+
+    wd.switchTo().window(newWindow);
+    System.out.println("New window title: " + wd.getTitle());
+    wd.findElement(By.id("Email")).click();
+    wd.findElement(By.id("Email")).clear();
+    wd.findElement(By.id("Email")).sendKeys("slavko9090test@gmail.com");
+    wd.findElement(By.id("next")).click();
+    Thread.sleep(500);
+    wd.findElement(By.id("Passwd")).click();
+    wd.findElement(By.id("Passwd")).clear();
+    wd.findElement(By.id("Passwd")).sendKeys("testforselenium");
+    wd.findElement(By.id("signIn")).click();
+
+//    if(elementPresent(By.id("grant_heading"))){
+//      click(By.id("submit_approve_access"));
+//    }
+
+    wd.switchTo().window(originalWindow);
+    System.out.println("Old window title: " + wd.getTitle());
   }
 }
