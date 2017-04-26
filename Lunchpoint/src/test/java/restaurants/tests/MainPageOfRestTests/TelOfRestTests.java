@@ -14,16 +14,12 @@ import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 public class TelOfRestTests extends TestBase {
 
   @Test(priority = 1)
-  public void addressOfRestTest() throws InterruptedException {
+  public void testViewTelNumber() throws InterruptedException {
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameAdmin, passwordAdmin);
       Thread.sleep(1000);
     }
-
-    app.getSiteHelper().searchRestOnTheSite();
-
-    app.getSiteHelper()
-            .click(By.cssSelector(String.format("div[lng='%s'] div.title", restEditDataOfMainPg.getLng())));
+    app.getAdminHelper().getAddressMainUrl(restEditDataOfMainPg.getSeoOfRest());
     app.getSiteHelper().click(By.cssSelector("div.tel span.spoiler > span"));
     Thread.sleep(500);
     // проверяем на сайте на страничке ресторана
