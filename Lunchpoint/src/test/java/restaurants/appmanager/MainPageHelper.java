@@ -389,6 +389,10 @@ public class MainPageHelper extends HelperBase {
   public void addTelNumber() {
     click(By.cssSelector("div.add-more-input"));
   }
+
+  public void delTelNumber() {
+    click(By.cssSelector("div.del-phone:last-of-type"));
+  }
 }
 
 

@@ -5,6 +5,7 @@
         <classes>
             <class name="restaurants.tests.MainPageOfRestTests.NameOfRestTests" />
             <class name="restaurants.tests.MainPageOfRestTests.VariantsOfNameTests" />
+            <class name="restaurants.tests.MainPageOfRestTests.TelOfRestTests" />
         </classes>
     </test>
 </suite>

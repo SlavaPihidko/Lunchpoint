@@ -13,7 +13,7 @@ import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
  */
 public class TelOfRestTests extends TestBase {
 
-  @Test
+  @Test(priority = 1)
   public void addressOfRestTest() throws InterruptedException {
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -56,7 +56,7 @@ public class TelOfRestTests extends TestBase {
             .attribute(By.xpath("//input[@name='phone[]']"),"value"), telKleim);
   }
 
-  @Test
+  @Test(priority = 2)
   public void testAddTelNumber() throws InterruptedException {
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -76,6 +76,25 @@ public class TelOfRestTests extends TestBase {
     String secondTelNumber = app.getMainPgHelper().attribute(By.xpath("(//input[@name='phone[]'])[2]"), "value");
     System.out.println(secondTelNumber);
     assertEquals(secondTelNumber, "+38 (063) 222-33-55");
+  }
+
+  @Test(priority = 3)
+  public void testDelTelNumber() throws InterruptedException {
+    if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
+      app.getSessionHelper().login(usernameAdmin, passwordAdmin);
+      Thread.sleep(1000);
+    }
+    app.getAdminHelper()
+            .getAddressMainUrl(String.format("manager/restaurants/update?id=%s", restEditDataOfMainPg.getId()));
+    app.getMainPgHelper().delTelNumber();
+    app.getMainPgHelper().saveRestMainPg();
+    app.getMainPgHelper().confirmChangesOfRestMainPg();
+    app.getAdminHelper().refreshPg();
+    Thread.sleep(2000);
+
+    Boolean secondTelNumber = app.getMainPgHelper().elementPresent(By.xpath("(//input[@name='phone[]'])[2]"));
+    System.out.println("secondTelNumber: "+secondTelNumber);
+    assertEquals(app.getMainPgHelper().elementPresent(By.xpath("(//input[@name='phone[]'])[2]")), false);
   }
 
 }
