@@ -27,7 +27,7 @@ public class LoginTestViaGooglePlus extends TestBase {
             .text(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.user-profile-link")), "CD");
   }
 
-@Test(dependsOnMethods = "testLoginClientThroughGoogle")
+@Test(dependsOnMethods = "testLoginClientThroughGoogle", alwaysRun = true)
   public void testLogOutClientGoogle() throws InterruptedException {
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
       app.getSessionHelper().login(usernameGuest, passwordGuest);
