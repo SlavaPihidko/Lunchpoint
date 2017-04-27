@@ -134,7 +134,7 @@ public class SiteHelper extends HelperBase {
     wd.findElement(By.id("identifierId")).clear();
     wd.findElement(By.id("identifierId")).sendKeys("slavko9090test@gmail.com");
     wd.findElement(By.cssSelector("span.RveJvd.snByac")).click();
-    Thread.sleep(500);
+    Thread.sleep(1500);
     wd.findElement(By.cssSelector("input[type='password']")).click();
     wd.findElement(By.cssSelector("input[type='password']")).clear();
     wd.findElement(By.cssSelector("input[type='password']")).sendKeys("testforselenium");
