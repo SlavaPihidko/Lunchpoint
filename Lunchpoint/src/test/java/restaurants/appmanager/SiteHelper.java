@@ -130,15 +130,15 @@ public class SiteHelper extends HelperBase {
 
     wd.switchTo().window(newWindow);
     System.out.println("New window title: " + wd.getTitle());
-    wd.findElement(By.id("Email")).click();
-    wd.findElement(By.id("Email")).clear();
-    wd.findElement(By.id("Email")).sendKeys("slavko9090test@gmail.com");
-    wd.findElement(By.id("next")).click();
+    wd.findElement(By.id("identifierId")).click();
+    wd.findElement(By.id("identifierId")).clear();
+    wd.findElement(By.id("identifierId")).sendKeys("slavko9090test@gmail.com");
+    wd.findElement(By.cssSelector("span.RveJvd.snByac")).click();
     Thread.sleep(500);
-    wd.findElement(By.id("Passwd")).click();
-    wd.findElement(By.id("Passwd")).clear();
-    wd.findElement(By.id("Passwd")).sendKeys("testforselenium");
-    wd.findElement(By.id("signIn")).click();
+    wd.findElement(By.cssSelector("input[type='password']")).click();
+    wd.findElement(By.cssSelector("input[type='password']")).clear();
+    wd.findElement(By.cssSelector("input[type='password']")).sendKeys("testforselenium");
+    wd.findElement(By.cssSelector("span.RveJvd.snByac")).click();
 
 //    if(elementPresent(By.id("grant_heading"))){
 //      click(By.id("submit_approve_access"));
