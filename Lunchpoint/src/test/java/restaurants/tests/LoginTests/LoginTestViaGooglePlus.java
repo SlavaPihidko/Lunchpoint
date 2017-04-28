@@ -36,7 +36,7 @@ public class LoginTestViaGooglePlus extends TestBase {
     System.out.println("=======LoginTestViaGooglePlus Test 2=========");
     app.getSiteHelper().click(By.cssSelector("a.user-profile-link"));
     Thread.sleep(500);
-    app.getAdminHelper().click(By.cssSelector("li.logout-user > a"));
+    app.getAdminHelper().click(By.cssSelector("li.logout-user > a1"));
     app.getAdminHelper().getAddressMainUrl();
     Thread.sleep(1000);
     // наличия елемента кнопки Входа

@@ -1,8 +1,6 @@
 package restaurants.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -86,6 +84,10 @@ public class ApplicationManager {
 
   public SiteRestPageHelper getSiteRestPageHelper() {
     return siteRestPageHelper;
+  }
+
+  public byte[] takeScreenshot(){
+    return ((TakesScreenshot) wd).getScreenshotAs(OutputType.BYTES);
   }
 
 
