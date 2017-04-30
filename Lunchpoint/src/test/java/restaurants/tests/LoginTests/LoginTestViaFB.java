@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 12.02.2017.
  */
-@Test(priority = 2)
+@Test(priority = 2, alwaysRun = true)
 public class LoginTestViaFB extends TestBase {
   public WebDriver wd;
 

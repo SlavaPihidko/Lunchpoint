@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Slava on 26.04.2017.
  */
-@Test(priority = 3)
+@Test(priority = 3, alwaysRun = true)
 public class LoginTestViaGooglePlus extends TestBase {
 
   public WebDriver wd;

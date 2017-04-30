@@ -152,6 +152,8 @@ public class LoginTestsViaForm extends TestBase {
     Thread.sleep(1000);
     app.getSiteHelper().workWithAlert();
     String textFromAlert = app.getSiteHelper().alert.getText();
+  Thread.sleep(500);
+    app.getSiteHelper().alert.accept();
     System.out.println(textFromAlert);
     assertEquals(textFromAlert,expectedTextFromAlert);
   }
