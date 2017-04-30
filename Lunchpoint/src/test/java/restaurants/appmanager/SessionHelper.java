@@ -21,4 +21,16 @@ public class SessionHelper extends HelperBase {
     click(By.xpath("//div[@id='logIn']/div/a/span"));
   }
 
+  public void loginWithoutConfirm(String username, String password) {
+    click(By.cssSelector("a.log-in"));
+    type(By.id("email"), username);
+    type(By.id("pass"), password);
+  }
+
+  public void loginWithoutConfirmFirstPassword(String username, String password) {
+    click(By.cssSelector("a.log-in"));
+    type(By.id("pass"), password);
+    type(By.id("email"), username);
+  }
+
 }

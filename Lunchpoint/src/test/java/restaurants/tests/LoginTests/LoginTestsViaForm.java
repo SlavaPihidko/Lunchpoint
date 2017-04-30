@@ -24,7 +24,7 @@ public class LoginTestsViaForm extends TestBase {
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
-  @Test(dependsOnMethods ="buttonLoginPresentTest" )
+  @Test(dependsOnMethods ="buttonLoginPresentTest", alwaysRun = true)
   public void formLoginPresentTest() throws InterruptedException {
     System.out.println("======LoginTestsViaForm Test2=========");
     app.getMainPgHelper().click(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"));
@@ -80,7 +80,7 @@ public class LoginTestsViaForm extends TestBase {
     Thread.sleep(500);
   }
 
-  @Test(dependsOnMethods = "formLoginPresentTest")
+  @Test(dependsOnMethods = "formLoginPresentTest", alwaysRun = true)
   public void loginManagerTestPosTroughEmailTest (){
     System.out.println("==========LoginTestsViaForm Test3==========");
     app.getSessionHelper().login(usernameAdmin, passwordAdmin);
@@ -114,7 +114,7 @@ public class LoginTestsViaForm extends TestBase {
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
-@Test(dependsOnMethods = "testLogOutManager")
+@Test(dependsOnMethods = "testLogOutManager", alwaysRun = true)
   public  void loginClientTestPosThroughEmailTest() throws InterruptedException {
     System.out.println("=======LoginTestsViaForm Test5=======");
     if(app.getMainPgHelper().elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in"))) {
@@ -143,17 +143,37 @@ public class LoginTestsViaForm extends TestBase {
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
   }
 
-
+@Test(dependsOnMethods ="testLogOutClient", alwaysRun = true)
   public void loginNegativeEmailTroughEmailTest () throws InterruptedException {
     String expectedTextFromAlert = "Введенные логин/пароль не верны";
-    String IncorrectLogin = "manager@lunch.ua1";
+    String IncorrectEmail = "manager@lunch.ua1";
     System.out.println("==========LoginTestsViaForm Test7==========");
-    app.getSessionHelper().login(IncorrectLogin, passwordAdmin);
+    app.getSessionHelper().login(IncorrectEmail, passwordAdmin);
     Thread.sleep(1000);
     app.getSiteHelper().workWithAlert();
     String textFromAlert = app.getSiteHelper().alert.getText();
     System.out.println(textFromAlert);
     assertEquals(textFromAlert,expectedTextFromAlert);
+  }
+
+  @Test(dependsOnMethods = "loginNegativeEmailTroughEmailTest", alwaysRun = true)
+  public void loginEmptyEmailTest(){
+    System.out.println("==========LoginTestsViaForm Test8==========");
+    String expectedText = "Пожалуйста, введите правильный емейл";
+    String incorrectEmail = "";
+    app.getSessionHelper().loginWithoutConfirm(incorrectEmail,passwordAdmin);
+    String textFromForm = app.getMainPgHelper().text(By.cssSelector("div.input-wrap.error div.error-msg > p"));
+    assertEquals(textFromForm, expectedText);
+  }
+
+  @Test(dependsOnMethods = "loginEmptyEmailTest", alwaysRun = true)
+  public void loginEmptyPasswordTest(){
+    System.out.println("==========LoginTestsViaForm Test9==========");
+    String expectedText = "Введите пароль";
+    String incorrectPassword = "";
+    app.getSessionHelper().loginWithoutConfirmFirstPassword(usernameAdmin,incorrectPassword);
+    String textFromForm = app.getMainPgHelper().text(By.cssSelector("div.input-wrap.error div.error-msg > p"));
+    assertEquals(textFromForm, expectedText);
   }
 
 }
