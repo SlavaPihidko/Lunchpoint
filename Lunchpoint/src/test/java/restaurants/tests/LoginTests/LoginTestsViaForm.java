@@ -159,23 +159,27 @@ public class LoginTestsViaForm extends TestBase {
   }
 
   @Test(dependsOnMethods = "loginNegativeEmailTroughEmailTest", alwaysRun = true)
-  public void loginEmptyEmailTest(){
+  public void loginEmptyEmailTest() throws InterruptedException {
     System.out.println("==========LoginTestsViaForm Test8==========");
     String expectedText = "Пожалуйста, введите правильный емейл";
     String incorrectEmail = "";
     app.getSessionHelper().loginWithoutConfirm(incorrectEmail,passwordAdmin);
     String textFromForm = app.getMainPgHelper().text(By.cssSelector("div.input-wrap.error div.error-msg > p"));
     assertEquals(textFromForm, expectedText);
+    app.getAdminHelper().getAddressMainUrl();
+    Thread.sleep(500);
   }
 
   @Test(dependsOnMethods = "loginEmptyEmailTest", alwaysRun = true)
-  public void loginEmptyPasswordTest(){
+  public void loginEmptyPasswordTest() throws InterruptedException {
     System.out.println("==========LoginTestsViaForm Test9==========");
     String expectedText = "Введите пароль";
     String incorrectPassword = "";
     app.getSessionHelper().loginWithoutConfirmFirstPassword(usernameAdmin,incorrectPassword);
     String textFromForm = app.getMainPgHelper().text(By.cssSelector("div.input-wrap.error div.error-msg > p"));
     assertEquals(textFromForm, expectedText);
+    app.getAdminHelper().getAddressMainUrl();
+    Thread.sleep(500);
   }
 
 }
