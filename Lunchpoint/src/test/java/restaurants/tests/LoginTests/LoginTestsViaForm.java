@@ -1,9 +1,13 @@
 package restaurants.tests.LoginTests;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import restaurants.tests.TestBase;
 
+import java.awt.*;
+
+import static java.awt.SystemColor.text;
 import static org.testng.Assert.assertEquals;
 
 /**
@@ -137,6 +141,19 @@ public class LoginTestsViaForm extends TestBase {
     // наличия елемента кнопки Входа
     assertEquals(app.getMainPgHelper()
             .elementPresent(By.cssSelector("div.header-top.clear div.wrap div.to-right > a.log-in")), true);
+  }
+
+
+  public void loginNegativeEmailTroughEmailTest () throws InterruptedException {
+    String expectedTextFromAlert = "Введенные логин/пароль не верны";
+    String IncorrectLogin = "manager@lunch.ua1";
+    System.out.println("==========LoginTestsViaForm Test7==========");
+    app.getSessionHelper().login(IncorrectLogin, passwordAdmin);
+    Thread.sleep(1000);
+    app.getSiteHelper().workWithAlert();
+    String textFromAlert = app.getSiteHelper().alert.getText();
+    System.out.println(textFromAlert);
+    assertEquals(textFromAlert,expectedTextFromAlert);
   }
 
 }
