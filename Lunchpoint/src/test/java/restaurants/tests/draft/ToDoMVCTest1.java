@@ -66,6 +66,15 @@ public class ToDoMVCTest1 {
     assertEquals(elements.size(), sizeOfList);
   }
 
+  @Test//(dependsOnMethods ="toDoMVCTest2", alwaysRun = true)
+  public void toDoMVCTest3() throws InterruptedException {
+    wd.findElement(By.cssSelector("ul.todo-list li.active:last-of-type input.toggle")).click();
+    Thread.sleep(3000);
+    wd.findElement(By.cssSelector("a[href='#/completed']")).click();
+    String firstCompletedItem = wd.findElement(By.cssSelector("ul.todo-list.filter-completed li.completed label")).getText();
+  assertEquals(firstCompletedItem, "Task4");
+  }
+
   @AfterSuite
   public void stop(){
     wd.quit();
