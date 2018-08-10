@@ -6,9 +6,7 @@ import com.google.gson.JsonElement;
  * Created by slva on 10.08.2018.
  */
 public class Wallets {
-    public Wallets(JsonElement result) {
-
-    }
+    //public Wallets(JsonElement result) {
 
     public int getId() {
         return id;
@@ -19,25 +17,46 @@ public class Wallets {
         return this;
     }
 
-    public String getCode() {
-        return code;
+    public String getBalance() {
+        return balance;
     }
 
-    public Wallets withCode(String code) {
-        this.code = code;
+    public Wallets withBalance(String balance) {
+        this.balance = balance;
         return this;
     }
 
-    public String getChain() {
-        return chain;
+    public String getTop_up_address() {
+        return top_up_address;
     }
 
-    public Wallets withChain(String chain) {
-        this.chain = chain;
+    public Wallets withTop_up_address(String top_up_address) {
+        this.top_up_address = top_up_address;
+        return this;
+    }
+
+    public String getDepositable() {
+        return depositable;
+    }
+
+    public Wallets withDepositable(String depositable) {
+        this.depositable = depositable;
+        return this;
+    }
+
+    public String getUsd_balance() {
+        return usd_balance;
+    }
+
+    public Wallets withUsd_balance(String usd_balance) {
+        this.usd_balance = usd_balance;
         return this;
     }
 
     private int id;
-    private String code;
-    private String chain;
+    private String balance;
+    private  String top_up_address;
+    private String depositable;
+    private String usd_balance;
+   // }
 }
