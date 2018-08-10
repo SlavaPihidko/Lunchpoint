@@ -1,22 +1,11 @@
 package rest;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
-import jdk.nashorn.internal.parser.JSONParser;
-import org.apache.http.client.fluent.Executor;
+import com.google.gson.*;
 import org.apache.http.client.fluent.Request;
-import org.apache.http.entity.ContentType;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Set;
-
-
+import java.util.*;
 
 
 /**
@@ -26,30 +15,37 @@ public class RestTests {
 
     @Test
     public void testWalletList() throws IOException {
-        Set<Wallets> listWallets = getWallets();
-System.out.println(listWallets);
+        List<Wallets> listWallets =  getWallets();
+        System.out.println(listWallets);
     }
 
 
-    private Set<Wallets> getWallets() throws IOException {
-       // String json= getExecutor()
-        String json =  Request.Get("http://146.71.78.211/api/settings/wallets")
+    private List<Wallets> getWallets() throws IOException {
+        // String json= getExecutor()
+        String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzkxNzUzOSwiZXhwIjoxNTMzOTIxMTM5LCJuYmYiOjE1MzM5MTc1MzksImp0aSI6IkV2RjdaTWNWM3VqWFByVG0ifQ.Dze6qHwMkdGQaETITanNcK4DqA1zeSCtVMyEr3YwVNo")
-        .execute().returnContent().asString();
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzkzMzQ4OCwiZXhwIjoxNTMzOTM3MDg4LCJuYmYiOjE1MzM5MzM0ODgsImp0aSI6Ik5lM0Qzdm5lbXRUN3JHazAifQ.Q66rmMikiUqBw3D_ruw2QGMczGTonQVSrU5wWhA58GU")
+                .execute().returnContent().asString();
 
-        JsonElement parsed  =  new JsonParser().parse(json);
-        JsonElement wallets =  parsed.getAsJsonObject().get("data");
 
-        System.out.println(wallets);
-       return new Gson().fromJson(wallets, new TypeToken<Set<Wallets>>(){}.getType());
+        List<Wallets> wallets = new ArrayList<Wallets>();
+
+        JsonParser jsonParser = new JsonParser();
+        JsonArray parsed  = jsonParser.parse(json).getAsJsonObject().get("data").getAsJsonObject().getAsJsonArray("wallets");
+        System.out.printf(String.valueOf(parsed));
+        for(JsonElement result: parsed) {
+            Wallets wallet = new Wallets(result);
+            wallets.add(wallet);
+        }
+
+
+      Iterator itr = wallets.iterator();
+        while (itr.hasNext())
+            System.out.println(itr.next());
+
+
+        return wallets;
     }
-
-
-
-    /*private Executor getExecutor(){
-        return Executor.newInstance()
-                .auth("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzkwODg3MSwiZXhwIjoxNTMzOTEyNDcxLCJuYmYiOjE1MzM5MDg4NzEsImp0aSI6IjJWNVlQcVZrWUdWcWRkVkEifQ.yBeOQj3lV-nyzy9U4121QAh6rWQHCAXgaI-CUk4umLg", "");
-
-    } */
 }
+
+

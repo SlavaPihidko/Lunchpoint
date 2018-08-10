@@ -1,9 +1,15 @@
 package rest;
 
+import com.google.gson.JsonElement;
+
 /**
  * Created by slva on 10.08.2018.
  */
 public class Wallets {
+    public Wallets(JsonElement result) {
+
+    }
+
     public int getId() {
         return id;
     }
