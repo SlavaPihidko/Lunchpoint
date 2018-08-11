@@ -8,9 +8,14 @@ import com.google.gson.JsonElement;
 public class Wallets {
     //public Wallets(JsonElement result) {
 
-    public int getId() {
-        return id;
-    }
+    private int id;
+    private String balance;
+    private  String top_up_address;
+
+   // }
+   public int getId() {
+       return id;
+   }
 
     public Wallets withId(int id) {
         this.id = id;
@@ -34,29 +39,4 @@ public class Wallets {
         this.top_up_address = top_up_address;
         return this;
     }
-
-    public String getDepositable() {
-        return depositable;
-    }
-
-    public Wallets withDepositable(String depositable) {
-        this.depositable = depositable;
-        return this;
-    }
-
-    public String getUsd_balance() {
-        return usd_balance;
-    }
-
-    public Wallets withUsd_balance(String usd_balance) {
-        this.usd_balance = usd_balance;
-        return this;
-    }
-
-    private int id;
-    private String balance;
-    private  String top_up_address;
-    private String depositable;
-    private String usd_balance;
-   // }
 }

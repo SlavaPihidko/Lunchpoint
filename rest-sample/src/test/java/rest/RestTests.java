@@ -17,8 +17,8 @@ public class RestTests {
     @Test
     public void testWalletList() throws IOException {
         //List<Wallets> listWallets =  getWallets();
-        Set<Wallets> listWallets =  getWallets();
-        System.out.println("spisok " +listWallets);
+        Set<Wallets> listWalletsFromRequest =  getWallets();
+        System.out.println("spisok " +listWalletsFromRequest);
     }
 
 
@@ -26,14 +26,15 @@ public class RestTests {
         // String json= getExecutor()
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzkzOTU4OSwiZXhwIjoxNTMzOTQzMTg5LCJuYmYiOjE1MzM5Mzk1ODksImp0aSI6Ikt1RFVpQlYxSDhhdVY2djgifQ.Msf0YpigLruANEQ7WYB2mkSsGNgsrRPlHZdf-Uepd70")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzk4MzE5MywiZXhwIjoxNTMzOTg2NzkzLCJuYmYiOjE1MzM5ODMxOTMsImp0aSI6Ik5UaWlKSXNMQ3V2NVRBM00ifQ.3gg8YNWQT-NkohaTIH3ag_6tcFIbxTv1mtbYL7qA2cw")
                 .execute().returnContent().asString();
 
 
-        List<Wallets> wallets = new ArrayList<Wallets>();
+      //  List<Wallets> wallets = new ArrayList<Wallets>();
 
         JsonParser jsonParser = new JsonParser();
         JsonArray parsed  = jsonParser.parse(json).getAsJsonObject().get("data").getAsJsonObject().getAsJsonArray("wallets");
+
        /* System.out.println("Массив обьектов wallets представлен строкой "+String.valueOf(parsed));
         System.out.println(" !!! ");
 
