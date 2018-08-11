@@ -12,6 +12,12 @@ public class Wallets {
     private String balance;
     private  String top_up_address;
 
+    public Wallets(int id, String balance, String top_up_address){
+        this.id=id;
+        this.balance=balance;
+        this.top_up_address=top_up_address;
+    }
+
    // }
    public int getId() {
        return id;
