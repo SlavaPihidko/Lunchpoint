@@ -9,10 +9,10 @@ public class Wallets {
     //public Wallets(JsonElement result) {
 
     private int id;
-    private String balance;
+    private double balance;
     private  String top_up_address;
 
-    public Wallets(int id, String balance, String top_up_address){
+    public Wallets(int id, double balance, String top_up_address){
         this.id=id;
         this.balance=balance;
         this.top_up_address=top_up_address;
@@ -29,11 +29,11 @@ public class Wallets {
         return this;
     }
 
-    public String getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public Wallets withBalance(String balance) {
+    public Wallets withBalance(double balance) {
         this.balance = balance;
         return this;
     }
@@ -64,12 +64,17 @@ public class Wallets {
         Wallets wallets = (Wallets) o;
 
         if (getId() != wallets.getId()) return false;
+        if (Double.compare(wallets.getBalance(), getBalance()) != 0) return false;
         return getTop_up_address() != null ? getTop_up_address().equals(wallets.getTop_up_address()) : wallets.getTop_up_address() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
+        int result;
+        long temp;
+        result = getId();
+        temp = Double.doubleToLongBits(getBalance());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (getTop_up_address() != null ? getTop_up_address().hashCode() : 0);
         return result;
     }

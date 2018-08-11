@@ -15,10 +15,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.testng.Assert.assertEquals;
 
@@ -27,7 +24,7 @@ public class WalletsTestsWithRestAndDB {
     private Set<Wallets> getWallets() throws IOException {
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDAwNzc3NSwiZXhwIjoxNTM0MDExMzc1LCJuYmYiOjE1MzQwMDc3NzUsImp0aSI6ImhndkhDRkx4TGZmc2JZTm8ifQ.h5SxxaYH7EHavDd8IrpiUxSKtDEWO8VcUcRTahHf6uo")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDAyMTA0NSwiZXhwIjoxNTM0MDI0NjQ1LCJuYmYiOjE1MzQwMjEwNDUsImp0aSI6InUydTNnUTNaTXk2cldwREIifQ.JTspQV9Xl6vXLLCGe5fuFs6MoXrT3rIRMhMrJeiXOPI")
                 .execute().returnContent().asString();
 
         JsonParser jsonParser = new JsonParser();
@@ -38,7 +35,8 @@ public class WalletsTestsWithRestAndDB {
     }
 
     @Test
-    public void testDbConnection() throws IOException {
+    public void walletsTestsWithRestAndDB() throws IOException {
+
         String userName;
         String password;
         String dbURL;
@@ -64,12 +62,19 @@ public class WalletsTestsWithRestAndDB {
 
             walletsFromDb = new HashSet<>();
             while (rs.next()) {
-                Wallets wallet = new Wallets(rs.getInt("id"), rs.getString("balance"), rs.getString("top_up_address"));
+                Wallets wallet = new Wallets(rs.getInt("id"), rs.getDouble("balance"), rs.getString("top_up_address"));
                 walletsFromDb.add(wallet);
+                double balance = wallet.getBalance();
+                System.out.println(balance);
             }
             for (Wallets n : walletsFromDb) {
                 System.out.println("wallet from DB equal : " + n);
             }
+//            Iterator iterator = walletsFromDb.iterator();
+//            while (iterator.hasNext()){
+//                System.out.println(iterator.next());
+//            }
+
             rs.close();
             st.close();
             conn.close();
