@@ -64,15 +64,12 @@ public class Wallets {
         Wallets wallets = (Wallets) o;
 
         if (getId() != wallets.getId()) return false;
-        if (getBalance() != null ? !getBalance().equals(wallets.getBalance()) : wallets.getBalance() != null)
-            return false;
         return getTop_up_address() != null ? getTop_up_address().equals(wallets.getTop_up_address()) : wallets.getTop_up_address() == null;
     }
 
     @Override
     public int hashCode() {
         int result = getId();
-        result = 31 * result + (getBalance() != null ? getBalance().hashCode() : 0);
         result = 31 * result + (getTop_up_address() != null ? getTop_up_address().hashCode() : 0);
         return result;
     }
