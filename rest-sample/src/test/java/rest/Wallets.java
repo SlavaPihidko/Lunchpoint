@@ -18,7 +18,8 @@ public class Wallets {
         this.top_up_address=top_up_address;
     }
 
-   // }
+
+    // }
    public int getId() {
        return id;
    }
@@ -44,5 +45,35 @@ public class Wallets {
     public Wallets withTop_up_address(String top_up_address) {
         this.top_up_address = top_up_address;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Wallets{" +
+                "id=" + id +
+                ", balance='" + balance + '\'' +
+                ", top_up_address='" + top_up_address + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Wallets)) return false;
+
+        Wallets wallets = (Wallets) o;
+
+        if (getId() != wallets.getId()) return false;
+        if (getBalance() != null ? !getBalance().equals(wallets.getBalance()) : wallets.getBalance() != null)
+            return false;
+        return getTop_up_address() != null ? getTop_up_address().equals(wallets.getTop_up_address()) : wallets.getTop_up_address() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId();
+        result = 31 * result + (getBalance() != null ? getBalance().hashCode() : 0);
+        result = 31 * result + (getTop_up_address() != null ? getTop_up_address().hashCode() : 0);
+        return result;
     }
 }

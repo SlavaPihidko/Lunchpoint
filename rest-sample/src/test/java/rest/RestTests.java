@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Request;
 import org.testng.annotations.Test;
 
+import javax.sound.midi.Soundbank;
 import java.io.IOException;
 import java.util.*;
 
@@ -16,9 +17,12 @@ public class RestTests {
 
     @Test
     public void testWalletList() throws IOException {
-        //List<Wallets> listWallets =  getWallets();
-        Set<Wallets> listWalletsFromRequest =  getWallets();
-        System.out.println("spisok " +listWalletsFromRequest);
+       // List<Wallets> listWallets =  getWallets();
+        Set<Wallets> setWalletsFromRequest =  getWallets();
+        System.out.println("spisok " +setWalletsFromRequest);
+        for(Wallets n: setWalletsFromRequest) {
+            System.out.println("n :" +n);
+        }
     }
 
 
@@ -26,11 +30,11 @@ public class RestTests {
         // String json= getExecutor()
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzk4MzE5MywiZXhwIjoxNTMzOTg2NzkzLCJuYmYiOjE1MzM5ODMxOTMsImp0aSI6Ik5UaWlKSXNMQ3V2NVRBM00ifQ.3gg8YNWQT-NkohaTIH3ag_6tcFIbxTv1mtbYL7qA2cw")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzMzk4ODkyOCwiZXhwIjoxNTMzOTkyNTI4LCJuYmYiOjE1MzM5ODg5MjgsImp0aSI6InVwT3dpYXRGc0FFMHBKMWcifQ.O_EXfsowVBV9Nf79hBi7jOZztuJSsJabA-NrZ22mHRc")
                 .execute().returnContent().asString();
 
 
-      //  List<Wallets> wallets = new ArrayList<Wallets>();
+       // List<Wallets> wallets = new ArrayList<Wallets>();
 
         JsonParser jsonParser = new JsonParser();
         JsonArray parsed  = jsonParser.parse(json).getAsJsonObject().get("data").getAsJsonObject().getAsJsonArray("wallets");
@@ -49,7 +53,7 @@ public class RestTests {
             System.out.println(itr.next());
 
 
-        return wallets;*/
+        //return wallets;*/
        return new Gson().fromJson(parsed, new TypeToken<Set<Wallets>>(){}.getType());
     }
 }
