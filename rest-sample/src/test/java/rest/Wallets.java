@@ -1,10 +1,13 @@
 package rest;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.JsonElement;
 
 /**
  * Created by slva on 10.08.2018.
  */
+
 public class Wallets {
     //public Wallets(JsonElement result) {
 
@@ -12,7 +15,10 @@ public class Wallets {
     private double balance;
     private  String top_up_address;
 
-    public Wallets(int id, double balance, String top_up_address){
+    @JsonCreator
+    public Wallets(@JsonProperty(value = "id", required = true) int id,
+                   @JsonProperty(value = "balance", required = true) double balance,
+                   @JsonProperty(value = "top_up_address", required = true) String top_up_address){
         this.id=id;
         this.balance=balance;
         this.top_up_address=top_up_address;

@@ -1,8 +1,10 @@
 package restaurants.scenarios;
 
+import com.fasterxml.jackson.databind.DeserializationConfig;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import org.codehaus.jackson.map.DeserializationConfig;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
+//import org.codehaus.jackson.map.DeserializationConfig;
+//import org.codehaus.jackson.map.ObjectMapper;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 //import restaurants.model.DataOfRestMainPgJson;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 import static restaurants.utils.MainPgUtils.restEditDataOfMainPg;
 
 /**
@@ -26,7 +29,8 @@ public class CreateRestViaAdminPage extends TestBase {
   public Iterator<Object[]> defaultRestData() throws IOException {
     List<Object[]> list = new ArrayList<Object[]>();
     ObjectMapper mapper = new ObjectMapper();
-    mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    //mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
 //    BufferedReader reader = new BufferedReader( new FileReader(new File("src\\test\\resources\\forRest.json")));'
 //    StringBuilder builder = new StringBuilder();
 //    String line = reader.readLine();

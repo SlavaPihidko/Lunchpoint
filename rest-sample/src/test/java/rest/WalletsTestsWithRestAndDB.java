@@ -1,18 +1,17 @@
 package rest;
 
-
-/**
- * Created by slva on 11.08.2018.
- */
-
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Request;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import javax.rmi.CORBA.ValueHandler;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
@@ -24,8 +23,20 @@ public class WalletsTestsWithRestAndDB {
     private Set<Wallets> getWallets() throws IOException {
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDAyMTA0NSwiZXhwIjoxNTM0MDI0NjQ1LCJuYmYiOjE1MzQwMjEwNDUsImp0aSI6InUydTNnUTNaTXk2cldwREIifQ.JTspQV9Xl6vXLLCGe5fuFs6MoXrT3rIRMhMrJeiXOPI")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDA5NDk0NSwiZXhwIjoxNTM0MDk4NTQ1LCJuYmYiOjE1MzQwOTQ5NDUsImp0aSI6IndBbmhLdGJnMDN1ZnYyMVgifQ.j93Snw5vHZRN_dQe05ptd7PwUnE8lTPoc0H7QZd5Rwo")
                 .execute().returnContent().asString();
+
+        String json2 =
+                "[{ \"id\" : \"1\", \"balance\" : \"0.0001\", \"top_up_address\" : \"BMW\" }," +
+                        " { \"id\" : \"2\", \"balance\" : \"0.002\", \"top_up_address\" : \"FIAT\"}]";
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        Set<Wallets> walletsMap = objectMapper.readValue(json2, new TypeReference<Set<Wallets>>(){});
+        System.out.println("Set<Wallets> " +walletsMap);
+
+//        System.out.println(walletsMap.getId());
+//        System.out.println(walletsMap.getBalance());
+//        System.out.println(walletsMap.getTop_up_address());
 
         JsonParser jsonParser = new JsonParser();
         JsonArray parsed = jsonParser.parse(json).getAsJsonObject().get("data").getAsJsonObject().getAsJsonArray("wallets");
