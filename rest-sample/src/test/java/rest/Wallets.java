@@ -17,6 +17,7 @@ public class Wallets {
     private double balance;
     private  String top_up_address;
 
+
     @JsonCreator
     public Wallets(@JsonProperty(value = "id", required = true) int id,
                    @JsonProperty(value = "balance", required = true) double balance,
@@ -24,11 +25,6 @@ public class Wallets {
         this.id=id;
         this.balance=balance;
         this.top_up_address=top_up_address;
-    }
-
-    Set<Wallets> primer;
-    public Set<Wallets> getPrimer() {
-        return primer;
     }
 
    public int getId() {

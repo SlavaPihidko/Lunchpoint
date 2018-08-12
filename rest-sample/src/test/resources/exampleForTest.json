@@ -1,2 +1,2 @@
-{"primer": [{ "id" : "1", "balance" : "0.0001", "top_up_address" : "BMW" },
+{"primer":[{ "id" : "1", "balance" : "0.0001", "top_up_address" : "BMW" },
   { "id" : "2", "balance" : "0.002", "top_up_address" : "FIAT"}]}

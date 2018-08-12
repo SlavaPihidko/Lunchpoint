@@ -32,7 +32,8 @@ public class WalletsTestsWithRestAndDB {
                         " { \"id\" : \"2\", \"balance\" : \"0.002\", \"top_up_address\" : \"FIAT\"}]";
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Set<Wallets> walletsMap = objectMapper.readValue(new File("src\\test\\resources\\exampleForTest.json"), new TypeReference<Set<Wallets>>(){});
+        Set<Wallets> walletsMap = objectMapper
+                .readValue(new File("src\\test\\resources\\exampleForTest.json"), new TypeReference<Set<Wallets>>(){});
         System.out.println("Set<Wallets> " +walletsMap);
 
 //        System.out.println(walletsMap.getId());
