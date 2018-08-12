@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.JsonElement;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by slva on 10.08.2018.
  */
 
 public class Wallets {
-    //public Wallets(JsonElement result) {
 
     private int id;
     private double balance;
@@ -24,8 +26,11 @@ public class Wallets {
         this.top_up_address=top_up_address;
     }
 
+    Set<Wallets> primer;
+    public Set<Wallets> getPrimer() {
+        return primer;
+    }
 
-    // }
    public int getId() {
        return id;
    }

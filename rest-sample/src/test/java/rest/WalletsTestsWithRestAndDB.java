@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import javax.rmi.CORBA.ValueHandler;
+import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
@@ -23,7 +24,7 @@ public class WalletsTestsWithRestAndDB {
     private Set<Wallets> getWallets() throws IOException {
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDA5NDk0NSwiZXhwIjoxNTM0MDk4NTQ1LCJuYmYiOjE1MzQwOTQ5NDUsImp0aSI6IndBbmhLdGJnMDN1ZnYyMVgifQ.j93Snw5vHZRN_dQe05ptd7PwUnE8lTPoc0H7QZd5Rwo")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDEwMjE2MSwiZXhwIjoxNTM0MTA1NzYxLCJuYmYiOjE1MzQxMDIxNjEsImp0aSI6Imcxckszc29Sa3A3RFp0VGMifQ.6q1hUMtbnGEHPyMMk6de_5c_WwLkcC9Ba67v6s3KyZc")
                 .execute().returnContent().asString();
 
         String json2 =
@@ -31,7 +32,7 @@ public class WalletsTestsWithRestAndDB {
                         " { \"id\" : \"2\", \"balance\" : \"0.002\", \"top_up_address\" : \"FIAT\"}]";
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Set<Wallets> walletsMap = objectMapper.readValue(json2, new TypeReference<Set<Wallets>>(){});
+        Set<Wallets> walletsMap = objectMapper.readValue(new File("src\\test\\resources\\exampleForTest.json"), new TypeReference<Set<Wallets>>(){});
         System.out.println("Set<Wallets> " +walletsMap);
 
 //        System.out.println(walletsMap.getId());
