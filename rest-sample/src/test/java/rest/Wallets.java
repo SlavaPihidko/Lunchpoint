@@ -1,57 +1,84 @@
 package rest;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import com.google.gson.JsonElement;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
  * Created by slva on 10.08.2018.
  */
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "id",
+        "balance",
+        "top_up_address"
+})
 public class Wallets {
-
+    @JsonProperty("id")
     private int id;
+    @JsonProperty("balance")
     private double balance;
+    @JsonProperty("top_up_address")
     private  String top_up_address;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 
-    @JsonCreator
-    public Wallets(@JsonProperty(value = "id", required = true) int id,
-                   @JsonProperty(value = "balance", required = true) double balance,
-                   @JsonProperty(value = "top_up_address", required = true) String top_up_address){
+
+    public Wallets( int id,
+                    double balance,
+                    String top_up_address){
         this.id=id;
         this.balance=balance;
         this.top_up_address=top_up_address;
     }
 
+    @JsonProperty("id")
    public int getId() {
        return id;
    }
 
+    @JsonProperty("id")
     public Wallets withId(int id) {
         this.id = id;
         return this;
     }
 
+    @JsonProperty("balance")
     public double getBalance() {
         return balance;
     }
 
+    @JsonProperty("balance")
     public Wallets withBalance(double balance) {
         this.balance = balance;
         return this;
     }
 
+    @JsonProperty("top_up_address")
     public String getTop_up_address() {
         return top_up_address;
     }
 
+    @JsonProperty("top_up_address")
     public Wallets withTop_up_address(String top_up_address) {
         this.top_up_address = top_up_address;
         return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
     }
 
     @Override
