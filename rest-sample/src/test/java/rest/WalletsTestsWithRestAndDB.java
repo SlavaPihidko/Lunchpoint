@@ -7,6 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Request;
+import org.apache.http.message.BasicNameValuePair;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -45,10 +46,12 @@ public class WalletsTestsWithRestAndDB {
 
         return new Gson().fromJson(parsed, new TypeToken<Set<Wallets>>() {
         }.getType());
+
+
     }
 
     @Test
-    public void walletsTestsWithRestAndDB() throws IOException {
+    public void testWalletsTestsWithRestAndDB() throws IOException {
 
         String userName;
         String password;
@@ -60,7 +63,6 @@ public class WalletsTestsWithRestAndDB {
         dbURL = "jdbc:mysql://146.71.78.211:3306?autoReconnect=true&useSSL=false";
 
         Set<Wallets> walletsFromRequest = getWallets();
-        //System.out.println("spisok " +setWalletsFromRequest);
         for(Wallets n: walletsFromRequest) {
             System.out.println("wallet from response :" +n);
         }
