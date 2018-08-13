@@ -38,6 +38,8 @@ public class Wallets {
         this.top_up_address=top_up_address;
     }
 
+    public Wallets(){}
+
     @JsonProperty("id")
    public int getId() {
        return id;

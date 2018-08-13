@@ -35,6 +35,14 @@ public class Example {
     public void setAdditionalProperties(Map<String, Object> additionalProperties) {
         this.additionalProperties = additionalProperties;
     }
+
+    @Override
+    public String toString() {
+        return "Example{" +
+                "primer=" + primer +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
 
 

@@ -25,7 +25,7 @@ public class WalletsTestsWithRestAndDB {
     private Set<Wallets> getWallets() throws IOException {
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDE2MTM2NiwiZXhwIjoxNTM0MTY0OTY2LCJuYmYiOjE1MzQxNjEzNjYsImp0aSI6IkxxM3FuYlhTbjBGVm5xM2YifQ.NkBZsa8HxkBO4EVHOsHtKq3K7lhv6cju3KUtHZrPpjc")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDE3MDUzMiwiZXhwIjoxNTM0MTc0MTMyLCJuYmYiOjE1MzQxNzA1MzIsImp0aSI6IlJhb0ZQNXZoZE44NHFaSlkifQ.1TsC66UY7kDuK3NsJNx14j_pCXljC7zGcUcdcoz6CV4")
                 .execute().returnContent().asString();
 
         String json2 =
@@ -33,9 +33,13 @@ public class WalletsTestsWithRestAndDB {
                         " { \"id\" : \"2\", \"balance\" : \"0.002\", \"top_up_address\" : \"FIAT\"}]";
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Set<Example> walletsMap = objectMapper
-                .readValue(new File("src\\test\\resources\\exampleForTest.json"), new TypeReference<Set<Example>>(){});
+        Set<Wallets> walletsMap = objectMapper
+                .readValue(json2, new TypeReference<Set<Wallets>>(){});
         System.out.println("Set<Wallets> " +walletsMap);
+//        File jsonFile = new File("src\\test\\resources\\exampleForTest.json");
+//        Example walletsMap = objectMapper
+//                .readValue(jsonFile, Example.class);
+//        System.out.println("Set<Wallets> " + walletsMap);
 
 //        System.out.println(walletsMap.getId());
 //        System.out.println(walletsMap.getBalance());
