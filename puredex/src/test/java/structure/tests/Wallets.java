@@ -1,12 +1,9 @@
-package rest;
+package structure.tests;
 
 import com.fasterxml.jackson.annotation.*;
-import com.google.gson.JsonElement;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by slva on 10.08.2018.

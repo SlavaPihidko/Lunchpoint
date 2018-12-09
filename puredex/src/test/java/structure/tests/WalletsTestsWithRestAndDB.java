@@ -1,4 +1,4 @@
-package rest;
+package structure.tests;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,13 +7,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Request;
-import org.apache.http.message.BasicNameValuePair;
-import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import javax.rmi.CORBA.ValueHandler;
-import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
@@ -25,7 +20,7 @@ public class WalletsTestsWithRestAndDB {
     private Set<Wallets> getWallets() throws IOException {
         String json = Request.Get("http://146.71.78.211/api/settings/wallets")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTUzNDE3MDUzMiwiZXhwIjoxNTM0MTc0MTMyLCJuYmYiOjE1MzQxNzA1MzIsImp0aSI6IlJhb0ZQNXZoZE44NHFaSlkifQ.1TsC66UY7kDuK3NsJNx14j_pCXljC7zGcUcdcoz6CV4")
+                .addHeader("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6Ly8xNDYuNzEuNzguMjExL2FwaS9sb2dpbiIsImlhdCI6MTU0NDMxMzAxNywiZXhwIjoxNTQ0MzE2NjE3LCJuYmYiOjE1NDQzMTMwMTcsImp0aSI6IjRGY2lWalNIa0EyOW41YmUifQ.cB33HC0zOd9B0jho3HwXDAWah3TSblDqvRv7W9DTZq0")
                 .execute().returnContent().asString();
 
         String json2 =

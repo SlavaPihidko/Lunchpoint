@@ -1,27 +1,15 @@
-package rest;
+package structure.tests;
 
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.fluent.Executor;
-import org.apache.http.client.fluent.Form;
-import org.apache.http.client.fluent.Request;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Locale;
-import java.util.Set;
 
 
 public class AssetsTestFees {
@@ -45,12 +33,12 @@ public class AssetsTestFees {
 
         CloseableHttpClient client = HttpClients.createDefault();
         HttpPut httpPut = new HttpPut("http://146.71.78.211/api/admin/fees");
-        String json = "{\"assets\": [{\"id\":18,\"trade_fee\": 1,\"deposit_fee\": 1,\"withdraw_fee\": 0.000006,\"order_max\": 1000,\"order_min\": 0.0001,\"deposit_max\": 1000,\"deposit_min\": 0.00001,\"withdraw_max\": 100,\"withdraw_min\": 0.00001}]}";
+        String json = "{\"assets\": [{\"id\":18,\"trade_fee\": 1,\"deposit_fee\": 1,\"withdraw_fee\": 0.000001,\"order_max\": 1000,\"order_min\": 0.0001,\"deposit_max\": 1000,\"deposit_min\": 0.00001,\"withdraw_max\": 100,\"withdraw_min\": 0.00001}]}";
         StringEntity entity = new StringEntity(json);
         httpPut.setEntity(entity);
         httpPut.setHeader("Content-Type", "application/json");
         httpPut.setHeader("authorization",
-                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY0LCJpc3MiOiJodHRwOi8vMTQ2LjcxLjc4LjIxMS9hcGkvbG9naW4iLCJpYXQiOjE1MzQyNzAxOTcsImV4cCI6MTUzNDI3Mzc5NywibmJmIjoxNTM0MjcwMTk3LCJqdGkiOiJBSDE0MTBsN2FOUTVrelB4In0.CrZ08Gw1zsOqjHnTEVz-JMSRk8IXfP_sfZa7RFmJ_Lc");
+                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY0LCJpc3MiOiJodHRwOi8vMTQ2LjcxLjc4LjIxMS9hcGkvbG9naW4iLCJpYXQiOjE1MzQyODE1MDEsImV4cCI6MTUzNDI4NTEwMSwibmJmIjoxNTM0MjgxNTAxLCJqdGkiOiJqcjBIdmw0ZWJ1cDBHa3ZjIn0.hoDq8-QkRZa8kE70vwfDLMFVkIdEn2dohVbOLcvDAM8");
         CloseableHttpResponse responseHeader = client.execute(httpPut);
         HttpEntity entity2 = responseHeader.getEntity();
         String responseBody=  EntityUtils.toString(entity2);

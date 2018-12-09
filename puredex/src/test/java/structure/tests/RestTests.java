@@ -1,11 +1,10 @@
-package rest;
+package structure.tests;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Request;
 import org.testng.annotations.Test;
 
-import javax.sound.midi.Soundbank;
 import java.io.IOException;
 import java.util.*;
 

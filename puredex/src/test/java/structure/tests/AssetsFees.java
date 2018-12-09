@@ -1,4 +1,4 @@
-package rest;
+package structure.tests;
 
 public class AssetsFees {
     private String id;

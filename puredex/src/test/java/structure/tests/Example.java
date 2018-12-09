@@ -1,9 +1,8 @@
-package rest;
+package structure.tests;
 
 import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

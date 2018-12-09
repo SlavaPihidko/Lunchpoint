@@ -1,4 +1,4 @@
-package rest;
+package structure.tests;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
